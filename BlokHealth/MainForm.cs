@@ -31,20 +31,28 @@ namespace BlokHealth
             if (!File.Exists(NotebookFilePath))
             {
                 StreamWriter sw = File.CreateText(NotebookFilePath);
-                sw.WriteLine(NotebookTextBox.Text);
+                sw.Write(NotebookTextBox.Text);
                 File.SetAttributes(NotebookFilePath, FileAttributes.Normal);
 
                 sw.Close();
             }
             else
             {
-                File.SetAttributes(NotebookFilePath, FileAttributes.Normal);
                 StreamReader sr = File.OpenText(NotebookFilePath);
-                string s;
-                while ((s = sr.ReadLine()) != null)
+                string s = "";
+
+                string[] lines = System.IO.File.ReadAllLines(NotebookFilePath);
+
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    aSomeText = s;
+                    s += lines[i];
+                    if (i + 1 != lines.Length)
+                    {
+                        s += "\r\n";
+                    }
                 }
+
+                aSomeText = s;
 
                 sr.Close();
                 NotebookTextBox.Text = aSomeText;
@@ -68,7 +76,7 @@ namespace BlokHealth
         private int IndeksOfHealthCuriosty;
 
         // Notatnik
-        private string NotebookFilePath = $@"C:\Users\{Environment.UserName}\NotatkaBlokHealth.txt";
+        private readonly string NotebookFilePath = $@"C:\Users\{Environment.UserName}\NotatkaBlokHealth.txt";
 
         #endregion
 
@@ -172,7 +180,7 @@ namespace BlokHealth
 
         #region Calculator
 
-        private void CalculatorOperation(int liczba)
+        private void CalculatorOperation(double liczba)
         {
             if (CalculatorTypeOfOperation == ' ')
             {
@@ -759,6 +767,182 @@ namespace BlokHealth
 
         #region ListOfProducts
 
+        #region LabelValues
+        private void LabelValueWartoscEnergetyczna_Click(object sender, EventArgs e)
+        {
+            CalculatorOperation(Product[ProductNumber].EnergyValue);
+            if (ButtonTypeOfConvert.Text == "Masa")
+            {
+                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(90)))), ((int)(((byte)(74)))));
+                ButtonTypeOfConvert.Text = "Energia";
+
+                ComboBoxTypeOfValueBeforeConvert.Items.Clear();
+                this.ComboBoxTypeOfValueBeforeConvert.Items.AddRange(new object[] {
+                "Kilodżule (kJ)",
+                "Kilokalorie (kcal)",
+                "Dżule (J)",
+                "Kalorie (cal)"
+                });
+                ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 1;
+
+                ComboBoxTypeOfValueAfterConvert.Items.Clear();
+                this.ComboBoxTypeOfValueAfterConvert.Items.AddRange(new object[] {
+                "Kilodżule (kJ)",
+                "Kilokalorie (kcal)",
+                "Dżule (J)",
+                "Kalorie (cal)"
+                });
+                ComboBoxTypeOfValueAfterConvert.SelectedIndex = 0;
+
+            }
+        }
+
+        private void LabelValueBialko_Click(object sender, EventArgs e)
+        {
+            CalculatorOperation(Product[ProductNumber].Protein);
+            if (ButtonTypeOfConvert.Text == "Energia")
+            {
+
+                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+                ButtonTypeOfConvert.Text = "Masa";
+
+                ComboBoxTypeOfValueBeforeConvert.Items.Clear();
+                ComboBoxTypeOfValueBeforeConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 2;
+
+                ComboBoxTypeOfValueAfterConvert.Items.Clear();
+                ComboBoxTypeOfValueAfterConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
+
+            }
+        }
+
+        private void LabelValueTluszcz_Click(object sender, EventArgs e)
+        {
+            CalculatorOperation(Product[ProductNumber].Fat);
+            if (ButtonTypeOfConvert.Text == "Energia")
+            {
+
+                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+                ButtonTypeOfConvert.Text = "Masa";
+
+                ComboBoxTypeOfValueBeforeConvert.Items.Clear();
+                ComboBoxTypeOfValueBeforeConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 2;
+
+                ComboBoxTypeOfValueAfterConvert.Items.Clear();
+                ComboBoxTypeOfValueAfterConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
+
+            }
+        }
+
+        private void LabelValueWeglowodany_Click(object sender, EventArgs e)
+        {
+            CalculatorOperation(Product[ProductNumber].Carbohydrates);
+            if (ButtonTypeOfConvert.Text == "Energia")
+            {
+
+                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+                ButtonTypeOfConvert.Text = "Masa";
+
+                ComboBoxTypeOfValueBeforeConvert.Items.Clear();
+                ComboBoxTypeOfValueBeforeConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 2;
+
+                ComboBoxTypeOfValueAfterConvert.Items.Clear();
+                ComboBoxTypeOfValueAfterConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
+
+            }
+        }
+
+        private void LabelValueBlonnik_Click(object sender, EventArgs e)
+        {
+            CalculatorOperation(Product[ProductNumber].Fiber);
+            if (ButtonTypeOfConvert.Text == "Energia")
+            {
+
+                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+                ButtonTypeOfConvert.Text = "Masa";
+
+                ComboBoxTypeOfValueBeforeConvert.Items.Clear();
+                ComboBoxTypeOfValueBeforeConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 2;
+
+                ComboBoxTypeOfValueAfterConvert.Items.Clear();
+                ComboBoxTypeOfValueAfterConvert.Items.AddRange(new object[] {
+                "Kilogramy (kg)",
+                "Dekagramy (dag)",
+                "Gramy (g)",
+                "Miligramy (mg)",
+                "Litry wody (l)",
+                "Mililitry wody (ml)",
+                "Tony (t)"
+                });
+                ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
+
+            }
+        }
+
+        #endregion
+
         private void GoNextButton_Click(object sender, EventArgs e)
         {
             if (Product.Count > ProductNumber + 1)
@@ -794,15 +978,15 @@ namespace BlokHealth
 
                     "Banan jest to jadalny owoc tropikalny, jest owocem bogatym w potas i zaleca się spożywanie go sportowcom.",
 
-                    "122 kcal",
+                    122,
 
-                    "1,30 g	",
+                    1.30,
 
-                    "0,37 g",
+                    0.37,
 
-                    "31,9 g",
+                    31.9,
 
-                    "2,30 g",
+                    2.30,
 
                     "Witamina C - 18,40 mg\n" +
                     "Witamina B1 - 0,05 mg\n" +
@@ -832,15 +1016,15 @@ namespace BlokHealth
 
                     "Barszcz czerwony to jedna z najpyszniejszych polskich zup. Jest to zupa na bazie esencji buraka czerwonego. Zawiera dużo witamin oraz minerałów.",
 
-                    "18 kcal",
+                    18,
 
-                    "0,1 g",
+                    0.1,
 
-                    "0,1 g",
+                    0.1,
 
-                    "4,1 g",
+                    4.1,
 
-                    "-",
+                    0,
 
                     "Witamina C\n" +
                     "Witamina B\n" +
@@ -866,15 +1050,15 @@ namespace BlokHealth
 
                     "Brukselka odmiana kapusty warzywnej. Prawdopodobnie powstała ze skrzyżowania jarmużu i kapusty głowiastej w Belgii.",
 
-                    "41 kcal",
+                    41,
 
-                    "3.85 g",
+                    3.85,
 
-                    "0.40 g",
+                    0.40,
 
-                    "8.10 g",
+                    8.10,
 
-                    "3.2 g",
+                    3.2,
 
                     "Witamina C – 70 mg\n" +
                     "Tiamina – 0.122 mg\n" +
@@ -904,15 +1088,15 @@ namespace BlokHealth
 
                     "Cola to słodki napój gazowany, początkowo wytwarzany z soku z owoców drzewa koli i krzewu koki, zmieszanych z wodą sodową.",
 
-                    "37 kcal",
+                    37,
 
-                    "0.07 g",
+                    0.07,
 
-                    "0.02 g",
+                    0.02,
 
-                    "9.56 g",
+                    9.56,
 
-                    "0.0 g",
+                    0.0,
 
                     "Witamina A - 0\n" +
                     "Witamina C - 0\n" +
@@ -940,15 +1124,15 @@ namespace BlokHealth
 
                     "Fasolka szparagowa lub inaczej zwyczajna, należy do warzyw chętnie uprawianych na naszych działkach. Jest bowiem nie tylko smaczna, ale też łatwa w uprawie.",
 
-                    "31 kcal",
+                    31,
 
-                    "1.83 g",
+                    1.83,
 
-                    "0.22 g",
+                    0.22,
 
-                    "6.97 g",
+                    6.97,
 
-                    "2.7 g",
+                    2.7,
 
                     "Witamina C – 12.2 mg\n" +
                     "Tiamina – 0.082 mg\n" +
@@ -978,15 +1162,15 @@ namespace BlokHealth
 
                     "Gruszki bogate są w: fosfor, wapń, magnez, sód, miedź i żelazo. Gruszki to bogate źródło kwasów owocowych jabłkowego i cytrynowego.",
 
-                    "57 kcal",
+                    57,
 
-                    "0.36 g",
+                    0.36,
 
-                    "0.14 g",
+                    0.14,
 
-                    "15.23 g",
+                    15.23,
 
-                    "3.1 g",
+                    3.1,
 
                     "Witamina C – 4.3 mg\n" +
                     "Tiamina – 0.012 mg\n" +
@@ -1016,15 +1200,15 @@ namespace BlokHealth
 
                     "Jabłko to jadalny, kulisty owoc drzew z rodzaju jabłoń Malus. Jabłka, są istotnym komercyjnie owocem o soczystym i chrupkim miąższu.",
 
-                    "52 kcal",
+                    52,
 
-                    "0,26 g",
+                    0.26,
 
-                    "0,17 g",
+                    0.17,
 
-                    "13,81 g",
+                    13.81,
 
-                    "2,4 g",
+                    2.4,
 
                     "Witamina E - 0,18 mg\n" +
                     "Witamina K1 - 2,2 µg\n" +
@@ -1054,15 +1238,15 @@ namespace BlokHealth
 
                     "Jajecznica to potrawa z rozmąconych, usmażonych na patelni jajek. Jest domeną prostej kuchni, ponieważ nie wymaga umiejętności kulinarnych ani techniki.",
 
-                    "149 kcal",
+                    149,
 
-                    "9,99 g",
+                    9.99,
 
-                    "10,98 g",
+                    10.98,
 
-                    "1,61 g",
+                    1.61,
 
-                    "0 g",
+                    0,
 
                     "Witamina C - 0 mg\n" +
                     "Rów. fol. - 36,0 µg\n" +
@@ -1092,15 +1276,16 @@ namespace BlokHealth
 
                     "Kajzerka jest to mała, okrągła bułka z charakterystycznymi pięcioma promienistymi bruzdami na wierzchu. Masa kajzerki wynosi około 50 gramów, wypiekana jest zazwyczaj z mąki pszennej, słodu, zakwasu lub drożdży, soli i wody.",
 
-                    "1077 kJ",
+                    1077,
+                    "kJ",
 
-                    "8 g",
+                    8,
 
-                    "3.3 g",
+                    3.3,
 
-                    "54 g",
+                    54,
 
-                    "2 g",
+                    2,
 
                     "Brak Danych",
 
@@ -1117,15 +1302,15 @@ namespace BlokHealth
 
                     "Krówki to rodzaj polskich słodyczy, cukierki mleczne z miękkim, ciągliwym nadzieniem. Konsystencja krówek wynika z czasu przechowywania.",
 
-                    "383 kcal",
+                    383,
 
-                    "1,05 g",
+                    1.05,
 
-                    "5,45 g",
+                    5.45,
 
-                    "82,2 g",
+                    82.2,
 
-                    "0 g",
+                    0,
 
                     "Witamina C - 0 mg\n" +
                     "Witamina B1 - 0,01 mg\n" +
@@ -1155,15 +1340,15 @@ namespace BlokHealth
 
                     "U różnych odmian uprawnych owoce mogą być koloru od czarnego i purpurowego, przez czerwony, żółty, do białawego.",
 
-                    "52 kcal",
+                    52,
 
-                    "1.20 g",
+                    1.20,
 
-                    "0.65 g",
+                    0.65,
 
-                    "11.94 g",
+                    11.94,
 
-                    "6.5 g",
+                    6.5,
 
                     "Witamina C – 26.2 mg\n" +
                     "Tiamina – 0.032 mg\n" +
@@ -1193,15 +1378,15 @@ namespace BlokHealth
 
                     "Mango to soczyste owoce w typie pestkowca pochodzące z tropikalnych drzew mango, uprawianych głównie dla swoich jadalnych owoców.",
 
-                    "60 kcal",
+                    60,
 
-                    "0,82 g",
+                    0.82,
 
-                    "0,38 g",
+                    0.38,
 
-                    "14,98 g",
+                    14.98,
 
-                    "1,6 g",
+                    1.6,
 
                     "Witamina C – 36,4 mg\n" +
                     "Tiamina – 0,028 mg\n" +
@@ -1231,15 +1416,15 @@ namespace BlokHealth
 
                     "Jako produkt żywnościowy dla człowieka najczęstsze zastosowanie ma mleko krowie. Mleko jest mieszaniną wieloskładnikową.",
 
-                    "51 kcal",
+                    51,
 
-                    "3,3 g",
+                    3.3,
 
-                    "2,0 g",
+                    2.0,
 
-                    "4,9 g",
+                    4.9,
 
-                    "0 g",
+                    0,
 
                     "Witamina A – 102 IU\n" +
                     "Witamina D – 40 IU\n" +
@@ -1269,15 +1454,15 @@ namespace BlokHealth
 
                     "Nerkowce mają wiele wartości odżywczych. Te odznaczające się delikatnym, słodkim smakiem orzechy mogą zapobiec rozwojowi cukrzycy typu 2.",
 
-                    "533 kcal",
+                    533,
 
-                    "18,22 g",
+                    18.22,
 
-                    "43,85 g",
+                    43.85,
 
-                    "30.19 g",
+                    30.19,
 
-                    "3,3 g",
+                    3.3,
 
                     "Witamina C – 0,5 mg\n" +
                     "Tiamina – 0,423 mg\n" +
@@ -1307,15 +1492,15 @@ namespace BlokHealth
 
                     "Ogórek to rodzaj roślin jednorocznych z rodziny dyniowatych. Obejmuje co najmniej 52 gatunki. Ogórki zawierają kukurbitacyny dające gorzki smak.",
 
-                    "13 kcal",
+                    13,
 
-                    "0.61.5 g",
+                    0.615,
 
-                    "0.14 g",
+                    0.14,
 
-                    "2.90 g",
+                    2.90,
 
-                    "0.6 g",
+                    0.6,
 
                     "Witamina C – 3.2 mg\n" +
                     "Tiamina – 0.031 mg\n" +
@@ -1345,15 +1530,15 @@ namespace BlokHealth
 
                     "Pączek to w kuchni polskiej, wyrób cukierniczy w postaci ciasta drożdżowego z mąki pszennej, uformowanego na kształt spłaszczonej kuli.",
 
-                    "426 kcal",
+                    426,
 
-                    "5.20 g",
+                    5.20,
 
-                    "22.90 g",
+                    22.90,
 
-                    "50.80 g",
+                    50.80,
 
-                    "1.5 g",
+                    1.5,
 
                     "Tiamina – 0.233 mg\n" +
                     "Ryboflawina – 0.198 mg\n" +
@@ -1382,15 +1567,15 @@ namespace BlokHealth
 
                     "Pizza to włoska potrawa, rozpowszechniona na całym świecie. Jest to płaski placek z ciasta drożdżowego, z sosem pomidorowym, posypany tartym serem i ziołami.",
 
-                    "280 kcal",
+                    280,
 
-                    "12, 86 g",
+                    12.86,
 
-                    "11,38 g",
+                    11.38,
 
-                    "31,55 g",
+                    31.55,
 
-                    "1,7 g",
+                    1.7,
 
                     "Witamina B1 - 0,32 mg\n" +
                     "Witamina B2 - 0,271 mg\n" +
@@ -1419,15 +1604,15 @@ namespace BlokHealth
 
                     "Pomidor odpowiada za niepowtarzalny smak wielu dań, a nawet zdążył się wpisać w warzywną „popkulturę” dzięki temu, że wchodzi w skład ketchupu.",
 
-                    "18 kcal",
+                    18,
 
-                    "0.88 g",
+                    0.88,
 
-                    "0.20 g",
+                    0.20,
 
-                    "3.89 g",
+                    3.89,
 
-                    "1.2 g",
+                    1.2,
 
                     "Tiamina – 0.037 mg\n" +
                     "Ryboflawina – 0.019 mg\n" +
@@ -1457,15 +1642,15 @@ namespace BlokHealth
 
                     "Rodzynki to suszone winogrona, zaliczane do bakalii. Mogą być spożywane surowe lub używane do pieczenia.",
 
-                    "299 kcal",
+                    299,
 
-                    "3.07 g",
+                    3.07,
 
-                    "0.46 g",
+                    0.46,
 
-                    "79.18 g",
+                    79.18,
 
-                    "3.7 g",
+                    3.7,
 
                     "Witamina C – 2, 3 mg\n" +
                     "Tiamina – 0, 106 mg\n" +
@@ -1495,15 +1680,15 @@ namespace BlokHealth
 
                     "Rosół to niezagęszczana zupa będąca wywarem mięsno-warzywnym. Sporządzana z drobiu, ewentualnie z wołowiny, baraniny lub na Górnym Śląsku z gołębi.",
 
-                    "15 kcal",
+                    15,
 
-                    "37.5 g",
+                    37.5,
 
-                    "1.25 g",
+                    1.25,
 
-                    "0.625 g",
+                    0.625,
 
-                    "0.125 g",
+                    0.125,
 
                     "Brak Danych",
 
@@ -1523,15 +1708,15 @@ namespace BlokHealth
 
                     "Kotlet schabowy to kotlet panierowany ze schabu przypominający sznycel wiedeński. Jest to jedna z tradycyjnych i najbardziej popularnych potraw w kuchni polskiej.",
 
-                    "120 kcal",
+                    120,
 
-                    "21 g",
+                    21,
 
-                    "4.0 g",
+                    4.0,
 
-                    "50.80 g",
+                    50.80,
 
-                    "1.5 g",
+                    1.5,
 
                     "Witamina B1 w 35 %\n" +
                     "Witamina B2 w 12 %\n" +
@@ -1553,15 +1738,15 @@ namespace BlokHealth
 
                     "W skład spaghetti bolognese wchodzi mięso, warzywa takie jak pietruszka, cebula, marchew, pomidory i seler oraz oliwa i czerwone wino.",
 
-                    "150 kcal",
+                    150,
 
-                    "7,12 g",
+                    7.12,
 
-                    "5,11 g",
+                    5.11,
 
-                    "18 g",
+                    18,
 
-                    "1,7 g",
+                    1.7,
 
                     "Kwas foliowy,\n" +
                     "PP\n" +
@@ -1589,15 +1774,15 @@ namespace BlokHealth
 
                     "Szarlotka to pochodzący z Francji wyrób cukierniczy, składający się z półkruchego lub kruchego ciasta oraz owoców.",
 
-                    "265 kcal",
+                    265,
 
-                    "2,40 g",
+                    2.40,
 
-                    "12,50 g",
+                    12.50,
 
-                    "37,1 g",
+                    37.1,
 
-                    "0 g",
+                    0,
 
                     "Witamina C	1,70 mg\n" +
                     "Witamina B1 - 0,15 mg\n" +
@@ -1627,15 +1812,15 @@ namespace BlokHealth
 
                     "Owoce są nie tylko smaczne, ale dostarczają naszemu organizmowi wiele wartości odżywczych. Śliwki są wyśmienitym owocem sezonowym.",
 
-                    "46 kcal",
+                    46,
 
-                    "0.70 g",
+                    0.70,
 
-                    "0.28 g",
+                    0.28,
 
-                    "11.42 g",
+                    11.42,
 
-                    "1.4 g",
+                    1.4,
 
                     "Witamina C – 9.5 mg\n" +
                     "Tiamina – 0.028 mg\n" +
@@ -1665,15 +1850,15 @@ namespace BlokHealth
 
                     "Winogrona można jeść na surowo lub można je przetwarzać. Główne produkty spożywcze uzyskiwane z winogron to: dżem, sok, galaretka, wino itd.",
 
-                    "69 kcal",
+                    69,
 
-                    "0.72 g",
+                    0.72,
 
-                    "0.16 g",
+                    0.16,
 
-                    "18.10 g",
+                    18.10,
 
-                    "0.9 g",
+                    0.9,
 
                     "Witamina C – 3.2 mg\n" +
                     "Tiamina – 0.069 mg\n" +
@@ -1702,13 +1887,25 @@ namespace BlokHealth
         {
             FoodTitleLabel.Text = Product[ProductNumber].Name;
             LabelDescriptionOfProduct.Text = Product[ProductNumber].Describe;
-            LabelValueWartoscEnergetyczna.Text = Product[ProductNumber].EnergyValue;
-            LabelValueBialko.Text = Product[ProductNumber].Protein;
-            LabelValueTluszcz.Text = Product[ProductNumber].Fat;
-            LabelValueWeglowodany.Text = Product[ProductNumber].Carbohydrates;
-            LabelValueBlonnik.Text = Product[ProductNumber].Fiber;
+
+            LabelValueWartoscEnergetyczna.Text = Product[ProductNumber].EnergyValue.ToString();
+            LabelValueWartoscEnergetyczna.Text += " " + Product[ProductNumber].EnergyValueVarible;
+
+            LabelValueBialko.Text = Product[ProductNumber].Protein.ToString();
+            LabelValueBialko.Text += " " + Product[ProductNumber].ProteinVarible;
+
+            LabelValueTluszcz.Text = Product[ProductNumber].Fat.ToString();
+            LabelValueTluszcz.Text += " " + Product[ProductNumber].FatVarible;
+
+            LabelValueWeglowodany.Text = Product[ProductNumber].Carbohydrates.ToString();
+            LabelValueWeglowodany.Text += " " + Product[ProductNumber].CarbohydratesVarible;
+
+            LabelValueBlonnik.Text = Product[ProductNumber].Fiber.ToString();
+            LabelValueBlonnik.Text += " " + Product[ProductNumber].FiberVarible;
+
             LabelValueWitaminy.Text = Product[ProductNumber].Vitamins;
             LabelValueMineraly.Text = Product[ProductNumber].Minerals;
+
             PictureBoxImageOfProduct.Image = Product[ProductNumber].ExampleImage;
         }
 
