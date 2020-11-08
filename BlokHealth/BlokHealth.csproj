@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="128x128.ico" />
+    <Content Include="Resources\64x64.ico" />
     <None Include="Resources\Przysiady.png" />
     <None Include="Resources\Pompki.png" />
     <None Include="Resources\MartwyCiąg.png" />
