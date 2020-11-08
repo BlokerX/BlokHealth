@@ -16,31 +16,31 @@
         "Entry"
         {
         "MsmKey" = "8:_6935D175035C4523CB81D0A12119A740"
-        "OwnerKey" = "8:_A3754DACF198418E885E962E2416E127"
+        "OwnerKey" = "8:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_69E96B38802E4C26953929185E4B2EAD"
+        "MsmKey" = "8:_84A4C3D2C99E4567AC48DB35A6793C93"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A3754DACF198418E885E962E2416E127"
+        "MsmKey" = "8:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3754DACF198418E885E962E2416E127"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6935D175035C4523CB81D0A12119A740"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -169,10 +169,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_69E96B38802E4C26953929185E4B2EAD"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84A4C3D2C99E4567AC48DB35A6793C93"
             {
             "SourcePath" = "8:..\\BlokHealth\\Resources\\64x64.ico"
-            "TargetName" = "8:SetupIcon"
+            "TargetName" = "8:SetupIcon.ico"
             "Tag" = "8:"
             "Folder" = "8:_021CD888DDEF4DF3A5C7591462B6793A"
             "Condition" = "8:"
@@ -257,7 +257,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BlokHealth"
         "ProductCode" = "8:{C15F8EF2-35CE-4CF0-AD85-A5079438C495}"
-        "PackageCode" = "8:{33469F74-67F7-43BB-B631-8BE79084FB31}"
+        "PackageCode" = "8:{3FEC01A4-BE95-4A4C-B3AC-746D715E5080}"
         "UpgradeCode" = "8:{A0A6AF1A-4532-4CA8-A766-13D8878B2448}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -274,7 +274,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Aplikacja powstała w celach konkursowych i jej zawartość jest własnością twórców (Nie podlega sprzedaży)"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_69E96B38802E4C26953929185E4B2EAD"
+        "ARPPRODUCTICON" = "8:_84A4C3D2C99E4567AC48DB35A6793C93"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -377,7 +377,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1956228DBBA946D9B08934B887726BDC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0DF052B20CBF4DC382053DD276A5F881"
             {
             "Name" = "8:BlokHealth"
             "Arguments" = "8:"
@@ -385,24 +385,24 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A3754DACF198418E885E962E2416E127"
-            "Folder" = "8:_A100C7F24C2E487E84F61F1646C4ED3E"
-            "WorkingFolder" = "8:_021CD888DDEF4DF3A5C7591462B6793A"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E63F36F268C64FEDAD913FF694DC628D"
-            {
-            "Name" = "8:BlokHealth"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_A3754DACF198418E885E962E2416E127"
+            "Target" = "8:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
             "Folder" = "8:_9B1003A149E44820B0FF0C707C2D973C"
             "WorkingFolder" = "8:_021CD888DDEF4DF3A5C7591462B6793A"
-            "Icon" = "8:"
+            "Icon" = "8:_84A4C3D2C99E4567AC48DB35A6793C93"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_20044454B9094BC4BEEC5DA914B938A4"
+            {
+            "Name" = "8:BlokHealth"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
+            "Folder" = "8:_A100C7F24C2E487E84F61F1646C4ED3E"
+            "WorkingFolder" = "8:_021CD888DDEF4DF3A5C7591462B6793A"
+            "Icon" = "8:_84A4C3D2C99E4567AC48DB35A6793C93"
             "Feature" = "8:"
             }
         }
@@ -804,7 +804,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A3754DACF198418E885E962E2416E127"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8E1AD6DFBD5D4F7F99FAA3039B1A8EE7"
             {
             "SourcePath" = "8:..\\BlokHealth\\obj\\Release\\BlokHealth.exe"
             "TargetName" = "8:"
