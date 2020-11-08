@@ -27,7 +27,7 @@ namespace BlokHealth
             #endregion
 
             #region Notebook
-            string aSomeText = "";
+            string aSomeText;
             if (!File.Exists(NotebookFilePath))
             {
                 StreamWriter sw = File.CreateText(NotebookFilePath);
