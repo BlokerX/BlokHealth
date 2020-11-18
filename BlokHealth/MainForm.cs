@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,18 +16,22 @@ namespace BlokHealth
         {
             #region Standard_load_function
 
+            VariblesDefaultConstructor();
+            CheckProgramDiresArchitecture();
+            LoadingMyProducts();
+
             ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
             ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 0;
             LoadingProductObjects();
             SelectActiveProduct();
+
+            //Health Curiosity
             LoadingHealthCuriosity();
 
             //HealthCuriosityWork
             Timer1.Start();
 
-            #endregion
-
-            #region Notebook
+            //Notebook
             string aSomeText;
             if (!File.Exists(NotebookFilePath))
             {
@@ -59,7 +64,6 @@ namespace BlokHealth
             }
 
             #endregion
-
         }
 
         #region Varibles
@@ -75,8 +79,35 @@ namespace BlokHealth
         readonly List<string> HealthCuriosity = new List<string>();
         private int IndeksOfHealthCuriosty;
 
-        // Notatnik
-        private readonly string NotebookFilePath = $@"C:\Users\{Environment.UserName}\NotatkaBlokHealth.txt";
+        // Paths
+        string SystemDriveName = "-";
+        string ProgramMainFolderPath;
+        string MyProductFolderPath;
+        string NotebookFileFolderPath;
+        string NotebookFilePath;
+        string ImagesFolderPath;
+
+        void VariblesDefaultConstructor()
+        {
+            #region DriveName
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+            foreach (DriveInfo d in allDrives)
+            {
+                if (d.IsReady == true)
+                {
+                    if (Directory.Exists($@"{d.Name}\Users\{Environment.UserName}") && Directory.Exists($@"{d.Name}\Windows"))
+                    { SystemDriveName = d.Name; continue; }
+                }
+            }
+            #endregion
+
+            ProgramMainFolderPath = $@"{SystemDriveName}Users\{Environment.UserName}\BlokHealth";
+            MyProductFolderPath = $@"{ProgramMainFolderPath}\MyProducts";
+            NotebookFileFolderPath = $@"{ProgramMainFolderPath}\Notatki";
+            NotebookFilePath = $@"{NotebookFileFolderPath}\NotatkaBlokHealth.txt";
+            ImagesFolderPath = $@"{ProgramMainFolderPath}\Images";
+        }
 
         #endregion
 
@@ -767,7 +798,7 @@ namespace BlokHealth
 
         #region ListOfProducts
 
-        #region LabelValues
+        #region ChoseLabelValues
         private void LabelValueWartoscEnergetyczna_Click(object sender, EventArgs e)
         {
             CalculatorOperation(Product[ProductNumber].EnergyValue);
@@ -969,6 +1000,15 @@ namespace BlokHealth
             SelectActiveProduct();
         }
 
+        private void ButtonOpenAddProductDialog_Click(object sender, EventArgs e)
+        {
+            AddProductForm addProductForm = new AddProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath);
+            addProductForm.ShowDialog();
+            Product.Clear();
+            LoadingMyProducts();
+            LoadingProductObjects();
+        }
+
         void LoadingProductObjects()
         {
             #region Banan
@@ -1005,7 +1045,9 @@ namespace BlokHealth
                     "Sód - 4, 00 mg\n" +
                     "Cynk - 0, 14 mg",
 
-                    BlokHealth.Properties.Resources.banany
+                    BlokHealth.Properties.Resources.banany,
+
+                    true
                 ));
             #endregion
 
@@ -1039,7 +1081,9 @@ namespace BlokHealth
                     "Sód\n" +
                     "Cynk",
 
-                    BlokHealth.Properties.Resources.barszcz
+                    BlokHealth.Properties.Resources.barszcz,
+
+                    true
                 ));
             #endregion
 
@@ -1077,7 +1121,9 @@ namespace BlokHealth
                     "Sód - 23 mg\n" +
                     "Cynk - 0.37 mg",
 
-                    BlokHealth.Properties.Resources.brukselka
+                    BlokHealth.Properties.Resources.brukselka,
+
+                    true
                 ));
             #endregion
 
@@ -1113,7 +1159,9 @@ namespace BlokHealth
                     "Sód - 4 mg\n" +
                     "Cynk - 0.02 mg",
 
-                    BlokHealth.Properties.Resources.coca_cola
+                    BlokHealth.Properties.Resources.coca_cola,
+
+                    true
                 ));
             #endregion
 
@@ -1151,7 +1199,9 @@ namespace BlokHealth
                     "Sód - 6 mg\n" +
                     "Cynk - 0.24 mg",
 
-                    BlokHealth.Properties.Resources.fasolka_szparagowa
+                    BlokHealth.Properties.Resources.fasolka_szparagowa,
+
+                    true
                 ));
             #endregion
 
@@ -1189,7 +1239,9 @@ namespace BlokHealth
                     "Sód - 1 mg\n" +
                     "Cynk - 0.10 mg",
 
-                    BlokHealth.Properties.Resources.gruszki
+                    BlokHealth.Properties.Resources.gruszki,
+
+                    true
                 ));
             #endregion
 
@@ -1227,7 +1279,9 @@ namespace BlokHealth
                     "Sód - 1 mg\n" +
                     "Cynk - 0,04 mg",
 
-                    BlokHealth.Properties.Resources.jabłka
+                    BlokHealth.Properties.Resources.jabłka,
+
+                    true
                 ));
             #endregion
 
@@ -1265,7 +1319,9 @@ namespace BlokHealth
                     "Sód - 145 mg\n" +
                     "Cynk - 1,04 mg",
 
-                    BlokHealth.Properties.Resources.jajecznica
+                    BlokHealth.Properties.Resources.jajecznica,
+
+                    true
                 ));
             #endregion
 
@@ -1291,7 +1347,9 @@ namespace BlokHealth
 
                     "Brak Danych",
 
-                    BlokHealth.Properties.Resources.kajzerki
+                    BlokHealth.Properties.Resources.kajzerki,
+
+                    true
                 ));
             #endregion
 
@@ -1329,7 +1387,9 @@ namespace BlokHealth
                     "Sód - 47,0 mg\n" +
                     "Cynk - 0,15 mg",
 
-                    BlokHealth.Properties.Resources.krówka_cukierki
+                    BlokHealth.Properties.Resources.krówka_cukierki,
+
+                    true
                 ));
             #endregion
 
@@ -1367,7 +1427,9 @@ namespace BlokHealth
                     "Sód – 1 mg\n" +
                     "Cynk - 0, 42 mg",
 
-                    BlokHealth.Properties.Resources.maliny
+                    BlokHealth.Properties.Resources.maliny,
+
+                    true
                 ));
             #endregion
 
@@ -1405,7 +1467,9 @@ namespace BlokHealth
                     "Sód - 1 mg\n" +
                     "Cynk - 0,09 mg",
 
-                    BlokHealth.Properties.Resources.mango
+                    BlokHealth.Properties.Resources.mango,
+
+                    true
                 ));
             #endregion
 
@@ -1443,7 +1507,9 @@ namespace BlokHealth
                     "Sód - 40 mg\n" +
                     "Cynk - 0.4 mg",
 
-                    BlokHealth.Properties.Resources.mleko
+                    BlokHealth.Properties.Resources.mleko,
+
+                    true
                 ));
             #endregion
 
@@ -1481,7 +1547,9 @@ namespace BlokHealth
                     "Sód - 12 mg\n" +
                     "Cynk - 5.78 mg",
 
-                    BlokHealth.Properties.Resources.orzeszki_nerkowca
+                    BlokHealth.Properties.Resources.orzeszki_nerkowca,
+
+                    true
                 ));
             #endregion
 
@@ -1519,7 +1587,9 @@ namespace BlokHealth
                     "Sód - 2 mg\n" +
                     "Cynk - 0.185 mg",
 
-                    BlokHealth.Properties.Resources.ogorek
+                    BlokHealth.Properties.Resources.ogorek,
+
+                    true
                 ));
             #endregion
 
@@ -1556,7 +1626,9 @@ namespace BlokHealth
                     "Sód - 402 mg\n" +
                     "Cynk - 0.44 mg",
 
-                    BlokHealth.Properties.Resources.paczki
+                    BlokHealth.Properties.Resources.paczki,
+
+                    true
                 ));
             #endregion
 
@@ -1593,7 +1665,9 @@ namespace BlokHealth
                     "Sód - 801 mg\n" +
                     "Cynk - 1.68 mg",
 
-                    BlokHealth.Properties.Resources.pizza
+                    BlokHealth.Properties.Resources.pizza,
+
+                    true
                 ));
             #endregion
 
@@ -1631,7 +1705,9 @@ namespace BlokHealth
                     "Sód - 5 mg\n" +
                     "Cynk - 0.17 mg",
 
-                    BlokHealth.Properties.Resources.pomidor
+                    BlokHealth.Properties.Resources.pomidor,
+
+                    true
                 ));
             #endregion
 
@@ -1669,7 +1745,9 @@ namespace BlokHealth
                     "Sód - 11 mg\n" +
                     "Cynk - 0.22 mg",
 
-                    BlokHealth.Properties.Resources.rodzynki
+                    BlokHealth.Properties.Resources.rodzynki,
+
+                    true
                 ));
             #endregion
 
@@ -1697,7 +1775,9 @@ namespace BlokHealth
                     "Fosfor - 17.5 mg\n" +
                     "Potas - 50 mg",
 
-                    BlokHealth.Properties.Resources.rosół
+                    BlokHealth.Properties.Resources.rosół,
+
+                    true
                 ));
             #endregion
 
@@ -1727,7 +1807,9 @@ namespace BlokHealth
 
                     "Brak Danych",
 
-                    BlokHealth.Properties.Resources.schabowy
+                    BlokHealth.Properties.Resources.schabowy,
+
+                    true
                 ));
             #endregion
 
@@ -1763,7 +1845,9 @@ namespace BlokHealth
                     "Sód\n" +
                     "Cynk",
 
-                    BlokHealth.Properties.Resources.spagetti
+                    BlokHealth.Properties.Resources.spagetti,
+
+                    true
                 ));
             #endregion
 
@@ -1801,7 +1885,9 @@ namespace BlokHealth
                     "Sód - 211 mg\n" +
                     "Cynk - 0,19 mg",
 
-                    BlokHealth.Properties.Resources.szarlotka
+                    BlokHealth.Properties.Resources.szarlotka,
+
+                    true
                 ));
             #endregion
 
@@ -1839,7 +1925,9 @@ namespace BlokHealth
                     "Sód - 0 mg\n" +
                     "Cynk - 0.1 mg",
 
-                    BlokHealth.Properties.Resources.śliwki
+                    BlokHealth.Properties.Resources.śliwki,
+
+                    true
                 ));
             #endregion
 
@@ -1877,7 +1965,9 @@ namespace BlokHealth
                     "Sód - 2 mg\n" +
                     "Cynk - 0.07 mg",
 
-                    BlokHealth.Properties.Resources.białe_wingrona
+                    BlokHealth.Properties.Resources.białe_wingrona,
+
+                    true
                 ));
             #endregion
 
@@ -1907,6 +1997,193 @@ namespace BlokHealth
             LabelValueMineraly.Text = Product[ProductNumber].Minerals;
 
             PictureBoxImageOfProduct.Image = Product[ProductNumber].ExampleImage;
+        }
+
+        void CheckProgramDiresArchitecture()
+        {
+            if (!Directory.Exists(ProgramMainFolderPath))
+            {
+                Directory.CreateDirectory(ProgramMainFolderPath);
+            }
+
+            if (!Directory.Exists(NotebookFileFolderPath))
+            {
+                Directory.CreateDirectory(NotebookFileFolderPath);
+            }
+
+            if (!Directory.Exists(MyProductFolderPath))
+            {
+                Directory.CreateDirectory(MyProductFolderPath);
+            }
+
+            if (!Directory.Exists(ImagesFolderPath))
+            {
+                Directory.CreateDirectory(ImagesFolderPath);
+            }
+        }
+
+        void LoadingMyProducts()
+        {
+            CheckProgramDiresArchitecture();
+
+            DirectoryInfo dir = new DirectoryInfo(MyProductFolderPath);
+            List<string> FilesPathList = new List<string>();
+            int i = 1;
+            foreach (var Prod in dir.GetFiles())
+            {
+                FilesPathList.Add(Prod.Name);
+                i++;
+            }
+
+            FilesPathList.Sort();
+
+            foreach (var THEProductFilePath in FilesPathList)
+            {
+                //Varibles
+                string THEProductName;
+                string THEProductDescribe;
+
+                double THEProductEnergyValue;
+                string THEProductEnergyValueVarible;
+
+                double THEProductProtein;
+                string THEProductProteinVarible;
+
+                double THEProductFat;
+                string THEProductFatVarible;
+
+                double THEProductCarbohydrates;
+                string THEProductCarbohydratesVarible;
+
+                double THEProductFiber;
+                string THEProductFiberVarible;
+
+                string THEProductVitamins;
+
+                string THEProductMinerals;
+
+                Image THEProductExampleImage;
+
+                // ----------------------------------- //
+
+                System.IO.StreamReader file = new System.IO.StreamReader(MyProductFolderPath + @"\" + THEProductFilePath);
+
+                THEProductName = file.ReadLine();
+                THEProductDescribe = file.ReadLine();
+
+                try
+                {
+                    THEProductEnergyValue = Convert.ToDouble(file.ReadLine());
+                }
+                catch
+                {
+                    THEProductEnergyValue = 0;
+                }// THEProductEnergyValue
+                THEProductEnergyValueVarible = file.ReadLine();
+
+                try
+                {
+                    THEProductProtein = Convert.ToDouble(file.ReadLine());
+                }
+                catch
+                {
+                    THEProductProtein = 0;
+                }// THEProductProtein
+                THEProductProteinVarible = file.ReadLine();
+
+                try
+                {
+                    THEProductFat = Convert.ToDouble(file.ReadLine());
+                }
+                catch
+                {
+                    THEProductFat = 0;
+                }// THEProductFat
+                THEProductFatVarible = file.ReadLine();
+
+                try
+                {
+                    THEProductCarbohydrates = Convert.ToDouble(file.ReadLine());
+                }
+                catch
+                {
+                    THEProductCarbohydrates = 0;
+                }// THEProductCarbohydrates
+                THEProductCarbohydratesVarible = file.ReadLine();
+
+                try
+                {
+                    THEProductFiber = Convert.ToDouble(file.ReadLine());
+                }
+                catch
+                {
+                    THEProductFiber = 0;
+                }// THEProductFiber
+                THEProductFiberVarible = file.ReadLine();
+
+                #region Vitamins&Minerals
+
+                THEProductVitamins =
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine();
+
+                THEProductMinerals =
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine() + "\n" +
+                    file.ReadLine();
+
+                #endregion
+
+                try
+                { THEProductExampleImage = Image.FromFile(file.ReadLine()); }
+                catch
+                { THEProductExampleImage = BlokHealth.Properties.Resources.brak_zdjęcia; }// THEProductExampleImage
+
+                file.Close();
+
+                #region CreatorOfProduct
+                Product.Add(new Product
+                (
+                    THEProductName,
+                    THEProductDescribe,
+
+                    THEProductEnergyValue,
+                    THEProductEnergyValueVarible,
+
+                    THEProductProtein,
+                    THEProductProteinVarible,
+
+                    THEProductFat,
+                    THEProductFatVarible,
+
+                    THEProductCarbohydrates,
+                    THEProductCarbohydratesVarible,
+
+                    THEProductFiber,
+                    THEProductFiberVarible,
+
+                    THEProductVitamins,
+
+                    THEProductMinerals,
+
+                    THEProductExampleImage,
+
+                    false
+                ));
+
+                #endregion
+            }
+
         }
 
         #endregion

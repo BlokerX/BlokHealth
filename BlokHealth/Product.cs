@@ -30,6 +30,8 @@ namespace BlokHealth
 
         public Image ExampleImage;
 
+        public bool StaticProduct = false;
+
         public Product
         (string name,
          string describe,
@@ -40,7 +42,8 @@ namespace BlokHealth
          double fiber,
          string vitamins,
          string minerals,
-         Image exampleImage)
+         Image exampleImage,
+         bool staticProduct)
         {
             Name = name;
             Describe = describe;
@@ -52,8 +55,9 @@ namespace BlokHealth
             Vitamins = vitamins;
             Minerals = minerals;
             ExampleImage = exampleImage;
+            StaticProduct = staticProduct;
         }
-        
+
         public Product
         (string name,
          string describe,
@@ -65,7 +69,8 @@ namespace BlokHealth
          double fiber,
          string vitamins,
          string minerals,
-         Image exampleImage)
+         Image exampleImage,
+         bool staticProduct)
         {
             Name = name;
             Describe = describe;
@@ -78,8 +83,9 @@ namespace BlokHealth
             Vitamins = vitamins;
             Minerals = minerals;
             ExampleImage = exampleImage;
+            StaticProduct = staticProduct;
         }
-        
+
         public Product
         (string name,
          string describe,
@@ -95,7 +101,8 @@ namespace BlokHealth
          string fiberVarible,
          string vitamins,
          string minerals,
-         Image exampleImage)
+         Image exampleImage,
+         bool staticProduct)
         {
             Name = name;
             Describe = describe;
@@ -112,6 +119,7 @@ namespace BlokHealth
             Vitamins = vitamins;
             Minerals = minerals;
             ExampleImage = exampleImage;
+            StaticProduct = staticProduct;
         }
 
     }

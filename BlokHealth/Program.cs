@@ -17,13 +17,11 @@ namespace BlokHealth
             #region ShowIntroForm
             IntroForm introForm = new IntroForm();
             introForm.Show();
-
             for (int i = 0; i < 250; i++)
             {
                 Thread.Sleep(5);
                 Application.DoEvents();
             }
-
             introForm.Close();
             #endregion
             Application.Run(new MainForm());

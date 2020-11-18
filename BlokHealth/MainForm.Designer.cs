@@ -97,6 +97,8 @@
             this.Button8 = new System.Windows.Forms.Button();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ButtonOpenAddProductDialog = new System.Windows.Forms.Button();
+            this.PanelSeparatorLine1 = new System.Windows.Forms.Panel();
             this.PanelLeft.SuspendLayout();
             this.PanelHealthCuriosity.SuspendLayout();
             this.PanelLogo.SuspendLayout();
@@ -267,6 +269,8 @@
             // PanelRight
             // 
             this.PanelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.PanelRight.Controls.Add(this.PanelSeparatorLine1);
+            this.PanelRight.Controls.Add(this.ButtonOpenAddProductDialog);
             this.PanelRight.Controls.Add(this.LabelWartosciOdzywcze);
             this.PanelRight.Controls.Add(this.LabelValueMineraly);
             this.PanelRight.Controls.Add(this.LabelValueWitaminy);
@@ -516,7 +520,7 @@
             this.FoodTitleLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodTitleLabel.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoodTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(254)))), ((int)(((byte)(244)))));
-            this.FoodTitleLabel.Location = new System.Drawing.Point(89, 16);
+            this.FoodTitleLabel.Location = new System.Drawing.Point(89, 18);
             this.FoodTitleLabel.Name = "FoodTitleLabel";
             this.FoodTitleLabel.Size = new System.Drawing.Size(240, 60);
             this.FoodTitleLabel.TabIndex = 2;
@@ -531,7 +535,7 @@
             this.GoNextButton.FlatAppearance.BorderSize = 0;
             this.GoNextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoNextButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoNextButton.Location = new System.Drawing.Point(335, 16);
+            this.GoNextButton.Location = new System.Drawing.Point(335, 18);
             this.GoNextButton.Name = "GoNextButton";
             this.GoNextButton.Size = new System.Drawing.Size(60, 60);
             this.GoNextButton.TabIndex = 1;
@@ -546,7 +550,7 @@
             this.GoBackButton.FlatAppearance.BorderSize = 0;
             this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoBackButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoBackButton.Location = new System.Drawing.Point(23, 16);
+            this.GoBackButton.Location = new System.Drawing.Point(23, 18);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(60, 60);
             this.GoBackButton.TabIndex = 0;
@@ -1032,6 +1036,31 @@
             this.Timer1.Interval = 18000;
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // ButtonOpenAddProductDialog
+            // 
+            this.ButtonOpenAddProductDialog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonOpenAddProductDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonOpenAddProductDialog.FlatAppearance.BorderSize = 0;
+            this.ButtonOpenAddProductDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonOpenAddProductDialog.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOpenAddProductDialog.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonOpenAddProductDialog.Location = new System.Drawing.Point(374, 535);
+            this.ButtonOpenAddProductDialog.Name = "ButtonOpenAddProductDialog";
+            this.ButtonOpenAddProductDialog.Size = new System.Drawing.Size(40, 40);
+            this.ButtonOpenAddProductDialog.TabIndex = 19;
+            this.ButtonOpenAddProductDialog.Text = "+";
+            this.ButtonOpenAddProductDialog.UseVisualStyleBackColor = false;
+            this.ButtonOpenAddProductDialog.Click += new System.EventHandler(this.ButtonOpenAddProductDialog_Click);
+            // 
+            // PanelSeparatorLine1
+            // 
+            this.PanelSeparatorLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelSeparatorLine1.BackColor = System.Drawing.Color.Gray;
+            this.PanelSeparatorLine1.Location = new System.Drawing.Point(0, 581);
+            this.PanelSeparatorLine1.Name = "PanelSeparatorLine1";
+            this.PanelSeparatorLine1.Size = new System.Drawing.Size(421, 1);
+            this.PanelSeparatorLine1.TabIndex = 20;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1137,6 +1166,8 @@
         private System.Windows.Forms.Button ButtonCwiczennik;
         private System.Windows.Forms.TextBox NotebookTextBox;
         private System.Windows.Forms.Label LabelNotesik;
+        private System.Windows.Forms.Button ButtonOpenAddProductDialog;
+        private System.Windows.Forms.Panel PanelSeparatorLine1;
     }
 }
 
