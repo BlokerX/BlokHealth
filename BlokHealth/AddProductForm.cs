@@ -35,6 +35,10 @@ namespace BlokHealth
         private readonly string MyProductFolderPath;
         private readonly string ImagesFolderPath;
 
+        //Zdjęcia
+        Bitmap ExampleImgBitmap;
+        MemoryStream msForExampleImg = new MemoryStream();
+
         // Tutejsze
         private string SourcePathToImage;
 
@@ -48,18 +52,15 @@ namespace BlokHealth
                 FilterIndex = 1,
                 RestoreDirectory = true
             };
-
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Wersja z otwieraniem pliku
-                ExampleImagePictureBox.Image = Image.FromFile(openFileDialog.FileName);
-
-                /* Wersja bez otwierania pliku
-                using (Stream sr = File.OpenRead(@openFileDialog.FileName))
+                msForExampleImg.SetLength(0);
+                using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open))
                 {
-                    ExampleImagePictureBox.Image = Image.FromStream(sr);
+                    fs.CopyTo(msForExampleImg);
                 }
-                */
+                ExampleImgBitmap = new Bitmap(msForExampleImg, true);
+                ExampleImagePictureBox.Image = ExampleImgBitmap;
 
                 SourcePathToImage = openFileDialog.FileName;
             }
@@ -86,7 +87,7 @@ namespace BlokHealth
                     (
                         @SourcePathToImage,
                         $@"{ImagesFolderPath}\{ProductNameTextBox.Text}.png",
-                        false
+                        true
                     );
                     pathToImage = $@"{ImagesFolderPath}\{ProductNameTextBox.Text}.png";
                 }

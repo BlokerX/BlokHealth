@@ -84,7 +84,13 @@ namespace BlokHealth
 
             if (File.Exists(TheProduct.ExampleImagePath))
             {
-                ExampleImagePictureBox.Image = Image.FromFile(@TheProduct.ExampleImagePath);
+                msForExampleImg.SetLength(0);
+                using (FileStream fs = new FileStream(TheProduct.ExampleImagePath, FileMode.Open))
+                {
+                    fs.CopyTo(msForExampleImg);
+                }
+                ExampleImgBitmap = new Bitmap(msForExampleImg, true);
+                ExampleImagePictureBox.Image = ExampleImgBitmap;
             }
             else
             {
@@ -102,31 +108,32 @@ namespace BlokHealth
         // Tutejsze
         private string SourcePathToImage = "";
 
+        // Zdjęcia
+        Bitmap ExampleImgBitmap;
+        MemoryStream msForExampleImg = new MemoryStream();
+
         private void ButtonWybierzObrazek_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog()
-            //{
-            //    InitialDirectory = SystemDriveName,
-            //    Filter = "PNG files (*.png)|*.png|JPG files (*.jpg)|*.jpg|All files (*.*)|*.*",
-            //    FilterIndex = 1,
-            //    RestoreDirectory = true
-            //};
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                InitialDirectory = SystemDriveName,
+                Filter = "PNG files (*.png)|*.png|JPG files (*.jpg)|*.jpg|All files (*.*)|*.*",
+                FilterIndex = 1,
+                RestoreDirectory = true
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                msForExampleImg.SetLength(0);
+                using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open))
+                {
+                    fs.CopyTo(msForExampleImg);
+                }
+                ExampleImgBitmap = new Bitmap(msForExampleImg, true);
+                ExampleImagePictureBox.Image = ExampleImgBitmap;
 
-            //if (openFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Wersja z otwieraniem pliku
-            //    //ExampleImagePictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                SourcePathToImage = openFileDialog.FileName;
+            }
 
-            //    // Wersja bez otwierania pliku
-            //    using (Stream sr = File.OpenRead(@openFileDialog.FileName))
-            //    {
-            //        ExampleImagePictureBox.Image = Image.FromStream(sr);
-            //    }
-
-
-            //    SourcePathToImage = openFileDialog.FileName;
-            //}
-            //TODO problem Z użyciem
         }
 
         private void ButtonSaveDiferencesProduct_Click(object sender, EventArgs e)
@@ -136,18 +143,17 @@ namespace BlokHealth
                 //Zmienne do zapisu
                 string pathToImage = "";
 
-                //if (SourcePathToImage != "" && SourcePathToImage != TheProduct.ExampleImagePath && File.Exists(SourcePathToImage))
-                //{
-                //    File.Delete($@"{ImagesFolderPath}\{TheProduct.Name}.png");
-                //    System.IO.File.Copy
-                //    (
-                //        @SourcePathToImage,
-                //        $@"{ImagesFolderPath}\{TheProduct.Name}.png",
-                //        false
-                //    );
-                //    pathToImage = $@"{ImagesFolderPath}\{TheProduct.Name}.png";
-                //}
-                //TODO problem Z użyciem
+                if (SourcePathToImage != "" && SourcePathToImage != TheProduct.ExampleImagePath && File.Exists(SourcePathToImage))
+                {
+                    File.Delete($@"{ImagesFolderPath}\{TheProduct.Name}.png");
+                    System.IO.File.Copy
+                    (
+                        @SourcePathToImage,
+                        $@"{ImagesFolderPath}\{TheProduct.Name}.png",
+                        true
+                    );
+                    pathToImage = $@"{ImagesFolderPath}\{TheProduct.Name}.png";
+                }
 
                 //Twożenie oraz wpisywanie danych do pliku zrzutu
                 StreamWriter sw = File.CreateText($@"{MyProductFolderPath}\{TheProduct.Name}.txt");
@@ -192,8 +198,7 @@ namespace BlokHealth
                     sw.WriteLine("DomyslnyObraz");
                     if (File.Exists(TheProduct.ExampleImagePath))
                     {
-                        //File.Delete(TheProduct.ExampleImagePath);
-                        //TODO problem Z użyciem
+                        File.Delete(TheProduct.ExampleImagePath);
                     }
                 }
                 else if (File.Exists(@pathToImage))
@@ -218,9 +223,8 @@ namespace BlokHealth
 
         private void ButtonResetImage_Click(object sender, EventArgs e)
         {
-            //TODO problem Z użyciem
-            //SourcePathToImage = "Reset";
-            //ExampleImagePictureBox.Image = BlokHealth.Properties.Resources.brak_zdjęcia;
+            SourcePathToImage = "Reset";
+            ExampleImagePictureBox.Image = BlokHealth.Properties.Resources.brak_zdjęcia;
         }
     }
 }

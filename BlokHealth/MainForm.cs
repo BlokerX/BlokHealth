@@ -119,6 +119,10 @@ namespace BlokHealth
         string NotebookFilePath;
         string ImagesFolderPath;
 
+        // Image varibles
+        Bitmap ExampleImgBitmap;
+        MemoryStream msForExampleImg = new MemoryStream();
+
         void VariblesDefaultConstructor()
         {
             #region DriveName
@@ -2126,40 +2130,18 @@ namespace BlokHealth
 
             if (File.Exists(@Product[ProductNumber].ExampleImagePath))
             {
-                try // FromStream edition
+                try
                 {
-                    using (Stream sr = File.OpenRead(@Product[ProductNumber].ExampleImagePath))
+
+                    msForExampleImg.SetLength(0);
+                    using (FileStream fs = new FileStream(Product[ProductNumber].ExampleImagePath, FileMode.Open))
                     {
-                        PictureBoxImageOfProduct.Image = Image.FromStream(sr);
-                        sr.Close(); //TODO Problem z plikiem gif rozszerzenie nie ma znaczenia a zawartość
-                    }// TODO UWAGA! Nie obsługuje gifów
+                        fs.CopyTo(msForExampleImg);
+                    }
+                    ExampleImgBitmap = new Bitmap(msForExampleImg, true);
+                    PictureBoxImageOfProduct.Image = ExampleImgBitmap;
+
                 }
-                //try // Bitmap edition
-                //{
-                //    string ClonePath = $@"{ImagesFolderPath}/%used_image%";
-                //    if (File.Exists(ClonePath))
-                //    {
-                //        File.Delete(ClonePath);
-                //    }
-                //    File.Copy(Product[ProductNumber].ExampleImagePath, @ClonePath, true);
-
-                //    Bitmap ExampleImgBitmap = new Bitmap(@ClonePath, true);
-                //    int x, y;
-
-                //    // Loop through the images pixels to reset color.
-                //    for (x = 0; x < ExampleImgBitmap.Width; x++)
-                //    {
-                //        for (y = 0; y < ExampleImgBitmap.Height; y++)
-                //        {
-                //            Color pixelColor = ExampleImgBitmap.GetPixel(x, y);
-                //            Color newColor = Color.FromArgb(pixelColor.A, pixelColor.R, pixelColor.G, pixelColor.B);
-                //            ExampleImgBitmap.SetPixel(x, y, newColor);
-                //        }
-                //    }
-
-                //    // Set the PictureBox to display the image.
-                //    PictureBoxImageOfProduct.Image = ExampleImgBitmap;
-                //} // TODO TU ^ JESTEM ^
                 catch
                 {
                     PictureBoxImageOfProduct.Image = BlokHealth.Properties.Resources.brak_zdjęcia;
