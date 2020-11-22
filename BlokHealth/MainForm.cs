@@ -8,21 +8,28 @@ namespace BlokHealth
 {
     public partial class MainForm : Form
     {
+        #region Open_instructions
         public MainForm()
         {
             InitializeComponent();
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             #region Standard_load_function
 
-            VariblesDefaultConstructor();
-            CheckProgramDiresArchitecture();
-            LoadingMyProducts();
-
+            // Select Convert Values
             ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
             ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 0;
+
+            // Procedura Bezpieczeństwa and set varibles
+            VariblesDefaultConstructor();
+            CheckProgramDiresArchitecture();
+
+            // Prepare Products
+            LoadingMyProducts();
             LoadingProductObjects();
+            ProductAlphabeticSort();
             SelectActiveProduct();
 
             //Health Curiosity
@@ -66,6 +73,31 @@ namespace BlokHealth
             #endregion
         }
 
+        void CheckProgramDiresArchitecture()
+        {
+            if (!Directory.Exists(ProgramMainFolderPath))
+            {
+                Directory.CreateDirectory(ProgramMainFolderPath);
+            }
+
+            if (!Directory.Exists(NotebookFileFolderPath))
+            {
+                Directory.CreateDirectory(NotebookFileFolderPath);
+            }
+
+            if (!Directory.Exists(MyProductFolderPath))
+            {
+                Directory.CreateDirectory(MyProductFolderPath);
+            }
+
+            if (!Directory.Exists(ImagesFolderPath))
+            {
+                Directory.CreateDirectory(ImagesFolderPath);
+            }
+        }
+
+        #endregion
+
         #region Varibles
         // Calcularor&Convert varibles
         string CalculatorA = "", CalculatorB = "", CalculatorEqual = "1";
@@ -77,7 +109,7 @@ namespace BlokHealth
 
         // HealthCuriosity varibles
         readonly List<string> HealthCuriosity = new List<string>();
-        private int IndeksOfHealthCuriosty;
+        int IndeksOfHealthCuriosty;
 
         // Paths
         string SystemDriveName = "-";
@@ -143,6 +175,7 @@ namespace BlokHealth
         }
 
         #region HealthCuriosity
+
         void LoadingHealthCuriosity()
         {
             HealthCuriosity.Add("Najlepsza dieta dla Ciebie jest ta, która działa dla Ciebie i możesz się jej trzymać na dłuższą metę.");
@@ -197,6 +230,7 @@ namespace BlokHealth
             // Set Text
             LabelHealthCuriosity.Text = HealthCuriosity[IndeksOfHealthCuriosty];
         }
+
         #endregion
 
         private void ButtonCwiczennik_Click(object sender, EventArgs e)
@@ -1007,6 +1041,76 @@ namespace BlokHealth
             Product.Clear();
             LoadingMyProducts();
             LoadingProductObjects();
+            ProductAlphabeticSort();
+            SelectActiveProduct();
+        }
+
+        private void ButtonDeleteProduct_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show
+                ("Czy napewno chcesz usunąć ten produkt?\n" +
+                "Uwaga: Nie będzie się dało go później przywrócić!",
+                "Usuwanie produktu",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                if (File.Exists($@"{MyProductFolderPath}\{Product[ProductNumber].Name}.txt"))
+                {
+                    // Varibles
+                    string pathTo_txt_File = $@"{MyProductFolderPath}\{Product[ProductNumber].Name}.txt";
+                    string pathToImage = "";
+
+                    StreamReader sr = File.OpenText($@"{MyProductFolderPath}\{Product[ProductNumber].Name}.txt");
+
+                    for (int i = 0; i < 28; i++) //* Numer "28" jest ważny co do linii zapisu argumentu */
+                    {
+                        if (i == 27)
+                        {
+                            pathToImage = sr.ReadLine();
+                            if (!File.Exists(pathToImage))
+                            {
+                                pathToImage = "";
+                            }
+                            break;
+                        }
+                        sr.ReadLine();
+                    }
+                    sr.Close();
+
+                    // Usuwanie
+                    File.Delete(pathTo_txt_File);
+                    if (File.Exists(pathToImage))
+                    {
+                        File.Delete(pathToImage);
+                    } // TODO dodać obsługę wyjątków
+
+                    // Wczytywanie ponowne
+                    Product.Clear();
+                    LoadingMyProducts();
+                    LoadingProductObjects();
+                    ProductAlphabeticSort();
+                    if (ProductNumber >= Product.Count) { ProductNumber = 1; }
+                    SelectActiveProduct();
+
+                }
+                else { MessageBox.Show("Nie można namieżyć pliku zapisu!", "Zła lokalizacja pliku zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else if (result == DialogResult.No) { } // TODO Uzupełnij lub zniszcz
+
+        }
+
+        private void ProductAlphabeticSort()
+        {
+            Product.Sort(delegate (Product x, Product y)
+            {
+                if (x.Name == null && y.Name == null) return 0;
+                else if (x.Name == null) return -1;
+                else if (y.Name == null) return 1;
+                else return x.Name.CompareTo(y.Name);
+            });
         }
 
         void LoadingProductObjects()
@@ -1973,8 +2077,31 @@ namespace BlokHealth
 
         }
 
+        private void ButtonEditProduct_Click(object sender, EventArgs e)
+        {
+            EditProductForm editProductForm = new EditProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath, Product[ProductNumber]);
+            editProductForm.ShowDialog();
+            Product.Clear();
+            LoadingMyProducts();
+            LoadingProductObjects();
+            ProductAlphabeticSort();
+            SelectActiveProduct();
+        }
+
         void SelectActiveProduct()
         {
+
+            if (Product[ProductNumber].StaticProduct == false)
+            {
+                ButtonEditProduct.Visible = true;
+                ButtonDeleteProduct.Visible = true;
+            }
+            else if (Product[ProductNumber].StaticProduct == true)
+            {
+                ButtonEditProduct.Visible = false;
+                ButtonDeleteProduct.Visible = false;
+            }
+
             FoodTitleLabel.Text = Product[ProductNumber].Name;
             LabelDescriptionOfProduct.Text = Product[ProductNumber].Describe;
 
@@ -1996,30 +2123,50 @@ namespace BlokHealth
             LabelValueWitaminy.Text = Product[ProductNumber].Vitamins;
             LabelValueMineraly.Text = Product[ProductNumber].Minerals;
 
-            PictureBoxImageOfProduct.Image = Product[ProductNumber].ExampleImage;
-        }
 
-        void CheckProgramDiresArchitecture()
-        {
-            if (!Directory.Exists(ProgramMainFolderPath))
+            if (File.Exists(@Product[ProductNumber].ExampleImagePath))
             {
-                Directory.CreateDirectory(ProgramMainFolderPath);
-            }
+                try // FromStream edition
+                {
+                    using (Stream sr = File.OpenRead(@Product[ProductNumber].ExampleImagePath))
+                    {
+                        PictureBoxImageOfProduct.Image = Image.FromStream(sr);
+                        sr.Close(); //TODO Problem z plikiem gif rozszerzenie nie ma znaczenia a zawartość
+                    }// TODO UWAGA! Nie obsługuje gifów
+                }
+                //try // Bitmap edition
+                //{
+                //    string ClonePath = $@"{ImagesFolderPath}/%used_image%";
+                //    if (File.Exists(ClonePath))
+                //    {
+                //        File.Delete(ClonePath);
+                //    }
+                //    File.Copy(Product[ProductNumber].ExampleImagePath, @ClonePath, true);
 
-            if (!Directory.Exists(NotebookFileFolderPath))
-            {
-                Directory.CreateDirectory(NotebookFileFolderPath);
-            }
+                //    Bitmap ExampleImgBitmap = new Bitmap(@ClonePath, true);
+                //    int x, y;
 
-            if (!Directory.Exists(MyProductFolderPath))
-            {
-                Directory.CreateDirectory(MyProductFolderPath);
-            }
+                //    // Loop through the images pixels to reset color.
+                //    for (x = 0; x < ExampleImgBitmap.Width; x++)
+                //    {
+                //        for (y = 0; y < ExampleImgBitmap.Height; y++)
+                //        {
+                //            Color pixelColor = ExampleImgBitmap.GetPixel(x, y);
+                //            Color newColor = Color.FromArgb(pixelColor.A, pixelColor.R, pixelColor.G, pixelColor.B);
+                //            ExampleImgBitmap.SetPixel(x, y, newColor);
+                //        }
+                //    }
 
-            if (!Directory.Exists(ImagesFolderPath))
-            {
-                Directory.CreateDirectory(ImagesFolderPath);
+                //    // Set the PictureBox to display the image.
+                //    PictureBoxImageOfProduct.Image = ExampleImgBitmap;
+                //} // TODO TU ^ JESTEM ^
+                catch
+                {
+                    PictureBoxImageOfProduct.Image = BlokHealth.Properties.Resources.brak_zdjęcia;
+                }
             }
+            else
+            { PictureBoxImageOfProduct.Image = Product[ProductNumber].ExampleImage; }
         }
 
         void LoadingMyProducts()
@@ -2062,7 +2209,7 @@ namespace BlokHealth
 
                 string THEProductMinerals;
 
-                Image THEProductExampleImage;
+                String THEProductExampleImagePath;
 
                 // ----------------------------------- //
 
@@ -2144,10 +2291,7 @@ namespace BlokHealth
 
                 #endregion
 
-                try
-                { THEProductExampleImage = Image.FromFile(file.ReadLine()); }
-                catch
-                { THEProductExampleImage = BlokHealth.Properties.Resources.brak_zdjęcia; }// THEProductExampleImage
+                THEProductExampleImagePath = file.ReadLine();
 
                 file.Close();
 
@@ -2176,7 +2320,7 @@ namespace BlokHealth
 
                     THEProductMinerals,
 
-                    THEProductExampleImage,
+                    THEProductExampleImagePath,
 
                     false
                 ));

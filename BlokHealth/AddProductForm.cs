@@ -51,7 +51,16 @@ namespace BlokHealth
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                // Wersja z otwieraniem pliku
+                ExampleImagePictureBox.Image = Image.FromFile(openFileDialog.FileName);
+
+                /* Wersja bez otwierania pliku
+                using (Stream sr = File.OpenRead(@openFileDialog.FileName))
+                {
+                    ExampleImagePictureBox.Image = Image.FromStream(sr);
+                }
+                */
+
                 SourcePathToImage = openFileDialog.FileName;
             }
         }
@@ -61,6 +70,9 @@ namespace BlokHealth
             // Resetowanie ostrzeżeń
             LabelInfoPodajInnaNazwe.Visible = false;
             LabelInfoPodajNazwe.Visible = false;
+
+            // Zabezpieczenie przed szkodliwymi znakami
+            ProductNameTextBox.Text = ProductNameTextBox.Text.Trim('/', '\\', ':', '*', '?', '"', '<', '>', '|');
 
             // Procedura dodawania
             if (ProductNameTextBox.Text != "" && !File.Exists($@"{MyProductFolderPath}\{ProductNameTextBox.Text}.txt"))
@@ -81,10 +93,9 @@ namespace BlokHealth
 
                 //Twożenie oraz wpisywanie danych do pliku zrzutu
                 StreamWriter sw = File.CreateText($@"{MyProductFolderPath}\{ProductNameTextBox.Text}.txt");
-                // TODO dodać zabezpieczenie przed wpisaniem inntch znaków w nazwie
 
                 sw.WriteLine(ProductNameTextBox.Text);
-                sw.WriteLine(DescribeTextBox.Text);//TODO dodaj pominięcie enterów
+                sw.WriteLine(DescribeTextBox.Text.Replace('\n', ' ').Replace('\r', ' ').Replace("  ", " "));
 
                 sw.WriteLine(EnergyValueTextBox.Text);
                 sw.WriteLine(EnergyValueVaribleComboBox.Text);
@@ -125,6 +136,7 @@ namespace BlokHealth
 
                 sw.Close();
 
+                this.Close();
             }
             else if (ProductNameTextBox.Text == "")
             {

@@ -68,13 +68,12 @@ namespace BlokHealth
             this.LabelMineraly = new System.Windows.Forms.Label();
             this.Mineral1TextBox = new System.Windows.Forms.TextBox();
             this.LabelInfo2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ExampleImagePictureBox = new System.Windows.Forms.PictureBox();
             this.ButtonWybierzObrazek = new System.Windows.Forms.Button();
             this.LabelInfoPodajNazwe = new System.Windows.Forms.Label();
             this.LabelInfoPodajInnaNazwe = new System.Windows.Forms.Label();
             this.LabelInfo3 = new System.Windows.Forms.Label();
-            this.LabelOkresoweInfo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExampleImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonAddProduct
@@ -482,15 +481,15 @@ namespace BlokHealth
             this.LabelInfo2.TabIndex = 46;
             this.LabelInfo2.Text = "*Wartości w 100g produktu";
             // 
-            // pictureBox1
+            // ExampleImagePictureBox
             // 
-            this.pictureBox1.Image = global::BlokHealth.Properties.Resources.brak_zdjęcia;
-            this.pictureBox1.Location = new System.Drawing.Point(472, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 47;
-            this.pictureBox1.TabStop = false;
+            this.ExampleImagePictureBox.Image = global::BlokHealth.Properties.Resources.brak_zdjęcia;
+            this.ExampleImagePictureBox.Location = new System.Drawing.Point(472, 14);
+            this.ExampleImagePictureBox.Name = "ExampleImagePictureBox";
+            this.ExampleImagePictureBox.Size = new System.Drawing.Size(220, 135);
+            this.ExampleImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ExampleImagePictureBox.TabIndex = 47;
+            this.ExampleImagePictureBox.TabStop = false;
             // 
             // ButtonWybierzObrazek
             // 
@@ -544,29 +543,17 @@ namespace BlokHealth
             this.LabelInfo3.TabIndex = 51;
             this.LabelInfo3.Text = "Ułamki zapisujemy z przecinkiem np. 1,22";
             // 
-            // LabelOkresoweInfo
-            // 
-            this.LabelOkresoweInfo.AutoSize = true;
-            this.LabelOkresoweInfo.Font = new System.Drawing.Font("Century Gothic", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOkresoweInfo.ForeColor = System.Drawing.Color.Silver;
-            this.LabelOkresoweInfo.Location = new System.Drawing.Point(606, 158);
-            this.LabelOkresoweInfo.Name = "LabelOkresoweInfo";
-            this.LabelOkresoweInfo.Size = new System.Drawing.Size(88, 13);
-            this.LabelOkresoweInfo.TabIndex = 52;
-            this.LabelOkresoweInfo.Text = "Nie używaj Entera!";
-            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(704, 411);
-            this.Controls.Add(this.LabelOkresoweInfo);
             this.Controls.Add(this.LabelInfo2);
             this.Controls.Add(this.LabelInfo3);
             this.Controls.Add(this.LabelInfoPodajNazwe);
             this.Controls.Add(this.ButtonWybierzObrazek);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ExampleImagePictureBox);
             this.Controls.Add(this.Mineral7TextBox);
             this.Controls.Add(this.Mineral6TextBox);
             this.Controls.Add(this.Mineral5TextBox);
@@ -614,7 +601,7 @@ namespace BlokHealth
             this.Name = "AddProductForm";
             this.Text = "Dodaj Produkt";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExampleImagePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,11 +648,10 @@ namespace BlokHealth
         private System.Windows.Forms.Label LabelMineraly;
         private System.Windows.Forms.TextBox Mineral1TextBox;
         private System.Windows.Forms.Label LabelInfo2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ExampleImagePictureBox;
         private System.Windows.Forms.Button ButtonWybierzObrazek;
         private System.Windows.Forms.Label LabelInfoPodajNazwe;
         private System.Windows.Forms.Label LabelInfoPodajInnaNazwe;
         private System.Windows.Forms.Label LabelInfo3;
-        private System.Windows.Forms.Label LabelOkresoweInfo;
     }
 }

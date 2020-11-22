@@ -60,6 +60,12 @@
     <Compile Include="AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProductForm.Designer.cs">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseDictonary.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProductForm.resx">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExerciseDictonary.resx">
       <DependentUpon>ExerciseDictonary.cs</DependentUpon>

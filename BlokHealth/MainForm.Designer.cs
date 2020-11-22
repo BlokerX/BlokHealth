@@ -43,6 +43,10 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.LabelLogoTitle = new System.Windows.Forms.Label();
             this.PanelRight = new System.Windows.Forms.Panel();
+            this.ButtonEditProduct = new System.Windows.Forms.Button();
+            this.ButtonDeleteProduct = new System.Windows.Forms.Button();
+            this.PanelSeparatorLine1 = new System.Windows.Forms.Panel();
+            this.ButtonOpenAddProductDialog = new System.Windows.Forms.Button();
             this.LabelWartosciOdzywcze = new System.Windows.Forms.Label();
             this.LabelValueMineraly = new System.Windows.Forms.Label();
             this.LabelValueWitaminy = new System.Windows.Forms.Label();
@@ -97,8 +101,6 @@
             this.Button8 = new System.Windows.Forms.Button();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ButtonOpenAddProductDialog = new System.Windows.Forms.Button();
-            this.PanelSeparatorLine1 = new System.Windows.Forms.Panel();
             this.PanelLeft.SuspendLayout();
             this.PanelHealthCuriosity.SuspendLayout();
             this.PanelLogo.SuspendLayout();
@@ -269,6 +271,8 @@
             // PanelRight
             // 
             this.PanelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.PanelRight.Controls.Add(this.ButtonEditProduct);
+            this.PanelRight.Controls.Add(this.ButtonDeleteProduct);
             this.PanelRight.Controls.Add(this.PanelSeparatorLine1);
             this.PanelRight.Controls.Add(this.ButtonOpenAddProductDialog);
             this.PanelRight.Controls.Add(this.LabelWartosciOdzywcze);
@@ -295,13 +299,70 @@
             this.PanelRight.Size = new System.Drawing.Size(421, 681);
             this.PanelRight.TabIndex = 1;
             // 
+            // ButtonEditProduct
+            // 
+            this.ButtonEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditProduct.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonEditProduct.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonEditProduct.Location = new System.Drawing.Point(47, 540);
+            this.ButtonEditProduct.Name = "ButtonEditProduct";
+            this.ButtonEditProduct.Size = new System.Drawing.Size(111, 30);
+            this.ButtonEditProduct.TabIndex = 22;
+            this.ButtonEditProduct.Text = "Edytuj";
+            this.ButtonEditProduct.UseVisualStyleBackColor = false;
+            this.ButtonEditProduct.Visible = false;
+            this.ButtonEditProduct.Click += new System.EventHandler(this.ButtonEditProduct_Click);
+            // 
+            // ButtonDeleteProduct
+            // 
+            this.ButtonDeleteProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeleteProduct.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDeleteProduct.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonDeleteProduct.Location = new System.Drawing.Point(18, 540);
+            this.ButtonDeleteProduct.Name = "ButtonDeleteProduct";
+            this.ButtonDeleteProduct.Size = new System.Drawing.Size(30, 30);
+            this.ButtonDeleteProduct.TabIndex = 21;
+            this.ButtonDeleteProduct.Text = "X";
+            this.ButtonDeleteProduct.UseVisualStyleBackColor = false;
+            this.ButtonDeleteProduct.Visible = false;
+            this.ButtonDeleteProduct.Click += new System.EventHandler(this.ButtonDeleteProduct_Click);
+            // 
+            // PanelSeparatorLine1
+            // 
+            this.PanelSeparatorLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelSeparatorLine1.BackColor = System.Drawing.Color.Gray;
+            this.PanelSeparatorLine1.Location = new System.Drawing.Point(0, 581);
+            this.PanelSeparatorLine1.Name = "PanelSeparatorLine1";
+            this.PanelSeparatorLine1.Size = new System.Drawing.Size(421, 1);
+            this.PanelSeparatorLine1.TabIndex = 20;
+            // 
+            // ButtonOpenAddProductDialog
+            // 
+            this.ButtonOpenAddProductDialog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonOpenAddProductDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonOpenAddProductDialog.FlatAppearance.BorderSize = 0;
+            this.ButtonOpenAddProductDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonOpenAddProductDialog.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOpenAddProductDialog.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonOpenAddProductDialog.Location = new System.Drawing.Point(374, 535);
+            this.ButtonOpenAddProductDialog.Name = "ButtonOpenAddProductDialog";
+            this.ButtonOpenAddProductDialog.Size = new System.Drawing.Size(40, 40);
+            this.ButtonOpenAddProductDialog.TabIndex = 19;
+            this.ButtonOpenAddProductDialog.Text = "+";
+            this.ButtonOpenAddProductDialog.UseVisualStyleBackColor = false;
+            this.ButtonOpenAddProductDialog.Click += new System.EventHandler(this.ButtonOpenAddProductDialog_Click);
+            // 
             // LabelWartosciOdzywcze
             // 
             this.LabelWartosciOdzywcze.AutoSize = true;
             this.LabelWartosciOdzywcze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelWartosciOdzywcze.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelWartosciOdzywcze.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelWartosciOdzywcze.Location = new System.Drawing.Point(14, 161);
+            this.LabelWartosciOdzywcze.Location = new System.Drawing.Point(14, 160);
             this.LabelWartosciOdzywcze.Name = "LabelWartosciOdzywcze";
             this.LabelWartosciOdzywcze.Size = new System.Drawing.Size(365, 22);
             this.LabelWartosciOdzywcze.TabIndex = 18;
@@ -313,7 +374,7 @@
             this.LabelValueMineraly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueMineraly.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueMineraly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LabelValueMineraly.Location = new System.Drawing.Point(214, 393);
+            this.LabelValueMineraly.Location = new System.Drawing.Point(214, 364);
             this.LabelValueMineraly.Name = "LabelValueMineraly";
             this.LabelValueMineraly.Size = new System.Drawing.Size(15, 21);
             this.LabelValueMineraly.TabIndex = 17;
@@ -325,7 +386,7 @@
             this.LabelValueWitaminy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueWitaminy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueWitaminy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LabelValueWitaminy.Location = new System.Drawing.Point(14, 393);
+            this.LabelValueWitaminy.Location = new System.Drawing.Point(14, 364);
             this.LabelValueWitaminy.Name = "LabelValueWitaminy";
             this.LabelValueWitaminy.Size = new System.Drawing.Size(15, 21);
             this.LabelValueWitaminy.TabIndex = 16;
@@ -337,7 +398,7 @@
             this.LabelValueBlonnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueBlonnik.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueBlonnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(250)))), ((int)(((byte)(197)))));
-            this.LabelValueBlonnik.Location = new System.Drawing.Point(98, 338);
+            this.LabelValueBlonnik.Location = new System.Drawing.Point(98, 310);
             this.LabelValueBlonnik.Name = "LabelValueBlonnik";
             this.LabelValueBlonnik.Size = new System.Drawing.Size(17, 24);
             this.LabelValueBlonnik.TabIndex = 15;
@@ -350,7 +411,7 @@
             this.LabelValueWeglowodany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueWeglowodany.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueWeglowodany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
-            this.LabelValueWeglowodany.Location = new System.Drawing.Point(177, 299);
+            this.LabelValueWeglowodany.Location = new System.Drawing.Point(177, 280);
             this.LabelValueWeglowodany.Name = "LabelValueWeglowodany";
             this.LabelValueWeglowodany.Size = new System.Drawing.Size(17, 24);
             this.LabelValueWeglowodany.TabIndex = 14;
@@ -363,7 +424,7 @@
             this.LabelValueTluszcz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueTluszcz.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueTluszcz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(121)))), ((int)(((byte)(11)))));
-            this.LabelValueTluszcz.Location = new System.Drawing.Point(97, 263);
+            this.LabelValueTluszcz.Location = new System.Drawing.Point(97, 250);
             this.LabelValueTluszcz.Name = "LabelValueTluszcz";
             this.LabelValueTluszcz.Size = new System.Drawing.Size(17, 24);
             this.LabelValueTluszcz.TabIndex = 13;
@@ -376,7 +437,7 @@
             this.LabelValueBialko.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueBialko.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueBialko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LabelValueBialko.Location = new System.Drawing.Point(85, 226);
+            this.LabelValueBialko.Location = new System.Drawing.Point(85, 220);
             this.LabelValueBialko.Name = "LabelValueBialko";
             this.LabelValueBialko.Size = new System.Drawing.Size(17, 24);
             this.LabelValueBialko.TabIndex = 12;
@@ -389,7 +450,7 @@
             this.LabelValueWartoscEnergetyczna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelValueWartoscEnergetyczna.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelValueWartoscEnergetyczna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LabelValueWartoscEnergetyczna.Location = new System.Drawing.Point(255, 191);
+            this.LabelValueWartoscEnergetyczna.Location = new System.Drawing.Point(255, 190);
             this.LabelValueWartoscEnergetyczna.Name = "LabelValueWartoscEnergetyczna";
             this.LabelValueWartoscEnergetyczna.Size = new System.Drawing.Size(17, 24);
             this.LabelValueWartoscEnergetyczna.TabIndex = 11;
@@ -402,7 +463,7 @@
             this.LabelMineraly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelMineraly.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelMineraly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(221)))));
-            this.LabelMineraly.Location = new System.Drawing.Point(216, 369);
+            this.LabelMineraly.Location = new System.Drawing.Point(216, 340);
             this.LabelMineraly.Name = "LabelMineraly";
             this.LabelMineraly.Size = new System.Drawing.Size(101, 24);
             this.LabelMineraly.TabIndex = 10;
@@ -414,7 +475,7 @@
             this.LabelWitaminy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelWitaminy.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelWitaminy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.LabelWitaminy.Location = new System.Drawing.Point(14, 369);
+            this.LabelWitaminy.Location = new System.Drawing.Point(14, 340);
             this.LabelWitaminy.Name = "LabelWitaminy";
             this.LabelWitaminy.Size = new System.Drawing.Size(106, 24);
             this.LabelWitaminy.TabIndex = 9;
@@ -426,7 +487,7 @@
             this.LabelBlonnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelBlonnik.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelBlonnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(250)))), ((int)(((byte)(197)))));
-            this.LabelBlonnik.Location = new System.Drawing.Point(14, 338);
+            this.LabelBlonnik.Location = new System.Drawing.Point(14, 310);
             this.LabelBlonnik.Name = "LabelBlonnik";
             this.LabelBlonnik.Size = new System.Drawing.Size(87, 24);
             this.LabelBlonnik.TabIndex = 8;
@@ -438,7 +499,7 @@
             this.LabelWeglowodany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelWeglowodany.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelWeglowodany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(140)))), ((int)(((byte)(90)))));
-            this.LabelWeglowodany.Location = new System.Drawing.Point(14, 299);
+            this.LabelWeglowodany.Location = new System.Drawing.Point(14, 280);
             this.LabelWeglowodany.Name = "LabelWeglowodany";
             this.LabelWeglowodany.Size = new System.Drawing.Size(165, 24);
             this.LabelWeglowodany.TabIndex = 7;
@@ -450,7 +511,7 @@
             this.LabelTluszcz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelTluszcz.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTluszcz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(121)))), ((int)(((byte)(11)))));
-            this.LabelTluszcz.Location = new System.Drawing.Point(14, 263);
+            this.LabelTluszcz.Location = new System.Drawing.Point(14, 250);
             this.LabelTluszcz.Name = "LabelTluszcz";
             this.LabelTluszcz.Size = new System.Drawing.Size(82, 24);
             this.LabelTluszcz.TabIndex = 6;
@@ -462,7 +523,7 @@
             this.LabelBialko.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelBialko.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelBialko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LabelBialko.Location = new System.Drawing.Point(14, 226);
+            this.LabelBialko.Location = new System.Drawing.Point(14, 220);
             this.LabelBialko.Name = "LabelBialko";
             this.LabelBialko.Size = new System.Drawing.Size(75, 24);
             this.LabelBialko.TabIndex = 5;
@@ -474,7 +535,7 @@
             this.LabelWartoscEnergetyczna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabelWartoscEnergetyczna.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelWartoscEnergetyczna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LabelWartoscEnergetyczna.Location = new System.Drawing.Point(14, 191);
+            this.LabelWartoscEnergetyczna.Location = new System.Drawing.Point(14, 190);
             this.LabelWartoscEnergetyczna.Name = "LabelWartoscEnergetyczna";
             this.LabelWartoscEnergetyczna.Size = new System.Drawing.Size(246, 24);
             this.LabelWartoscEnergetyczna.TabIndex = 4;
@@ -1036,31 +1097,6 @@
             this.Timer1.Interval = 18000;
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // ButtonOpenAddProductDialog
-            // 
-            this.ButtonOpenAddProductDialog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenAddProductDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.ButtonOpenAddProductDialog.FlatAppearance.BorderSize = 0;
-            this.ButtonOpenAddProductDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonOpenAddProductDialog.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOpenAddProductDialog.ForeColor = System.Drawing.Color.Orange;
-            this.ButtonOpenAddProductDialog.Location = new System.Drawing.Point(374, 535);
-            this.ButtonOpenAddProductDialog.Name = "ButtonOpenAddProductDialog";
-            this.ButtonOpenAddProductDialog.Size = new System.Drawing.Size(40, 40);
-            this.ButtonOpenAddProductDialog.TabIndex = 19;
-            this.ButtonOpenAddProductDialog.Text = "+";
-            this.ButtonOpenAddProductDialog.UseVisualStyleBackColor = false;
-            this.ButtonOpenAddProductDialog.Click += new System.EventHandler(this.ButtonOpenAddProductDialog_Click);
-            // 
-            // PanelSeparatorLine1
-            // 
-            this.PanelSeparatorLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelSeparatorLine1.BackColor = System.Drawing.Color.Gray;
-            this.PanelSeparatorLine1.Location = new System.Drawing.Point(0, 581);
-            this.PanelSeparatorLine1.Name = "PanelSeparatorLine1";
-            this.PanelSeparatorLine1.Size = new System.Drawing.Size(421, 1);
-            this.PanelSeparatorLine1.TabIndex = 20;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1168,6 +1204,8 @@
         private System.Windows.Forms.Label LabelNotesik;
         private System.Windows.Forms.Button ButtonOpenAddProductDialog;
         private System.Windows.Forms.Panel PanelSeparatorLine1;
+        private System.Windows.Forms.Button ButtonDeleteProduct;
+        private System.Windows.Forms.Button ButtonEditProduct;
     }
 }
 

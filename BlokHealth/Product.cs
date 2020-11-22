@@ -2,7 +2,7 @@
 
 namespace BlokHealth
 {
-    class Product
+    public class Product
     {
         public string Name = "<nazwa>";
         public string Describe = "<opis>";
@@ -28,7 +28,8 @@ namespace BlokHealth
         public string Minerals = "<mineraly>";
         // -----------------------
 
-        public Image ExampleImage;
+        public Image ExampleImage = BlokHealth.Properties.Resources.brak_zdjęcia;
+        public string ExampleImagePath = "";
 
         public bool StaticProduct = false;
 
@@ -55,6 +56,42 @@ namespace BlokHealth
             Vitamins = vitamins;
             Minerals = minerals;
             ExampleImage = exampleImage;
+            StaticProduct = staticProduct;
+        }
+        
+        public Product
+        (string name,
+         string describe,
+         double energyValue,
+         string energyValueVarible,
+         double protein,
+         string proteinVarible,
+         double fat,
+         string fatVarible,
+         double carbohydrates,
+         string carbohydratesVarible,
+         double fiber,
+         string fiberVarible,
+         string vitamins,
+         string minerals,
+         string exampleImagePath,
+         bool staticProduct)
+        {
+            Name = name;
+            Describe = describe;
+            EnergyValue = energyValue;
+            EnergyValueVarible = energyValueVarible;
+            Protein = protein;
+            ProteinVarible = proteinVarible;
+            Fat = fat;
+            FatVarible = fatVarible;
+            Carbohydrates = carbohydrates;
+            CarbohydratesVarible = carbohydratesVarible;
+            Fiber = fiber;
+            FiberVarible = fiberVarible;
+            Vitamins = vitamins;
+            Minerals = minerals;
+            ExampleImagePath = exampleImagePath;
             StaticProduct = staticProduct;
         }
 
