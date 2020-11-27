@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,9 +21,10 @@ namespace BlokHealth
             ImagesFolderPath = FolderOfImages;
             SystemDriveName = systemDriveName;
         }
-
+        // TODO dodaj ikonę
         private void AddProductForm_Load(object sender, EventArgs e)
         {
+            ControlBox_Loading();
             EnergyValueVaribleComboBox.SelectedIndex = 0;
             ProteinVaribleComboBox.SelectedIndex = 0;
             FatVaribleComboBox.SelectedIndex = 0;
@@ -30,12 +32,137 @@ namespace BlokHealth
             FiberVaribleComboBox.SelectedIndex = 0;
         }
 
+        #region ControlBoxPanel
+
+        #region Drag window
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        #endregion
+
+        private bool CloseBox = true;
+
+        private void ControlBox_MouseMove_Drag(MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void ControlBox_Loading()
+        {
+            // Icon settings
+            if (this.ShowIcon == true)
+            {
+                ControlBoxIconPanel.Visible = true;
+                ControlBoxIcon.Image = this.Icon.ToBitmap();
+            }
+            else if (this.ShowIcon == false)
+            {
+                ControlBoxIconPanel.Visible = false;
+                ControlBoxTextLabel.Location = new Point(6, 9);
+            }
+
+            #region Minimized and maximized settings
+            //Close
+            if (this.CloseBox == true)
+            {
+                ControlBoxCloseButton.Visible = true;
+            }
+            else if (this.CloseBox == false)
+            {
+                ControlBoxCloseButton.Visible = false;
+            }
+            //Minimize
+            if (this.MinimizeBox == true)
+            {
+                ControlBoxMinimizeButton.Visible = true;
+            }
+            else if (this.MinimizeBox == false)
+            {
+                ControlBoxMinimizeButton.Visible = false;
+            }
+            //Maximize
+            if (this.MaximizeBox == true)
+            {
+                ControlBoxMaximizeButton.Visible = true;
+            }
+            else if (this.MaximizeBox == false)
+            {
+                ControlBoxMaximizeButton.Visible = false;
+            }
+            #endregion
+
+            ControlBoxTextLabel.Text = this.Text;
+        }
+
+        private void ControlBoxPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void PanelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxTextLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxTextPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxCloseButton_Click(object sender, EventArgs e)
+        {
+            // Jeśli zamykasz tylko okno:
+            this.Close();
+
+            // Jeśli zamykasz całą aplikację:
+            //Application.Exit();
+        }
+
+        private void ControlBoxMinimizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ControlBoxMaximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+        #endregion
+
         // Dziedziczone
         private readonly string SystemDriveName;
         private readonly string MyProductFolderPath;
         private readonly string ImagesFolderPath;
 
-        //Zdjęcia
+        // Zdjęcia
         Bitmap ExampleImgBitmap;
         MemoryStream msForExampleImg = new MemoryStream();
 
@@ -44,7 +171,6 @@ namespace BlokHealth
 
         private void ButtonWybierzObrazek_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 InitialDirectory = SystemDriveName,
@@ -52,17 +178,48 @@ namespace BlokHealth
                 FilterIndex = 1,
                 RestoreDirectory = true
             };
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    msForExampleImg.SetLength(0);
+                    try
+                    {
+
+                        using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open))
+                        {
+                            fs.CopyTo(msForExampleImg);
+                        }
+                        ExampleImgBitmap = new Bitmap(msForExampleImg, true);
+                        ExampleImagePictureBox.Image = ExampleImgBitmap;
+
+                        SourcePathToImage = openFileDialog.FileName;
+                    }
+                    catch
+                    {
+                        ExampleImgBitmap = new Bitmap(BlokHealth.Properties.Resources.brak_zdjęcia);
+                        ExampleImagePictureBox.Image = ExampleImgBitmap;
+
+                        SourcePathToImage = "";
+                    }
+                }
+            }
+            catch (System.UnauthorizedAccessException) //TODO System.UnauthorizedAccessException problem
+            {
+                MessageBox.Show("Ta funkcja aplikacji wymaga dostępu do plików, upewnij się że twój antywirus nie blokuje jej tego!\n",
+                                "Brak dostępu do plików",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            catch (System.ArgumentNullException) //TODO System.ArgumentNullException problem
             {
                 msForExampleImg.SetLength(0);
-                using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open))
-                {
-                    fs.CopyTo(msForExampleImg);
-                }
-                ExampleImgBitmap = new Bitmap(msForExampleImg, true);
-                ExampleImagePictureBox.Image = ExampleImgBitmap;
-
-                SourcePathToImage = openFileDialog.FileName;
+                msForExampleImg = new MemoryStream();
+                ExampleImgBitmap = new Bitmap(BlokHealth.Properties.Resources.brak_zdjęcia);
+                MessageBox.Show("Ta funkcja aplikacji wymaga dostępu do plików, upewnij się że twój antywirus nie blokuje jej tego!\n",
+                                "Brak dostępu do plików",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
@@ -148,5 +305,6 @@ namespace BlokHealth
                 LabelInfoPodajInnaNazwe.Visible = true;
             }
         }
+
     }
 }

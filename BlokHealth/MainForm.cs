@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace BlokHealth
@@ -71,6 +72,7 @@ namespace BlokHealth
             }
 
             #endregion
+            ControlBox_Loading();
         }
 
         void CheckProgramDiresArchitecture()
@@ -97,6 +99,131 @@ namespace BlokHealth
         }
 
         #endregion
+
+        #region ControlBoxPanel
+
+        #region Drag window
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        #endregion
+
+        private bool CloseBox = true;
+
+        private void ControlBox_MouseMove_Drag(MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void ControlBox_Loading()
+        {
+            // Icon settings
+            if (this.ShowIcon == true)
+            {
+                ControlBoxIconPanel.Visible = true;
+                ControlBoxIcon.Image = this.Icon.ToBitmap();
+            }
+            else if (this.ShowIcon == false)
+            {
+                ControlBoxIconPanel.Visible = false;
+                ControlBoxTextLabel.Location = new Point(6, 9);
+            }
+
+            #region Minimized and maximized settings
+            //Close
+            if (this.CloseBox == true)
+            {
+                ControlBoxCloseButton.Visible = true;
+            }
+            else if (this.CloseBox == false)
+            {
+                ControlBoxCloseButton.Visible = false;
+            }
+            //Minimize
+            if (this.MinimizeBox == true)
+            {
+                ControlBoxMinimizeButton.Visible = true;
+            }
+            else if (this.MinimizeBox == false)
+            {
+                ControlBoxMinimizeButton.Visible = false;
+            }
+            //Maximize
+            if (this.MaximizeBox == true)
+            {
+                ControlBoxMaximizeButton.Visible = true;
+            }
+            else if (this.MaximizeBox == false)
+            {
+                ControlBoxMaximizeButton.Visible = false;
+            }
+            #endregion
+
+            ControlBoxTextLabel.Text = this.Text;
+        }
+
+        private void ControlBoxPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void PanelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxTextLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxTextPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            ControlBox_MouseMove_Drag(e);
+        }
+
+        private void ControlBoxCloseButton_Click(object sender, EventArgs e)
+        {
+            // Jeśli zamykasz tylko okno:
+            //this.Close();
+
+            // Jeśli zamykasz całą aplikację:
+            Application.Exit();
+        }
+
+        private void ControlBoxMinimizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ControlBoxMaximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+#endregion
 
         #region Varibles
         // Calcularor&Convert varibles
@@ -1040,6 +1167,7 @@ namespace BlokHealth
 
         private void ButtonOpenAddProductDialog_Click(object sender, EventArgs e)
         {
+            CheckProgramDiresArchitecture();
             AddProductForm addProductForm = new AddProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath);
             addProductForm.ShowDialog();
             Product.Clear();
@@ -1056,7 +1184,7 @@ namespace BlokHealth
                 "Uwaga: Nie będzie się dało go później przywrócić!",
                 "Usuwanie produktu",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning,
+                MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
 
             if (result == DialogResult.Yes)
@@ -1087,9 +1215,7 @@ namespace BlokHealth
                     // Usuwanie
                     File.Delete(pathTo_txt_File);
                     if (File.Exists(pathToImage))
-                    {
-                        File.Delete(pathToImage);
-                    } // TODO dodać obsługę wyjątków
+                    { File.Delete(pathToImage); }
 
                     // Wczytywanie ponowne
                     Product.Clear();
@@ -1102,7 +1228,6 @@ namespace BlokHealth
                 }
                 else { MessageBox.Show("Nie można namieżyć pliku zapisu!", "Zła lokalizacja pliku zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
-            else if (result == DialogResult.No) { } // TODO Uzupełnij lub zniszcz
 
         }
 
@@ -2083,6 +2208,7 @@ namespace BlokHealth
 
         private void ButtonEditProduct_Click(object sender, EventArgs e)
         {
+            CheckProgramDiresArchitecture();
             EditProductForm editProductForm = new EditProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath, Product[ProductNumber]);
             editProductForm.ShowDialog();
             Product.Clear();
@@ -2094,7 +2220,7 @@ namespace BlokHealth
 
         void SelectActiveProduct()
         {
-
+            // Ustawianie widoczności przycisków / Set buttons visible
             if (Product[ProductNumber].StaticProduct == false)
             {
                 ButtonEditProduct.Visible = true;
@@ -2106,28 +2232,7 @@ namespace BlokHealth
                 ButtonDeleteProduct.Visible = false;
             }
 
-            FoodTitleLabel.Text = Product[ProductNumber].Name;
-            LabelDescriptionOfProduct.Text = Product[ProductNumber].Describe;
-
-            LabelValueWartoscEnergetyczna.Text = Product[ProductNumber].EnergyValue.ToString();
-            LabelValueWartoscEnergetyczna.Text += " " + Product[ProductNumber].EnergyValueVarible;
-
-            LabelValueBialko.Text = Product[ProductNumber].Protein.ToString();
-            LabelValueBialko.Text += " " + Product[ProductNumber].ProteinVarible;
-
-            LabelValueTluszcz.Text = Product[ProductNumber].Fat.ToString();
-            LabelValueTluszcz.Text += " " + Product[ProductNumber].FatVarible;
-
-            LabelValueWeglowodany.Text = Product[ProductNumber].Carbohydrates.ToString();
-            LabelValueWeglowodany.Text += " " + Product[ProductNumber].CarbohydratesVarible;
-
-            LabelValueBlonnik.Text = Product[ProductNumber].Fiber.ToString();
-            LabelValueBlonnik.Text += " " + Product[ProductNumber].FiberVarible;
-
-            LabelValueWitaminy.Text = Product[ProductNumber].Vitamins;
-            LabelValueMineraly.Text = Product[ProductNumber].Minerals;
-
-
+            // Load ExampleImage
             if (File.Exists(@Product[ProductNumber].ExampleImagePath))
             {
                 try
@@ -2149,6 +2254,35 @@ namespace BlokHealth
             }
             else
             { PictureBoxImageOfProduct.Image = Product[ProductNumber].ExampleImage; }
+
+            // Load Name & Describe
+            FoodTitleLabel.Text = Product[ProductNumber].Name;
+            LabelDescriptionOfProduct.Text = Product[ProductNumber].Describe;
+
+            // Load Energy Varibles
+            LabelValueWartoscEnergetyczna.Text = Product[ProductNumber].EnergyValue.ToString();
+            LabelValueWartoscEnergetyczna.Text += " " + Product[ProductNumber].EnergyValueVarible;
+
+            // Load Protein Varibles
+            LabelValueBialko.Text = Product[ProductNumber].Protein.ToString();
+            LabelValueBialko.Text += " " + Product[ProductNumber].ProteinVarible;
+
+            // Load Fat Varibles
+            LabelValueTluszcz.Text = Product[ProductNumber].Fat.ToString();
+            LabelValueTluszcz.Text += " " + Product[ProductNumber].FatVarible;
+
+            // Load Carbohydrates Varibles
+            LabelValueWeglowodany.Text = Product[ProductNumber].Carbohydrates.ToString();
+            LabelValueWeglowodany.Text += " " + Product[ProductNumber].CarbohydratesVarible;
+
+            // Load Fiber Varibles
+            LabelValueBlonnik.Text = Product[ProductNumber].Fiber.ToString();
+            LabelValueBlonnik.Text += " " + Product[ProductNumber].FiberVarible;
+
+            // Load Vitamins & Minerals
+            LabelValueWitaminy.Text = Product[ProductNumber].Vitamins;
+            LabelValueMineraly.Text = Product[ProductNumber].Minerals;
+
         }
 
         void LoadingMyProducts()
@@ -2313,6 +2447,6 @@ namespace BlokHealth
         }
 
         #endregion
-
+        //TODO Wprowadź autoskalowanie paneli
     }
 }

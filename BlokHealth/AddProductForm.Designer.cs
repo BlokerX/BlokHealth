@@ -29,6 +29,7 @@ namespace BlokHealth
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.ButtonAddProduct = new System.Windows.Forms.Button();
             this.LabelNazwaProduktu = new System.Windows.Forms.Label();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
@@ -73,7 +74,21 @@ namespace BlokHealth
             this.LabelInfoPodajNazwe = new System.Windows.Forms.Label();
             this.LabelInfoPodajInnaNazwe = new System.Windows.Forms.Label();
             this.LabelInfo3 = new System.Windows.Forms.Label();
+            this.CentralPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxMinimizeButton = new System.Windows.Forms.Button();
+            this.ControlBoxMaximizeButton = new System.Windows.Forms.Button();
+            this.ControlBoxCloseButton = new System.Windows.Forms.Button();
+            this.ControlBoxTextPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxTextLabel = new System.Windows.Forms.Label();
+            this.ControlBoxIconPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ExampleImagePictureBox)).BeginInit();
+            this.CentralPanel.SuspendLayout();
+            this.ControlBoxPanel.SuspendLayout();
+            this.ControlBoxTextPanel.SuspendLayout();
+            this.ControlBoxIconPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonAddProduct
@@ -543,58 +558,170 @@ namespace BlokHealth
             this.LabelInfo3.TabIndex = 51;
             this.LabelInfo3.Text = "Ułamki zapisujemy z przecinkiem np. 1,22";
             // 
+            // CentralPanel
+            // 
+            this.CentralPanel.Controls.Add(this.LabelInfo2);
+            this.CentralPanel.Controls.Add(this.LabelNazwaProduktu);
+            this.CentralPanel.Controls.Add(this.LabelInfo3);
+            this.CentralPanel.Controls.Add(this.LabelInfoPodajInnaNazwe);
+            this.CentralPanel.Controls.Add(this.LabelInfoPodajNazwe);
+            this.CentralPanel.Controls.Add(this.ButtonAddProduct);
+            this.CentralPanel.Controls.Add(this.ButtonWybierzObrazek);
+            this.CentralPanel.Controls.Add(this.ProductNameTextBox);
+            this.CentralPanel.Controls.Add(this.ExampleImagePictureBox);
+            this.CentralPanel.Controls.Add(this.LabelInfo1);
+            this.CentralPanel.Controls.Add(this.Mineral7TextBox);
+            this.CentralPanel.Controls.Add(this.LabelWartoscEnergetyczna);
+            this.CentralPanel.Controls.Add(this.Mineral6TextBox);
+            this.CentralPanel.Controls.Add(this.LabelBialko);
+            this.CentralPanel.Controls.Add(this.Mineral5TextBox);
+            this.CentralPanel.Controls.Add(this.LabelTluszcz);
+            this.CentralPanel.Controls.Add(this.Mineral4TextBox);
+            this.CentralPanel.Controls.Add(this.LabelWeglowodany);
+            this.CentralPanel.Controls.Add(this.Mineral3TextBox);
+            this.CentralPanel.Controls.Add(this.LabelBlonnik);
+            this.CentralPanel.Controls.Add(this.Mineral2TextBox);
+            this.CentralPanel.Controls.Add(this.DescribeTextBox);
+            this.CentralPanel.Controls.Add(this.LabelMineraly);
+            this.CentralPanel.Controls.Add(this.LabelOpisProduktu);
+            this.CentralPanel.Controls.Add(this.Mineral1TextBox);
+            this.CentralPanel.Controls.Add(this.EnergyValueTextBox);
+            this.CentralPanel.Controls.Add(this.Vitamin8TextBox);
+            this.CentralPanel.Controls.Add(this.EnergyValueVaribleComboBox);
+            this.CentralPanel.Controls.Add(this.Vitamin7TextBox);
+            this.CentralPanel.Controls.Add(this.ProteinTextBox);
+            this.CentralPanel.Controls.Add(this.Vitamin6TextBox);
+            this.CentralPanel.Controls.Add(this.ProteinVaribleComboBox);
+            this.CentralPanel.Controls.Add(this.Vitamin5TextBox);
+            this.CentralPanel.Controls.Add(this.FatTextBox);
+            this.CentralPanel.Controls.Add(this.Vitamin4TextBox);
+            this.CentralPanel.Controls.Add(this.FatVaribleComboBox);
+            this.CentralPanel.Controls.Add(this.Vitamin3TextBox);
+            this.CentralPanel.Controls.Add(this.CarbonohydratesTextBox);
+            this.CentralPanel.Controls.Add(this.Vitamin2TextBox);
+            this.CentralPanel.Controls.Add(this.CarbonohydratesVaribleComboBox);
+            this.CentralPanel.Controls.Add(this.LabelWitaminy);
+            this.CentralPanel.Controls.Add(this.FiberTextBox);
+            this.CentralPanel.Controls.Add(this.Vitamin1TextBox);
+            this.CentralPanel.Controls.Add(this.FiberVaribleComboBox);
+            this.CentralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CentralPanel.Location = new System.Drawing.Point(0, 30);
+            this.CentralPanel.Name = "CentralPanel";
+            this.CentralPanel.Size = new System.Drawing.Size(704, 411);
+            this.CentralPanel.TabIndex = 52;
+            // 
+            // ControlBoxPanel
+            // 
+            this.ControlBoxPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxPanel.Controls.Add(this.ControlBoxMinimizeButton);
+            this.ControlBoxPanel.Controls.Add(this.ControlBoxMaximizeButton);
+            this.ControlBoxPanel.Controls.Add(this.ControlBoxCloseButton);
+            this.ControlBoxPanel.Controls.Add(this.ControlBoxTextPanel);
+            this.ControlBoxPanel.Controls.Add(this.ControlBoxIconPanel);
+            this.ControlBoxPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ControlBoxPanel.Location = new System.Drawing.Point(0, 0);
+            this.ControlBoxPanel.Name = "ControlBoxPanel";
+            this.ControlBoxPanel.Size = new System.Drawing.Size(704, 30);
+            this.ControlBoxPanel.TabIndex = 100;
+            this.ControlBoxPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxPanel_MouseMove);
+            // 
+            // ControlBoxMinimizeButton
+            // 
+            this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
+            this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxMinimizeButton.Location = new System.Drawing.Point(569, 0);
+            this.ControlBoxMinimizeButton.Name = "ControlBoxMinimizeButton";
+            this.ControlBoxMinimizeButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxMinimizeButton.TabIndex = 3;
+            this.ControlBoxMinimizeButton.UseVisualStyleBackColor = true;
+            this.ControlBoxMinimizeButton.Click += new System.EventHandler(this.ControlBoxMinimizeButton_Click);
+            // 
+            // ControlBoxMaximizeButton
+            // 
+            this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
+            this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxMaximizeButton.Location = new System.Drawing.Point(614, 0);
+            this.ControlBoxMaximizeButton.Name = "ControlBoxMaximizeButton";
+            this.ControlBoxMaximizeButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxMaximizeButton.TabIndex = 2;
+            this.ControlBoxMaximizeButton.UseVisualStyleBackColor = true;
+            this.ControlBoxMaximizeButton.Click += new System.EventHandler(this.ControlBoxMaximizeButton_Click);
+            // 
+            // ControlBoxCloseButton
+            // 
+            this.ControlBoxCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxCloseButton.BackgroundImage")));
+            this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxCloseButton.Location = new System.Drawing.Point(659, 0);
+            this.ControlBoxCloseButton.Name = "ControlBoxCloseButton";
+            this.ControlBoxCloseButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxCloseButton.TabIndex = 1;
+            this.ControlBoxCloseButton.UseVisualStyleBackColor = true;
+            this.ControlBoxCloseButton.Click += new System.EventHandler(this.ControlBoxCloseButton_Click);
+            // 
+            // ControlBoxTextPanel
+            // 
+            this.ControlBoxTextPanel.AutoSize = true;
+            this.ControlBoxTextPanel.Controls.Add(this.ControlBoxTextLabel);
+            this.ControlBoxTextPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ControlBoxTextPanel.Location = new System.Drawing.Point(27, 0);
+            this.ControlBoxTextPanel.Name = "ControlBoxTextPanel";
+            this.ControlBoxTextPanel.Size = new System.Drawing.Size(4, 30);
+            this.ControlBoxTextPanel.TabIndex = 5;
+            this.ControlBoxTextPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxTextPanel_MouseMove);
+            // 
+            // ControlBoxTextLabel
+            // 
+            this.ControlBoxTextLabel.AutoSize = true;
+            this.ControlBoxTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ControlBoxTextLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxTextLabel.Location = new System.Drawing.Point(1, 9);
+            this.ControlBoxTextLabel.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.ControlBoxTextLabel.Name = "ControlBoxTextLabel";
+            this.ControlBoxTextLabel.Size = new System.Drawing.Size(0, 13);
+            this.ControlBoxTextLabel.TabIndex = 3;
+            this.ControlBoxTextLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxTextLabel_MouseMove);
+            // 
+            // ControlBoxIconPanel
+            // 
+            this.ControlBoxIconPanel.Controls.Add(this.ControlBoxIcon);
+            this.ControlBoxIconPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ControlBoxIconPanel.Location = new System.Drawing.Point(0, 0);
+            this.ControlBoxIconPanel.Name = "ControlBoxIconPanel";
+            this.ControlBoxIconPanel.Size = new System.Drawing.Size(27, 30);
+            this.ControlBoxIconPanel.TabIndex = 4;
+            // 
+            // ControlBoxIcon
+            // 
+            this.ControlBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("ControlBoxIcon.Image")));
+            this.ControlBoxIcon.Location = new System.Drawing.Point(7, 6);
+            this.ControlBoxIcon.Name = "ControlBoxIcon";
+            this.ControlBoxIcon.Size = new System.Drawing.Size(18, 18);
+            this.ControlBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ControlBoxIcon.TabIndex = 2;
+            this.ControlBoxIcon.TabStop = false;
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(704, 411);
-            this.Controls.Add(this.LabelInfo2);
-            this.Controls.Add(this.LabelInfo3);
-            this.Controls.Add(this.LabelInfoPodajNazwe);
-            this.Controls.Add(this.ButtonWybierzObrazek);
-            this.Controls.Add(this.ExampleImagePictureBox);
-            this.Controls.Add(this.Mineral7TextBox);
-            this.Controls.Add(this.Mineral6TextBox);
-            this.Controls.Add(this.Mineral5TextBox);
-            this.Controls.Add(this.Mineral4TextBox);
-            this.Controls.Add(this.Mineral3TextBox);
-            this.Controls.Add(this.Mineral2TextBox);
-            this.Controls.Add(this.LabelMineraly);
-            this.Controls.Add(this.Mineral1TextBox);
-            this.Controls.Add(this.Vitamin8TextBox);
-            this.Controls.Add(this.Vitamin7TextBox);
-            this.Controls.Add(this.Vitamin6TextBox);
-            this.Controls.Add(this.Vitamin5TextBox);
-            this.Controls.Add(this.Vitamin4TextBox);
-            this.Controls.Add(this.Vitamin3TextBox);
-            this.Controls.Add(this.Vitamin2TextBox);
-            this.Controls.Add(this.LabelWitaminy);
-            this.Controls.Add(this.Vitamin1TextBox);
-            this.Controls.Add(this.FiberVaribleComboBox);
-            this.Controls.Add(this.FiberTextBox);
-            this.Controls.Add(this.CarbonohydratesVaribleComboBox);
-            this.Controls.Add(this.CarbonohydratesTextBox);
-            this.Controls.Add(this.FatVaribleComboBox);
-            this.Controls.Add(this.FatTextBox);
-            this.Controls.Add(this.ProteinVaribleComboBox);
-            this.Controls.Add(this.ProteinTextBox);
-            this.Controls.Add(this.EnergyValueVaribleComboBox);
-            this.Controls.Add(this.EnergyValueTextBox);
-            this.Controls.Add(this.LabelOpisProduktu);
-            this.Controls.Add(this.DescribeTextBox);
-            this.Controls.Add(this.LabelBlonnik);
-            this.Controls.Add(this.LabelWeglowodany);
-            this.Controls.Add(this.LabelTluszcz);
-            this.Controls.Add(this.LabelBialko);
-            this.Controls.Add(this.LabelWartoscEnergetyczna);
-            this.Controls.Add(this.LabelInfo1);
-            this.Controls.Add(this.ProductNameTextBox);
-            this.Controls.Add(this.LabelNazwaProduktu);
-            this.Controls.Add(this.ButtonAddProduct);
-            this.Controls.Add(this.LabelInfoPodajInnaNazwe);
+            this.ClientSize = new System.Drawing.Size(704, 441);
+            this.Controls.Add(this.CentralPanel);
+            this.Controls.Add(this.ControlBoxPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -602,8 +729,15 @@ namespace BlokHealth
             this.Text = "Dodaj Produkt";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ExampleImagePictureBox)).EndInit();
+            this.CentralPanel.ResumeLayout(false);
+            this.CentralPanel.PerformLayout();
+            this.ControlBoxPanel.ResumeLayout(false);
+            this.ControlBoxPanel.PerformLayout();
+            this.ControlBoxTextPanel.ResumeLayout(false);
+            this.ControlBoxTextPanel.PerformLayout();
+            this.ControlBoxIconPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -653,5 +787,14 @@ namespace BlokHealth
         private System.Windows.Forms.Label LabelInfoPodajNazwe;
         private System.Windows.Forms.Label LabelInfoPodajInnaNazwe;
         private System.Windows.Forms.Label LabelInfo3;
+        private System.Windows.Forms.Panel CentralPanel;
+        private System.Windows.Forms.Panel ControlBoxPanel;
+        private System.Windows.Forms.Button ControlBoxMinimizeButton;
+        private System.Windows.Forms.Button ControlBoxMaximizeButton;
+        private System.Windows.Forms.Button ControlBoxCloseButton;
+        private System.Windows.Forms.Panel ControlBoxTextPanel;
+        private System.Windows.Forms.Label ControlBoxTextLabel;
+        private System.Windows.Forms.Panel ControlBoxIconPanel;
+        private System.Windows.Forms.PictureBox ControlBoxIcon;
     }
 }
