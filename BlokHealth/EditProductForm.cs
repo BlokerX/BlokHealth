@@ -106,6 +106,19 @@ namespace BlokHealth
 
         #region ControlBoxPanel
 
+        #region ProtectForMaximalizeForm
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int WS_MAXIMIZEBOX = 0x00010000;
+                var cp = base.CreateParams;
+                cp.Style &= ~WS_MAXIMIZEBOX;
+                return cp;
+            }
+        }
+        #endregion
+
         #region Drag window
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

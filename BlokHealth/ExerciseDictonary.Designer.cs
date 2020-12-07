@@ -130,6 +130,7 @@
             this.GoNextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GoNextButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GoNextButton.BackgroundImage")));
             this.GoNextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GoNextButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.GoNextButton.FlatAppearance.BorderSize = 0;
             this.GoNextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoNextButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +146,7 @@
             this.GoBackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GoBackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GoBackButton.BackgroundImage")));
             this.GoBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GoBackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.GoBackButton.FlatAppearance.BorderSize = 0;
             this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoBackButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,6 +207,7 @@
             this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
             this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -220,6 +223,7 @@
             this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
             this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -235,6 +239,7 @@
             this.ControlBoxCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxCloseButton.BackgroundImage")));
             this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;

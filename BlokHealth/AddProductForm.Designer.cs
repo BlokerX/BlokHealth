@@ -630,6 +630,7 @@ namespace BlokHealth
             this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
             this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -645,6 +646,7 @@ namespace BlokHealth
             this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
             this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -660,6 +662,7 @@ namespace BlokHealth
             this.ControlBoxCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxCloseButton.BackgroundImage")));
             this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;

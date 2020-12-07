@@ -1,33 +1,33 @@
 ﻿namespace BlokHealth
 {
     partial class MainForm
+{
+    /// <summary>
+    /// Wymagana zmienna projektanta.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Wyczyść wszystkie używane zasoby.
+    /// </summary>
+    /// <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Wymagana zmienna projektanta.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Wyczyść wszystkie używane zasoby.
-        /// </summary>
-        /// <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
-        protected override void Dispose(bool disposing)
+        if (disposing && (components != null))
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            components.Dispose();
         }
+        base.Dispose(disposing);
+    }
 
-        #region Kod generowany przez Projektanta formularzy systemu Windows
+    #region Kod generowany przez Projektanta formularzy systemu Windows
 
-        /// <summary>
-        /// Metoda wymagana do obsługi projektanta — nie należy modyfikować
-        /// jej zawartości w edytorze kodu.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Metoda wymagana do obsługi projektanta — nie należy modyfikować
+    /// jej zawartości w edytorze kodu.
+    /// </summary>
+    private void InitializeComponent()
+    {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.PanelLeft = new System.Windows.Forms.Panel();
@@ -78,6 +78,31 @@
             this.GoNextButton = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.PanelFill = new System.Windows.Forms.Panel();
+            this.CalculatorMainPanel = new System.Windows.Forms.Panel();
+            this.CalculatorPanel6 = new System.Windows.Forms.Panel();
+            this.ButtonEquals = new System.Windows.Forms.Button();
+            this.ButtonClearMemoryOfCalculator = new System.Windows.Forms.Button();
+            this.CalculatorPanel5 = new System.Windows.Forms.Panel();
+            this.ButtonAddition = new System.Windows.Forms.Button();
+            this.Button0 = new System.Windows.Forms.Button();
+            this.ButtonDecimal = new System.Windows.Forms.Button();
+            this.CalculatorPanel4 = new System.Windows.Forms.Panel();
+            this.ButtonSubtraction = new System.Windows.Forms.Button();
+            this.Button9 = new System.Windows.Forms.Button();
+            this.Button8 = new System.Windows.Forms.Button();
+            this.Button7 = new System.Windows.Forms.Button();
+            this.CalculatorPanel3 = new System.Windows.Forms.Panel();
+            this.ButtonMultiplication = new System.Windows.Forms.Button();
+            this.Button6 = new System.Windows.Forms.Button();
+            this.Button5 = new System.Windows.Forms.Button();
+            this.Button4 = new System.Windows.Forms.Button();
+            this.CalculatorPanel2 = new System.Windows.Forms.Panel();
+            this.ButtonDivision = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.CalculatorPanel1 = new System.Windows.Forms.Panel();
+            this.CalculatorTextBox = new System.Windows.Forms.TextBox();
             this.PanelConvertEquals = new System.Windows.Forms.Panel();
             this.LabelConvertEquals = new System.Windows.Forms.Label();
             this.LabelWynik = new System.Windows.Forms.Label();
@@ -89,25 +114,6 @@
             this.LabelKonwertujZ = new System.Windows.Forms.Label();
             this.ButtonConvertEqals = new System.Windows.Forms.Button();
             this.ButtonTypeOfConvert = new System.Windows.Forms.Button();
-            this.CalculatorMainPanel = new System.Windows.Forms.Panel();
-            this.ButtonClearMemoryOfCalculator = new System.Windows.Forms.Button();
-            this.ButtonEquals = new System.Windows.Forms.Button();
-            this.CalculatorTextBox = new System.Windows.Forms.TextBox();
-            this.ButtonAddition = new System.Windows.Forms.Button();
-            this.Button1 = new System.Windows.Forms.Button();
-            this.ButtonSubtraction = new System.Windows.Forms.Button();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.ButtonMultiplication = new System.Windows.Forms.Button();
-            this.Button3 = new System.Windows.Forms.Button();
-            this.ButtonDivision = new System.Windows.Forms.Button();
-            this.Button4 = new System.Windows.Forms.Button();
-            this.Button5 = new System.Windows.Forms.Button();
-            this.ButtonDecimal = new System.Windows.Forms.Button();
-            this.Button6 = new System.Windows.Forms.Button();
-            this.Button0 = new System.Windows.Forms.Button();
-            this.Button7 = new System.Windows.Forms.Button();
-            this.Button9 = new System.Windows.Forms.Button();
-            this.Button8 = new System.Windows.Forms.Button();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelLeft.SuspendLayout();
@@ -123,10 +129,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).BeginInit();
             this.ControlPanel_to_Left.SuspendLayout();
             this.PanelFill.SuspendLayout();
+            this.CalculatorMainPanel.SuspendLayout();
+            this.CalculatorPanel6.SuspendLayout();
+            this.CalculatorPanel5.SuspendLayout();
+            this.CalculatorPanel4.SuspendLayout();
+            this.CalculatorPanel3.SuspendLayout();
+            this.CalculatorPanel2.SuspendLayout();
+            this.CalculatorPanel1.SuspendLayout();
             this.PanelConvertEquals.SuspendLayout();
             this.PanelConvertSettings.SuspendLayout();
             this.PanelConvertSettingsEnergy.SuspendLayout();
-            this.CalculatorMainPanel.SuspendLayout();
             this.PanelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,6 +190,7 @@
             this.ButtonCwiczennik.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonCwiczennik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ButtonCwiczennik.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ButtonCwiczennik.FlatAppearance.BorderSize = 0;
             this.ButtonCwiczennik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonCwiczennik.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,6 +216,7 @@
             // 
             // ButtonNextHealthCuriosity
             // 
+            this.ButtonNextHealthCuriosity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
             this.ButtonNextHealthCuriosity.FlatAppearance.BorderSize = 0;
             this.ButtonNextHealthCuriosity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonNextHealthCuriosity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,6 +254,7 @@
             // ButtonInformationAboutApplication
             // 
             this.ButtonInformationAboutApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(62)))));
+            this.ButtonInformationAboutApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(62)))));
             this.ButtonInformationAboutApplication.FlatAppearance.BorderSize = 0;
             this.ButtonInformationAboutApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonInformationAboutApplication.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,6 +326,7 @@
             this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
             this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -326,6 +342,7 @@
             this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
             this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -341,6 +358,7 @@
             this.ControlBoxCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxCloseButton.BackgroundImage")));
             this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;
@@ -428,9 +446,10 @@
             // 
             this.ButtonEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonEditProduct.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEditProduct.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEditProduct.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonEditProduct.ForeColor = System.Drawing.Color.LightSalmon;
             this.ButtonEditProduct.Location = new System.Drawing.Point(47, 549);
             this.ButtonEditProduct.Name = "ButtonEditProduct";
             this.ButtonEditProduct.Size = new System.Drawing.Size(111, 30);
@@ -444,9 +463,10 @@
             // 
             this.ButtonDeleteProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.ButtonDeleteProduct.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonDeleteProduct.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDeleteProduct.ForeColor = System.Drawing.Color.Orange;
+            this.ButtonDeleteProduct.ForeColor = System.Drawing.Color.LightSalmon;
             this.ButtonDeleteProduct.Location = new System.Drawing.Point(18, 549);
             this.ButtonDeleteProduct.Name = "ButtonDeleteProduct";
             this.ButtonDeleteProduct.Size = new System.Drawing.Size(30, 30);
@@ -718,6 +738,7 @@
             this.GoNextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.GoNextButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GoNextButton.BackgroundImage")));
             this.GoNextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GoNextButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.GoNextButton.FlatAppearance.BorderSize = 0;
             this.GoNextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoNextButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -727,12 +748,14 @@
             this.GoNextButton.TabIndex = 1;
             this.GoNextButton.UseVisualStyleBackColor = false;
             this.GoNextButton.Click += new System.EventHandler(this.GoNextButton_Click);
+            this.GoNextButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
             // 
             // GoBackButton
             // 
             this.GoBackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.GoBackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GoBackButton.BackgroundImage")));
             this.GoBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GoBackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.GoBackButton.FlatAppearance.BorderSize = 0;
             this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoBackButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -742,20 +765,389 @@
             this.GoBackButton.TabIndex = 0;
             this.GoBackButton.UseVisualStyleBackColor = false;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            this.GoBackButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
             // 
             // PanelFill
             // 
             this.PanelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.PanelFill.Controls.Add(this.CalculatorMainPanel);
             this.PanelFill.Controls.Add(this.PanelConvertEquals);
             this.PanelFill.Controls.Add(this.PanelConvertSettings);
             this.PanelFill.Controls.Add(this.ButtonConvertEqals);
             this.PanelFill.Controls.Add(this.ButtonTypeOfConvert);
-            this.PanelFill.Controls.Add(this.CalculatorMainPanel);
             this.PanelFill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelFill.Location = new System.Drawing.Point(421, 30);
             this.PanelFill.Name = "PanelFill";
             this.PanelFill.Size = new System.Drawing.Size(438, 690);
             this.PanelFill.TabIndex = 2;
+            // 
+            // CalculatorMainPanel
+            // 
+            this.CalculatorMainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel6);
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel5);
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel4);
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel3);
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel2);
+            this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel1);
+            this.CalculatorMainPanel.Location = new System.Drawing.Point(80, 174);
+            this.CalculatorMainPanel.Name = "CalculatorMainPanel";
+            this.CalculatorMainPanel.Size = new System.Drawing.Size(281, 380);
+            this.CalculatorMainPanel.TabIndex = 29;
+            // 
+            // CalculatorPanel6
+            // 
+            this.CalculatorPanel6.Controls.Add(this.ButtonEquals);
+            this.CalculatorPanel6.Controls.Add(this.ButtonClearMemoryOfCalculator);
+            this.CalculatorPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel6.Location = new System.Drawing.Point(0, 314);
+            this.CalculatorPanel6.Name = "CalculatorPanel6";
+            this.CalculatorPanel6.Size = new System.Drawing.Size(281, 67);
+            this.CalculatorPanel6.TabIndex = 23;
+            // 
+            // ButtonEquals
+            // 
+            this.ButtonEquals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonEquals.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonEquals.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonEquals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(173)))), ((int)(((byte)(133)))));
+            this.ButtonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEquals.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonEquals.Location = new System.Drawing.Point(70, 0);
+            this.ButtonEquals.Name = "ButtonEquals";
+            this.ButtonEquals.Size = new System.Drawing.Size(211, 67);
+            this.ButtonEquals.TabIndex = 19;
+            this.ButtonEquals.Text = "=";
+            this.ButtonEquals.UseVisualStyleBackColor = false;
+            this.ButtonEquals.Click += new System.EventHandler(this.ButtonEquals_Click);
+            // 
+            // ButtonClearMemoryOfCalculator
+            // 
+            this.ButtonClearMemoryOfCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonClearMemoryOfCalculator.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonClearMemoryOfCalculator.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonClearMemoryOfCalculator.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(250)))), ((int)(((byte)(159)))));
+            this.ButtonClearMemoryOfCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonClearMemoryOfCalculator.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonClearMemoryOfCalculator.ForeColor = System.Drawing.Color.Red;
+            this.ButtonClearMemoryOfCalculator.Location = new System.Drawing.Point(0, 0);
+            this.ButtonClearMemoryOfCalculator.Name = "ButtonClearMemoryOfCalculator";
+            this.ButtonClearMemoryOfCalculator.Size = new System.Drawing.Size(70, 67);
+            this.ButtonClearMemoryOfCalculator.TabIndex = 20;
+            this.ButtonClearMemoryOfCalculator.Text = "C";
+            this.ButtonClearMemoryOfCalculator.UseVisualStyleBackColor = false;
+            this.ButtonClearMemoryOfCalculator.Click += new System.EventHandler(this.ButtonClearMemoryOfCalculator_Click);
+            // 
+            // CalculatorPanel5
+            // 
+            this.CalculatorPanel5.Controls.Add(this.ButtonAddition);
+            this.CalculatorPanel5.Controls.Add(this.Button0);
+            this.CalculatorPanel5.Controls.Add(this.ButtonDecimal);
+            this.CalculatorPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel5.Location = new System.Drawing.Point(0, 247);
+            this.CalculatorPanel5.Name = "CalculatorPanel5";
+            this.CalculatorPanel5.Size = new System.Drawing.Size(281, 67);
+            this.CalculatorPanel5.TabIndex = 22;
+            // 
+            // ButtonAddition
+            // 
+            this.ButtonAddition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonAddition.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonAddition.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonAddition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
+            this.ButtonAddition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAddition.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddition.Location = new System.Drawing.Point(210, 0);
+            this.ButtonAddition.Name = "ButtonAddition";
+            this.ButtonAddition.Size = new System.Drawing.Size(71, 67);
+            this.ButtonAddition.TabIndex = 18;
+            this.ButtonAddition.Text = "+";
+            this.ButtonAddition.UseVisualStyleBackColor = false;
+            this.ButtonAddition.Click += new System.EventHandler(this.ButtonAddition_Click);
+            // 
+            // Button0
+            // 
+            this.Button0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button0.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button0.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button0.Location = new System.Drawing.Point(70, 0);
+            this.Button0.Name = "Button0";
+            this.Button0.Size = new System.Drawing.Size(140, 67);
+            this.Button0.TabIndex = 12;
+            this.Button0.Text = "0";
+            this.Button0.UseVisualStyleBackColor = false;
+            this.Button0.Click += new System.EventHandler(this.Button0_Click);
+            // 
+            // ButtonDecimal
+            // 
+            this.ButtonDecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonDecimal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonDecimal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonDecimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.ButtonDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDecimal.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDecimal.Location = new System.Drawing.Point(0, 0);
+            this.ButtonDecimal.Name = "ButtonDecimal";
+            this.ButtonDecimal.Size = new System.Drawing.Size(70, 67);
+            this.ButtonDecimal.TabIndex = 13;
+            this.ButtonDecimal.Text = ".";
+            this.ButtonDecimal.UseVisualStyleBackColor = false;
+            this.ButtonDecimal.Click += new System.EventHandler(this.ButtonDecimal_Click);
+            // 
+            // CalculatorPanel4
+            // 
+            this.CalculatorPanel4.Controls.Add(this.ButtonSubtraction);
+            this.CalculatorPanel4.Controls.Add(this.Button9);
+            this.CalculatorPanel4.Controls.Add(this.Button8);
+            this.CalculatorPanel4.Controls.Add(this.Button7);
+            this.CalculatorPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel4.Location = new System.Drawing.Point(0, 180);
+            this.CalculatorPanel4.Name = "CalculatorPanel4";
+            this.CalculatorPanel4.Size = new System.Drawing.Size(281, 67);
+            this.CalculatorPanel4.TabIndex = 22;
+            // 
+            // ButtonSubtraction
+            // 
+            this.ButtonSubtraction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonSubtraction.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonSubtraction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonSubtraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
+            this.ButtonSubtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonSubtraction.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSubtraction.Location = new System.Drawing.Point(210, 0);
+            this.ButtonSubtraction.Name = "ButtonSubtraction";
+            this.ButtonSubtraction.Size = new System.Drawing.Size(71, 67);
+            this.ButtonSubtraction.TabIndex = 17;
+            this.ButtonSubtraction.Text = "-";
+            this.ButtonSubtraction.UseVisualStyleBackColor = false;
+            this.ButtonSubtraction.Click += new System.EventHandler(this.ButtonSubtraction_Click);
+            // 
+            // Button9
+            // 
+            this.Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button9.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button9.Location = new System.Drawing.Point(140, 0);
+            this.Button9.Name = "Button9";
+            this.Button9.Size = new System.Drawing.Size(70, 67);
+            this.Button9.TabIndex = 11;
+            this.Button9.Text = "9";
+            this.Button9.UseVisualStyleBackColor = false;
+            this.Button9.Click += new System.EventHandler(this.Button9_Click);
+            // 
+            // Button8
+            // 
+            this.Button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button8.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button8.Location = new System.Drawing.Point(70, 0);
+            this.Button8.Name = "Button8";
+            this.Button8.Size = new System.Drawing.Size(70, 67);
+            this.Button8.TabIndex = 10;
+            this.Button8.Text = "8";
+            this.Button8.UseVisualStyleBackColor = false;
+            this.Button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // Button7
+            // 
+            this.Button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button7.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button7.Location = new System.Drawing.Point(0, 0);
+            this.Button7.Name = "Button7";
+            this.Button7.Size = new System.Drawing.Size(70, 67);
+            this.Button7.TabIndex = 9;
+            this.Button7.Text = "7";
+            this.Button7.UseVisualStyleBackColor = false;
+            this.Button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // CalculatorPanel3
+            // 
+            this.CalculatorPanel3.Controls.Add(this.ButtonMultiplication);
+            this.CalculatorPanel3.Controls.Add(this.Button6);
+            this.CalculatorPanel3.Controls.Add(this.Button5);
+            this.CalculatorPanel3.Controls.Add(this.Button4);
+            this.CalculatorPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel3.Location = new System.Drawing.Point(0, 113);
+            this.CalculatorPanel3.Name = "CalculatorPanel3";
+            this.CalculatorPanel3.Size = new System.Drawing.Size(281, 67);
+            this.CalculatorPanel3.TabIndex = 22;
+            // 
+            // ButtonMultiplication
+            // 
+            this.ButtonMultiplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonMultiplication.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonMultiplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonMultiplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
+            this.ButtonMultiplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonMultiplication.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonMultiplication.Location = new System.Drawing.Point(210, 0);
+            this.ButtonMultiplication.Name = "ButtonMultiplication";
+            this.ButtonMultiplication.Size = new System.Drawing.Size(71, 67);
+            this.ButtonMultiplication.TabIndex = 16;
+            this.ButtonMultiplication.Text = "*";
+            this.ButtonMultiplication.UseVisualStyleBackColor = false;
+            this.ButtonMultiplication.Click += new System.EventHandler(this.ButtonMultiplication_Click);
+            // 
+            // Button6
+            // 
+            this.Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button6.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button6.Location = new System.Drawing.Point(140, 0);
+            this.Button6.Name = "Button6";
+            this.Button6.Size = new System.Drawing.Size(70, 67);
+            this.Button6.TabIndex = 8;
+            this.Button6.Text = "6";
+            this.Button6.UseVisualStyleBackColor = false;
+            this.Button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // Button5
+            // 
+            this.Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button5.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button5.Location = new System.Drawing.Point(70, 0);
+            this.Button5.Name = "Button5";
+            this.Button5.Size = new System.Drawing.Size(70, 67);
+            this.Button5.TabIndex = 7;
+            this.Button5.Text = "5";
+            this.Button5.UseVisualStyleBackColor = false;
+            this.Button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // Button4
+            // 
+            this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button4.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button4.Location = new System.Drawing.Point(0, 0);
+            this.Button4.Name = "Button4";
+            this.Button4.Size = new System.Drawing.Size(70, 67);
+            this.Button4.TabIndex = 6;
+            this.Button4.Text = "4";
+            this.Button4.UseVisualStyleBackColor = false;
+            this.Button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // CalculatorPanel2
+            // 
+            this.CalculatorPanel2.Controls.Add(this.ButtonDivision);
+            this.CalculatorPanel2.Controls.Add(this.Button3);
+            this.CalculatorPanel2.Controls.Add(this.Button2);
+            this.CalculatorPanel2.Controls.Add(this.Button1);
+            this.CalculatorPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel2.Location = new System.Drawing.Point(0, 46);
+            this.CalculatorPanel2.Name = "CalculatorPanel2";
+            this.CalculatorPanel2.Size = new System.Drawing.Size(281, 67);
+            this.CalculatorPanel2.TabIndex = 21;
+            // 
+            // ButtonDivision
+            // 
+            this.ButtonDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.ButtonDivision.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonDivision.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.ButtonDivision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
+            this.ButtonDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDivision.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDivision.Location = new System.Drawing.Point(210, 0);
+            this.ButtonDivision.Name = "ButtonDivision";
+            this.ButtonDivision.Size = new System.Drawing.Size(71, 67);
+            this.ButtonDivision.TabIndex = 15;
+            this.ButtonDivision.Text = "/";
+            this.ButtonDivision.UseVisualStyleBackColor = false;
+            this.ButtonDivision.Click += new System.EventHandler(this.ButtonDivision_Click);
+            // 
+            // Button3
+            // 
+            this.Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button3.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Location = new System.Drawing.Point(140, 0);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(70, 67);
+            this.Button3.TabIndex = 5;
+            this.Button3.Text = "3";
+            this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // Button2
+            // 
+            this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button2.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Location = new System.Drawing.Point(70, 0);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(70, 67);
+            this.Button2.TabIndex = 4;
+            this.Button2.Text = "2";
+            this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // Button1
+            // 
+            this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.Button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
+            this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button1.Location = new System.Drawing.Point(0, 0);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(70, 67);
+            this.Button1.TabIndex = 3;
+            this.Button1.Text = "1";
+            this.Button1.UseVisualStyleBackColor = false;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // CalculatorPanel1
+            // 
+            this.CalculatorPanel1.Controls.Add(this.CalculatorTextBox);
+            this.CalculatorPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CalculatorPanel1.Location = new System.Drawing.Point(0, 0);
+            this.CalculatorPanel1.Name = "CalculatorPanel1";
+            this.CalculatorPanel1.Size = new System.Drawing.Size(281, 46);
+            this.CalculatorPanel1.TabIndex = 22;
+            // 
+            // CalculatorTextBox
+            // 
+            this.CalculatorTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CalculatorTextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculatorTextBox.Location = new System.Drawing.Point(0, 0);
+            this.CalculatorTextBox.MaxLength = 19;
+            this.CalculatorTextBox.Name = "CalculatorTextBox";
+            this.CalculatorTextBox.Size = new System.Drawing.Size(281, 46);
+            this.CalculatorTextBox.TabIndex = 14;
+            this.CalculatorTextBox.Text = "0";
+            this.CalculatorTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CalculatorTextBox.TextChanged += new System.EventHandler(this.CalculatorTextBox_TextChanged);
+            this.CalculatorTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CalculatorTextBox_KeyUp);
             // 
             // PanelConvertEquals
             // 
@@ -881,6 +1273,7 @@
             // 
             this.ButtonConvertEqals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonConvertEqals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
+            this.ButtonConvertEqals.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.ButtonConvertEqals.FlatAppearance.BorderSize = 0;
             this.ButtonConvertEqals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonConvertEqals.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -909,303 +1302,6 @@
             this.ButtonTypeOfConvert.UseVisualStyleBackColor = false;
             this.ButtonTypeOfConvert.Click += new System.EventHandler(this.ButtonTypeOfConvert_Click);
             // 
-            // CalculatorMainPanel
-            // 
-            this.CalculatorMainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalculatorMainPanel.Controls.Add(this.ButtonClearMemoryOfCalculator);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonEquals);
-            this.CalculatorMainPanel.Controls.Add(this.CalculatorTextBox);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonAddition);
-            this.CalculatorMainPanel.Controls.Add(this.Button1);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonSubtraction);
-            this.CalculatorMainPanel.Controls.Add(this.Button2);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonMultiplication);
-            this.CalculatorMainPanel.Controls.Add(this.Button3);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonDivision);
-            this.CalculatorMainPanel.Controls.Add(this.Button4);
-            this.CalculatorMainPanel.Controls.Add(this.Button5);
-            this.CalculatorMainPanel.Controls.Add(this.ButtonDecimal);
-            this.CalculatorMainPanel.Controls.Add(this.Button6);
-            this.CalculatorMainPanel.Controls.Add(this.Button0);
-            this.CalculatorMainPanel.Controls.Add(this.Button7);
-            this.CalculatorMainPanel.Controls.Add(this.Button9);
-            this.CalculatorMainPanel.Controls.Add(this.Button8);
-            this.CalculatorMainPanel.Location = new System.Drawing.Point(76, 161);
-            this.CalculatorMainPanel.Name = "CalculatorMainPanel";
-            this.CalculatorMainPanel.Size = new System.Drawing.Size(289, 408);
-            this.CalculatorMainPanel.TabIndex = 20;
-            // 
-            // ButtonClearMemoryOfCalculator
-            // 
-            this.ButtonClearMemoryOfCalculator.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonClearMemoryOfCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonClearMemoryOfCalculator.FlatAppearance.BorderSize = 0;
-            this.ButtonClearMemoryOfCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonClearMemoryOfCalculator.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonClearMemoryOfCalculator.ForeColor = System.Drawing.Color.Red;
-            this.ButtonClearMemoryOfCalculator.Location = new System.Drawing.Point(15, 330);
-            this.ButtonClearMemoryOfCalculator.Name = "ButtonClearMemoryOfCalculator";
-            this.ButtonClearMemoryOfCalculator.Size = new System.Drawing.Size(60, 60);
-            this.ButtonClearMemoryOfCalculator.TabIndex = 20;
-            this.ButtonClearMemoryOfCalculator.Text = "C";
-            this.ButtonClearMemoryOfCalculator.UseVisualStyleBackColor = false;
-            this.ButtonClearMemoryOfCalculator.Click += new System.EventHandler(this.ButtonClearMemoryOfCalculator_Click);
-            // 
-            // ButtonEquals
-            // 
-            this.ButtonEquals.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonEquals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonEquals.FlatAppearance.BorderSize = 0;
-            this.ButtonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEquals.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEquals.Location = new System.Drawing.Point(81, 330);
-            this.ButtonEquals.Name = "ButtonEquals";
-            this.ButtonEquals.Size = new System.Drawing.Size(192, 60);
-            this.ButtonEquals.TabIndex = 19;
-            this.ButtonEquals.Text = "=";
-            this.ButtonEquals.UseVisualStyleBackColor = false;
-            this.ButtonEquals.Click += new System.EventHandler(this.ButtonEquals_Click);
-            // 
-            // CalculatorTextBox
-            // 
-            this.CalculatorTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CalculatorTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CalculatorTextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorTextBox.Location = new System.Drawing.Point(15, 14);
-            this.CalculatorTextBox.MaxLength = 19;
-            this.CalculatorTextBox.Name = "CalculatorTextBox";
-            this.CalculatorTextBox.Size = new System.Drawing.Size(258, 46);
-            this.CalculatorTextBox.TabIndex = 14;
-            this.CalculatorTextBox.Text = "0";
-            this.CalculatorTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // ButtonAddition
-            // 
-            this.ButtonAddition.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonAddition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonAddition.FlatAppearance.BorderSize = 0;
-            this.ButtonAddition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAddition.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonAddition.Location = new System.Drawing.Point(213, 264);
-            this.ButtonAddition.Name = "ButtonAddition";
-            this.ButtonAddition.Size = new System.Drawing.Size(60, 60);
-            this.ButtonAddition.TabIndex = 18;
-            this.ButtonAddition.Text = "+";
-            this.ButtonAddition.UseVisualStyleBackColor = false;
-            this.ButtonAddition.Click += new System.EventHandler(this.ButtonAddition_Click);
-            // 
-            // Button1
-            // 
-            this.Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button1.FlatAppearance.BorderSize = 0;
-            this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button1.Location = new System.Drawing.Point(15, 66);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(60, 60);
-            this.Button1.TabIndex = 3;
-            this.Button1.Text = "1";
-            this.Button1.UseVisualStyleBackColor = false;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // ButtonSubtraction
-            // 
-            this.ButtonSubtraction.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonSubtraction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonSubtraction.FlatAppearance.BorderSize = 0;
-            this.ButtonSubtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSubtraction.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSubtraction.Location = new System.Drawing.Point(213, 198);
-            this.ButtonSubtraction.Name = "ButtonSubtraction";
-            this.ButtonSubtraction.Size = new System.Drawing.Size(60, 60);
-            this.ButtonSubtraction.TabIndex = 17;
-            this.ButtonSubtraction.Text = "-";
-            this.ButtonSubtraction.UseVisualStyleBackColor = false;
-            this.ButtonSubtraction.Click += new System.EventHandler(this.ButtonSubtraction_Click);
-            // 
-            // Button2
-            // 
-            this.Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button2.FlatAppearance.BorderSize = 0;
-            this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button2.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button2.Location = new System.Drawing.Point(81, 66);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(60, 60);
-            this.Button2.TabIndex = 4;
-            this.Button2.Text = "2";
-            this.Button2.UseVisualStyleBackColor = false;
-            this.Button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // ButtonMultiplication
-            // 
-            this.ButtonMultiplication.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonMultiplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonMultiplication.FlatAppearance.BorderSize = 0;
-            this.ButtonMultiplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMultiplication.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonMultiplication.Location = new System.Drawing.Point(213, 132);
-            this.ButtonMultiplication.Name = "ButtonMultiplication";
-            this.ButtonMultiplication.Size = new System.Drawing.Size(60, 60);
-            this.ButtonMultiplication.TabIndex = 16;
-            this.ButtonMultiplication.Text = "*";
-            this.ButtonMultiplication.UseVisualStyleBackColor = false;
-            this.ButtonMultiplication.Click += new System.EventHandler(this.ButtonMultiplication_Click);
-            // 
-            // Button3
-            // 
-            this.Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button3.FlatAppearance.BorderSize = 0;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.Location = new System.Drawing.Point(147, 66);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(60, 60);
-            this.Button3.TabIndex = 5;
-            this.Button3.Text = "3";
-            this.Button3.UseVisualStyleBackColor = false;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // ButtonDivision
-            // 
-            this.ButtonDivision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonDivision.FlatAppearance.BorderSize = 0;
-            this.ButtonDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDivision.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDivision.Location = new System.Drawing.Point(213, 66);
-            this.ButtonDivision.Name = "ButtonDivision";
-            this.ButtonDivision.Size = new System.Drawing.Size(60, 60);
-            this.ButtonDivision.TabIndex = 15;
-            this.ButtonDivision.Text = "/";
-            this.ButtonDivision.UseVisualStyleBackColor = false;
-            this.ButtonDivision.Click += new System.EventHandler(this.ButtonDivision_Click);
-            // 
-            // Button4
-            // 
-            this.Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button4.FlatAppearance.BorderSize = 0;
-            this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button4.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button4.Location = new System.Drawing.Point(15, 132);
-            this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(60, 60);
-            this.Button4.TabIndex = 6;
-            this.Button4.Text = "4";
-            this.Button4.UseVisualStyleBackColor = false;
-            this.Button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // Button5
-            // 
-            this.Button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button5.FlatAppearance.BorderSize = 0;
-            this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button5.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button5.Location = new System.Drawing.Point(81, 132);
-            this.Button5.Name = "Button5";
-            this.Button5.Size = new System.Drawing.Size(60, 60);
-            this.Button5.TabIndex = 7;
-            this.Button5.Text = "5";
-            this.Button5.UseVisualStyleBackColor = false;
-            this.Button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // ButtonDecimal
-            // 
-            this.ButtonDecimal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonDecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonDecimal.FlatAppearance.BorderSize = 0;
-            this.ButtonDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDecimal.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDecimal.Location = new System.Drawing.Point(15, 264);
-            this.ButtonDecimal.Name = "ButtonDecimal";
-            this.ButtonDecimal.Size = new System.Drawing.Size(60, 60);
-            this.ButtonDecimal.TabIndex = 13;
-            this.ButtonDecimal.Text = ".";
-            this.ButtonDecimal.UseVisualStyleBackColor = false;
-            this.ButtonDecimal.Click += new System.EventHandler(this.ButtonDecimal_Click);
-            // 
-            // Button6
-            // 
-            this.Button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button6.FlatAppearance.BorderSize = 0;
-            this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button6.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button6.Location = new System.Drawing.Point(147, 132);
-            this.Button6.Name = "Button6";
-            this.Button6.Size = new System.Drawing.Size(60, 60);
-            this.Button6.TabIndex = 8;
-            this.Button6.Text = "6";
-            this.Button6.UseVisualStyleBackColor = false;
-            this.Button6.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // Button0
-            // 
-            this.Button0.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button0.FlatAppearance.BorderSize = 0;
-            this.Button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button0.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button0.Location = new System.Drawing.Point(81, 264);
-            this.Button0.Name = "Button0";
-            this.Button0.Size = new System.Drawing.Size(126, 60);
-            this.Button0.TabIndex = 12;
-            this.Button0.Text = "0";
-            this.Button0.UseVisualStyleBackColor = false;
-            this.Button0.Click += new System.EventHandler(this.Button0_Click);
-            // 
-            // Button7
-            // 
-            this.Button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button7.FlatAppearance.BorderSize = 0;
-            this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button7.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button7.Location = new System.Drawing.Point(15, 198);
-            this.Button7.Name = "Button7";
-            this.Button7.Size = new System.Drawing.Size(60, 60);
-            this.Button7.TabIndex = 9;
-            this.Button7.Text = "7";
-            this.Button7.UseVisualStyleBackColor = false;
-            this.Button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // Button9
-            // 
-            this.Button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button9.FlatAppearance.BorderSize = 0;
-            this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button9.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button9.Location = new System.Drawing.Point(147, 198);
-            this.Button9.Name = "Button9";
-            this.Button9.Size = new System.Drawing.Size(60, 60);
-            this.Button9.TabIndex = 11;
-            this.Button9.Text = "9";
-            this.Button9.UseVisualStyleBackColor = false;
-            this.Button9.Click += new System.EventHandler(this.Button9_Click);
-            // 
-            // Button8
-            // 
-            this.Button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button8.FlatAppearance.BorderSize = 0;
-            this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button8.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button8.Location = new System.Drawing.Point(81, 198);
-            this.Button8.Name = "Button8";
-            this.Button8.Size = new System.Drawing.Size(60, 60);
-            this.Button8.TabIndex = 10;
-            this.Button8.Text = "8";
-            this.Button8.UseVisualStyleBackColor = false;
-            this.Button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
             // PanelMain
             // 
             this.PanelMain.Controls.Add(this.PanelFill);
@@ -1225,14 +1321,13 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.PanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainForm";
             this.Text = "BlokHealth";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1254,100 +1349,111 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).EndInit();
             this.ControlPanel_to_Left.ResumeLayout(false);
             this.PanelFill.ResumeLayout(false);
+            this.CalculatorMainPanel.ResumeLayout(false);
+            this.CalculatorPanel6.ResumeLayout(false);
+            this.CalculatorPanel5.ResumeLayout(false);
+            this.CalculatorPanel4.ResumeLayout(false);
+            this.CalculatorPanel3.ResumeLayout(false);
+            this.CalculatorPanel2.ResumeLayout(false);
+            this.CalculatorPanel1.ResumeLayout(false);
+            this.CalculatorPanel1.PerformLayout();
             this.PanelConvertEquals.ResumeLayout(false);
             this.PanelConvertEquals.PerformLayout();
             this.PanelConvertSettings.ResumeLayout(false);
             this.PanelConvertSettings.PerformLayout();
             this.PanelConvertSettingsEnergy.ResumeLayout(false);
-            this.CalculatorMainPanel.ResumeLayout(false);
-            this.CalculatorMainPanel.PerformLayout();
             this.PanelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.Panel PanelLeft;
-        private System.Windows.Forms.Panel PanelRight;
-        private System.Windows.Forms.Panel PanelFill;
-        private System.Windows.Forms.Panel PanelMain;
-        private System.Windows.Forms.Button GoBackButton;
-        private System.Windows.Forms.Panel ControlPanel_to_Left;
-        private System.Windows.Forms.Button GoNextButton;
-        private System.Windows.Forms.Label FoodTitleLabel;
+    private System.Windows.Forms.Panel PanelLeft;
+    private System.Windows.Forms.Panel PanelRight;
+    private System.Windows.Forms.Panel PanelFill;
+    private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.Button GoBackButton;
+    private System.Windows.Forms.Panel ControlPanel_to_Left;
+    private System.Windows.Forms.Button GoNextButton;
+    private System.Windows.Forms.Label FoodTitleLabel;
+    private System.Windows.Forms.ComboBox ComboBoxTypeOfValueAfterConvert;
+    private System.Windows.Forms.ComboBox ComboBoxTypeOfValueBeforeConvert;
+    private System.Windows.Forms.Button ButtonConvertEqals;
+    private System.Windows.Forms.Panel PanelConvertSettingsEnergy;
+    private System.Windows.Forms.Button ButtonTypeOfConvert;
+    private System.Windows.Forms.Label LabelKonwertujZ;
+    private System.Windows.Forms.Label LabelKonwertujNa;
+    private System.Windows.Forms.Panel PanelConvertSettings;
+    private System.Windows.Forms.PictureBox PictureBoxImageOfProduct;
+    private System.Windows.Forms.Label LabelDescriptionOfProduct;
+    private System.Windows.Forms.Label LabelMineraly;
+    private System.Windows.Forms.Label LabelWitaminy;
+    private System.Windows.Forms.Label LabelBlonnik;
+    private System.Windows.Forms.Label LabelWeglowodany;
+    private System.Windows.Forms.Label LabelTluszcz;
+    private System.Windows.Forms.Label LabelBialko;
+    private System.Windows.Forms.Label LabelWartoscEnergetyczna;
+    private System.Windows.Forms.PictureBox PictureBox;
+    private System.Windows.Forms.Label LabelLogoTitle;
+    private System.Windows.Forms.Panel PanelLogo;
+    private System.Windows.Forms.Label LabelValueWartoscEnergetyczna;
+    private System.Windows.Forms.Label LabelWartosciOdzywcze;
+    private System.Windows.Forms.Label LabelValueMineraly;
+    private System.Windows.Forms.Label LabelValueWitaminy;
+    private System.Windows.Forms.Label LabelValueBlonnik;
+    private System.Windows.Forms.Label LabelValueWeglowodany;
+    private System.Windows.Forms.Label LabelValueTluszcz;
+    private System.Windows.Forms.Label LabelValueBialko;
+    private System.Windows.Forms.Button ButtonInformationAboutApplication;
+    private System.Windows.Forms.Label LabelHealthCuriosityTitle;
+    private System.Windows.Forms.Label LabelHealthCuriosity;
+    public System.Windows.Forms.Timer Timer1;
+    private System.Windows.Forms.Panel PanelHealthCuriosity;
+    private System.Windows.Forms.Button ButtonNextHealthCuriosity;
+    private System.Windows.Forms.Button ButtonCwiczennik;
+    private System.Windows.Forms.TextBox NotebookTextBox;
+    private System.Windows.Forms.Label LabelNotesik;
+    private System.Windows.Forms.Button ButtonOpenAddProductDialog;
+    private System.Windows.Forms.Panel PanelSeparatorLine1;
+    private System.Windows.Forms.Button ButtonDeleteProduct;
+    private System.Windows.Forms.Button ButtonEditProduct;
+    private System.Windows.Forms.Panel TopPanel;
+    private System.Windows.Forms.Panel ControlBoxPanel;
+    private System.Windows.Forms.Button ControlBoxMinimizeButton;
+    private System.Windows.Forms.Button ControlBoxMaximizeButton;
+    private System.Windows.Forms.Button ControlBoxCloseButton;
+    private System.Windows.Forms.Panel ControlBoxTextPanel;
+    private System.Windows.Forms.Label ControlBoxTextLabel;
+    private System.Windows.Forms.Panel ControlBoxIconPanel;
+    private System.Windows.Forms.PictureBox ControlBoxIcon;
+        private System.Windows.Forms.Panel PanelConvertEquals;
+        private System.Windows.Forms.Label LabelConvertEquals;
+        private System.Windows.Forms.Label LabelWynik;
+        private System.Windows.Forms.Panel CalculatorMainPanel;
+        private System.Windows.Forms.Panel CalculatorPanel6;
         private System.Windows.Forms.Button ButtonEquals;
+        private System.Windows.Forms.Button ButtonClearMemoryOfCalculator;
+        private System.Windows.Forms.Panel CalculatorPanel5;
         private System.Windows.Forms.Button ButtonAddition;
-        private System.Windows.Forms.Button ButtonSubtraction;
-        private System.Windows.Forms.Button ButtonMultiplication;
-        private System.Windows.Forms.Button ButtonDivision;
-        private System.Windows.Forms.TextBox CalculatorTextBox;
-        private System.Windows.Forms.Button ButtonDecimal;
         private System.Windows.Forms.Button Button0;
+        private System.Windows.Forms.Button ButtonDecimal;
+        private System.Windows.Forms.Panel CalculatorPanel4;
+        private System.Windows.Forms.Button ButtonSubtraction;
         private System.Windows.Forms.Button Button9;
         private System.Windows.Forms.Button Button8;
         private System.Windows.Forms.Button Button7;
+        private System.Windows.Forms.Panel CalculatorPanel3;
+        private System.Windows.Forms.Button ButtonMultiplication;
         private System.Windows.Forms.Button Button6;
         private System.Windows.Forms.Button Button5;
         private System.Windows.Forms.Button Button4;
+        private System.Windows.Forms.Panel CalculatorPanel2;
+        private System.Windows.Forms.Button ButtonDivision;
         private System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Button Button2;
         private System.Windows.Forms.Button Button1;
-        private System.Windows.Forms.Panel CalculatorMainPanel;
-        private System.Windows.Forms.Button ButtonClearMemoryOfCalculator;
-        private System.Windows.Forms.ComboBox ComboBoxTypeOfValueAfterConvert;
-        private System.Windows.Forms.ComboBox ComboBoxTypeOfValueBeforeConvert;
-        private System.Windows.Forms.Button ButtonConvertEqals;
-        private System.Windows.Forms.Panel PanelConvertSettingsEnergy;
-        private System.Windows.Forms.Button ButtonTypeOfConvert;
-        private System.Windows.Forms.Label LabelKonwertujZ;
-        private System.Windows.Forms.Label LabelKonwertujNa;
-        private System.Windows.Forms.Panel PanelConvertSettings;
-        private System.Windows.Forms.Label LabelConvertEquals;
-        private System.Windows.Forms.Label LabelWynik;
-        private System.Windows.Forms.Panel PanelConvertEquals;
-        private System.Windows.Forms.PictureBox PictureBoxImageOfProduct;
-        private System.Windows.Forms.Label LabelDescriptionOfProduct;
-        private System.Windows.Forms.Label LabelMineraly;
-        private System.Windows.Forms.Label LabelWitaminy;
-        private System.Windows.Forms.Label LabelBlonnik;
-        private System.Windows.Forms.Label LabelWeglowodany;
-        private System.Windows.Forms.Label LabelTluszcz;
-        private System.Windows.Forms.Label LabelBialko;
-        private System.Windows.Forms.Label LabelWartoscEnergetyczna;
-        private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.Label LabelLogoTitle;
-        private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.Label LabelValueWartoscEnergetyczna;
-        private System.Windows.Forms.Label LabelWartosciOdzywcze;
-        private System.Windows.Forms.Label LabelValueMineraly;
-        private System.Windows.Forms.Label LabelValueWitaminy;
-        private System.Windows.Forms.Label LabelValueBlonnik;
-        private System.Windows.Forms.Label LabelValueWeglowodany;
-        private System.Windows.Forms.Label LabelValueTluszcz;
-        private System.Windows.Forms.Label LabelValueBialko;
-        private System.Windows.Forms.Button ButtonInformationAboutApplication;
-        private System.Windows.Forms.Label LabelHealthCuriosityTitle;
-        private System.Windows.Forms.Label LabelHealthCuriosity;
-        public System.Windows.Forms.Timer Timer1;
-        private System.Windows.Forms.Panel PanelHealthCuriosity;
-        private System.Windows.Forms.Button ButtonNextHealthCuriosity;
-        private System.Windows.Forms.Button ButtonCwiczennik;
-        private System.Windows.Forms.TextBox NotebookTextBox;
-        private System.Windows.Forms.Label LabelNotesik;
-        private System.Windows.Forms.Button ButtonOpenAddProductDialog;
-        private System.Windows.Forms.Panel PanelSeparatorLine1;
-        private System.Windows.Forms.Button ButtonDeleteProduct;
-        private System.Windows.Forms.Button ButtonEditProduct;
-        private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Panel ControlBoxPanel;
-        private System.Windows.Forms.Button ControlBoxMinimizeButton;
-        private System.Windows.Forms.Button ControlBoxMaximizeButton;
-        private System.Windows.Forms.Button ControlBoxCloseButton;
-        private System.Windows.Forms.Panel ControlBoxTextPanel;
-        private System.Windows.Forms.Label ControlBoxTextLabel;
-        private System.Windows.Forms.Panel ControlBoxIconPanel;
-        private System.Windows.Forms.PictureBox ControlBoxIcon;
+        private System.Windows.Forms.Panel CalculatorPanel1;
+        private System.Windows.Forms.TextBox CalculatorTextBox;
     }
 }
-

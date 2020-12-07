@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
 [assembly: AssemblyTitle("BlokHealth")]
-[assembly: AssemblyDescription("Aplikacja powstała w celach konkursowych i jej zawartość jest własnością twórców (Nie podlega sprzedaży)")]
+[assembly: AssemblyDescription("BlokHealth to aplikacja ogólno-zdrowotna, zawiera ona funkcje przydatne dla zdrowia i jest łatwa w obsłudze")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bloker Company™ // Jakub Michalik / Dawid Zawadka / Igor Baran")]
+[assembly: AssemblyCompany("Bloker Company™")]
 [assembly: AssemblyProduct("BlokHealth")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("Bloker Company™")]

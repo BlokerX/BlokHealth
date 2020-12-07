@@ -12,19 +12,20 @@ namespace BlokHealth
             InitializeComponent();
         }
 
-        private void InformationAboutApplication_Load(object sender, EventArgs e)
-        {
-            ControlBox_Loading();
-            LabelProductName.Text = "Produkt: " + ProductName;
-            LabelVersion.Text = "Wersja: " + ProductVersion;
-        }
-
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         #region ControlBoxPanel
+
+        #region ProtectForMaximalizeForm
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int WS_MAXIMIZEBOX = 0x00010000;
+                var cp = base.CreateParams;
+                cp.Style &= ~WS_MAXIMIZEBOX;
+                return cp;
+            }
+        }
+        #endregion
 
         #region Drag window
 
@@ -141,5 +142,19 @@ namespace BlokHealth
         }
 
         #endregion
+
+        private void InformationAboutApplication_Load(object sender, EventArgs e)
+        {
+            ControlBox_Loading();
+            LabelProductName.Text = "Produkt: " + ProductName;
+            LabelVersion.Text = "Wersja: " + ProductVersion;
+            LabelAutors.Text = CompanyName;
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

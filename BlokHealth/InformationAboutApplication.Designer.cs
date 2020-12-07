@@ -78,7 +78,7 @@
             this.LabelVersion.Name = "LabelVersion";
             this.LabelVersion.Size = new System.Drawing.Size(216, 30);
             this.LabelVersion.TabIndex = 1;
-            this.LabelVersion.Text = "Wersja: " + ProductVersion;
+            this.LabelVersion.Text = "Wersja: 4.8.4270.0";
             // 
             // LabelLogoTitle
             // 
@@ -111,7 +111,7 @@
             this.LabelProductName.Name = "LabelProductName";
             this.LabelProductName.Size = new System.Drawing.Size(372, 24);
             this.LabelProductName.TabIndex = 2;
-            this.LabelProductName.Text = "Produkt: " + ProductName;
+            this.LabelProductName.Text = "Produkt: Microsoft® .NET Framework";
             // 
             // LabelCreators
             // 
@@ -129,11 +129,11 @@
             this.LabelAutors.AutoSize = true;
             this.LabelAutors.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelAutors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.LabelAutors.Location = new System.Drawing.Point(92, 116);
+            this.LabelAutors.Location = new System.Drawing.Point(100, 117);
             this.LabelAutors.Name = "LabelAutors";
-            this.LabelAutors.Size = new System.Drawing.Size(236, 42);
+            this.LabelAutors.Size = new System.Drawing.Size(232, 42);
             this.LabelAutors.TabIndex = 4;
-            this.LabelAutors.Text = " Jakub Michalik / Igor Baran /\r\n Dawid Zawadka";
+            this.LabelAutors.Text = "Jakub Michalik / Igor Baran /\r\nDawid Zawadka";
             // 
             // PanelMain
             // 
@@ -169,6 +169,7 @@
             this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
             this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -184,6 +185,7 @@
             this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
             this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
@@ -199,6 +201,7 @@
             this.ControlBoxCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxCloseButton.BackgroundImage")));
             this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
             this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;

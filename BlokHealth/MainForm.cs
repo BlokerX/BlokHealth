@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BlokHealth
@@ -101,6 +102,19 @@ namespace BlokHealth
         #endregion
 
         #region ControlBoxPanel
+
+        #region ProtectForMaximalizeForm
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int WS_MAXIMIZEBOX = 0x00010000;
+                var cp = base.CreateParams;
+                cp.Style &= ~WS_MAXIMIZEBOX;
+                return cp;
+            }
+        }
+        #endregion
 
         #region Drag window
 
@@ -223,7 +237,7 @@ namespace BlokHealth
                 this.WindowState = FormWindowState.Normal;
             }
         }
-#endregion
+        #endregion
 
         #region Varibles
         // Calcularor&Convert varibles
@@ -376,6 +390,14 @@ namespace BlokHealth
 
         #region Calculator
 
+        private void CalculatorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //if (CalculatorTextBox.Text == "")
+            //{
+            //    CalculatorTextBox.Text += "0";
+            //}
+        }
+
         private void CalculatorOperation(double liczba)
         {
             if (CalculatorTypeOfOperation == ' ')
@@ -387,6 +409,153 @@ namespace BlokHealth
             {
                 CalculatorB += liczba;
                 CalculatorTextBox.Text = CalculatorB;
+            }
+        }
+
+        private void CalculatorTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D1:
+                case Keys.NumPad1:
+                    CalculatorOperation(1);
+                    break;
+
+                case Keys.D2:
+                case Keys.NumPad2:
+                    CalculatorOperation(2);
+                    break;
+
+                case Keys.D3:
+                case Keys.NumPad3:
+                    CalculatorOperation(3);
+                    break;
+
+                case Keys.D4:
+                case Keys.NumPad4:
+                    CalculatorOperation(4);
+                    break;
+
+                case Keys.D5:
+                case Keys.NumPad5:
+                    CalculatorOperation(5);
+                    break;
+
+                case Keys.D6:
+                case Keys.NumPad6:
+                    CalculatorOperation(6);
+                    break;
+
+                case Keys.D7:
+                case Keys.NumPad7:
+                    CalculatorOperation(7);
+                    break;
+
+                case Keys.D8:
+                case Keys.NumPad8:
+                    CalculatorOperation(8);
+                    break;
+
+                case Keys.D9:
+                case Keys.NumPad9:
+                    CalculatorOperation(9);
+                    break;
+
+                case Keys.D0:
+                case Keys.NumPad0:
+                    CalculatorOperation(0);
+                    break;
+
+                case Keys.Oemcomma:
+                case Keys.Decimal:
+                case Keys.OemPeriod:
+                    if (CalculatorTypeOfOperation == ' ')
+                    {
+                        if (CalculatorTextBox.Text == "0")
+                        {
+                            CalculatorA += 0;
+                        }
+                        CalculatorA += ",";
+                        CalculatorTextBox.Text = CalculatorA;
+                    }
+                    else
+                    {
+                        if (CalculatorTextBox.Text == "0")
+                        {
+                            CalculatorB += 0;
+                        }
+                        CalculatorB += ",";
+                        CalculatorTextBox.Text = CalculatorB;
+                    }
+                    break;
+
+                case Keys.Add:
+                    CalculatorTypeOfOperation = '+';
+                    CalculatorTextBox.Text = "0";
+                    break;
+
+                case Keys.Subtract:
+                    CalculatorTypeOfOperation = '-';
+                    CalculatorTextBox.Text = "0";
+                    break;
+
+                case Keys.Multiply:
+                    CalculatorTypeOfOperation = '*';
+                    CalculatorTextBox.Text = "0";
+                    break;
+
+                case Keys.Divide:
+                    CalculatorTypeOfOperation = '/';
+                    CalculatorTextBox.Text = "0";
+                    break;
+
+                case Keys.Enter:
+                    #region Equals
+                    // Bezpieczniki
+                    if (CalculatorA == "")
+                        CalculatorA = "0";
+
+                    if (CalculatorB == "")
+                        CalculatorB = "0";
+
+                    switch (CalculatorTypeOfOperation)
+                    {
+                        case '+':
+                            CalculatorEqual = (Convert.ToDouble(CalculatorA) + Convert.ToDouble(CalculatorB)).ToString();
+                            CalculatorTextBox.Text = CalculatorEqual;
+                            break;
+
+                        case '-':
+                            CalculatorEqual = (Convert.ToDouble(CalculatorA) - Convert.ToDouble(CalculatorB)).ToString();
+                            CalculatorTextBox.Text = CalculatorEqual;
+                            break;
+
+                        case '*':
+                            CalculatorEqual = (Convert.ToDouble(CalculatorA) * Convert.ToDouble(CalculatorB)).ToString();
+                            CalculatorTextBox.Text = CalculatorEqual;
+                            break;
+
+                        case '/':
+                            if (CalculatorB != "0")
+                            {
+                                CalculatorEqual = (Convert.ToDouble(CalculatorA) / Convert.ToDouble(CalculatorB)).ToString();
+                                CalculatorTextBox.Text = CalculatorEqual;
+                            }
+                            else
+                            {
+                                CalculatorTextBox.Text = "NIE DZIELIMY PRZEZ 0!";
+                                CalculatorA = "";
+                                CalculatorB = "";
+                                CalculatorEqual = "1";
+                            }
+                            break;
+                    }
+
+                    CalculatorTypeOfOperation = ' ';
+                    CalculatorA = CalculatorEqual;
+                    CalculatorB = "";
+                    #endregion
+                    break;
             }
         }
 
@@ -895,7 +1064,25 @@ namespace BlokHealth
             }
             catch
             {
-                LabelConvertEquals.Text = "Nie można wykonać konwersji";
+                if (CalculatorTextBox.Text == "Dawid Zawadka")
+                {
+                    LabelConvertEquals.Text = "Pomocnik/60"; 
+                    //todo EsterEgg-1
+                }
+                else if (CalculatorTextBox.Text == "Jakub Michalik")
+                {
+                    LabelConvertEquals.Text = "Programista/Projektant"; 
+                    //todo EsterEgg-2
+                }
+                else if (CalculatorTextBox.Text == "Igor Baran")
+                {
+                    LabelConvertEquals.Text = "Grafik/Tester"; 
+                    //todo EsterEgg-3
+                }
+                else
+                {
+                    LabelConvertEquals.Text = "Nie można wykonać konwersji";
+                }
             }
         }
         private void ButtonTypeOfConvert_Click(object sender, EventArgs e)
@@ -1139,7 +1326,9 @@ namespace BlokHealth
 
         #endregion
 
-        private void GoNextButton_Click(object sender, EventArgs e)
+        #region ProductNavigation
+
+        private void NextProduct()
         {
             if (Product.Count > ProductNumber + 1)
             {
@@ -1152,7 +1341,7 @@ namespace BlokHealth
             SelectActiveProduct();
         }
 
-        private void GoBackButton_Click(object sender, EventArgs e)
+        private void BackProduct()
         {
             if (ProductNumber > 0)
             {
@@ -1164,6 +1353,41 @@ namespace BlokHealth
             }
             SelectActiveProduct();
         }
+
+        private void GoNextButton_Click(object sender, EventArgs e)
+        {
+            NextProduct();
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            BackProduct();
+        }
+
+        private void ArowProductControl(PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    BackProduct();
+                    break;
+                case Keys.Right:
+                    NextProduct();
+                    break;
+            }
+        }
+
+        private void GoNextButton_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            ArowProductControl(e);
+        }
+
+        private void GoBackButton_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            ArowProductControl(e);
+        }
+
+        #endregion
 
         private void ButtonOpenAddProductDialog_Click(object sender, EventArgs e)
         {
@@ -2447,6 +2671,7 @@ namespace BlokHealth
         }
 
         #endregion
-        //TODO Wprowadź autoskalowanie paneli
     }
 }
+
+//TODO Wprowadź autoskalowanie paneli
