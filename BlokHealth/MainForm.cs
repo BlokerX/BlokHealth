@@ -10,6 +10,7 @@ namespace BlokHealth
 {
     public partial class MainForm : Form
     {
+        // Start functions //
         #region Open_instructions
         public MainForm()
         {
@@ -101,7 +102,8 @@ namespace BlokHealth
 
         #endregion
 
-        #region ControlBoxPanel
+        // IMPORTANT //
+        #region SizeOperations
 
         #region ProtectForMaximalizeForm
         protected override CreateParams CreateParams
@@ -114,7 +116,177 @@ namespace BlokHealth
                 return cp;
             }
         }
+
         #endregion
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = PanelMain.Size.Width;
+            int FullSizeY = PanelMain.Size.Height - ControlBoxPanel.Height;
+
+            int UniwersalSize = (FullSizeX / 3) - 8;
+
+            PanelFill.Size = new Size(FullSizeX + 17 * UniwersalSize, FullSizeY);
+            PanelLeft.Size = new Size(UniwersalSize, FullSizeX);
+            PanelRight.Size = new Size(UniwersalSize, FullSizeX);
+        }
+
+        #region CalculatorSize
+
+        private void CalculatorMainPanel_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorMainPanel.Size.Width;
+            int FullSizeY = CalculatorMainPanel.Size.Height;
+
+            if (
+                FullSizeY !=
+                CalculatorPanel1.Size.Height +
+                CalculatorPanel2.Size.Height +
+                CalculatorPanel3.Size.Height +
+                CalculatorPanel4.Size.Height +
+                CalculatorPanel5.Size.Height
+                )
+            {
+                int FirstSizeY, SecondSizeY;
+
+                FirstSizeY = CalculatorPanel1.Size.Height;
+                SecondSizeY = (FullSizeY - FirstSizeY) / 5;
+
+                CalculatorPanel1.Size = new Size(FullSizeX, FirstSizeY);
+                CalculatorPanel2.Size = new Size(FullSizeX, SecondSizeY);
+                CalculatorPanel3.Size = new Size(FullSizeX, SecondSizeY);
+                CalculatorPanel4.Size = new Size(FullSizeX, SecondSizeY);
+                CalculatorPanel5.Size = new Size(FullSizeX, SecondSizeY);
+                CalculatorPanel6.Size = new Size(FullSizeX, SecondSizeY);
+
+                CalculatorPanel2.Location = new Point(0, FirstSizeY);
+                CalculatorPanel3.Location = new Point(0, FirstSizeY + SecondSizeY);
+                CalculatorPanel4.Location = new Point(0, FirstSizeY + SecondSizeY * 2);
+                CalculatorPanel5.Location = new Point(0, FirstSizeY + SecondSizeY * 3);
+                CalculatorPanel6.Location = new Point(0, FirstSizeY + SecondSizeY * 4);
+
+            }
+        }
+
+        private void CalculatorPanel2_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorPanel2.Size.Width;
+            int FullSizeY = CalculatorPanel2.Size.Height;
+
+            if (FullSizeX != Button1.Size.Width + Button2.Size.Width + Button3.Size.Width + ButtonDivision.Size.Width)
+            {
+                int FirstSizeX, SecondSizeX;
+
+                FirstSizeX = FullSizeX / 4;
+                SecondSizeX = FullSizeX - (FirstSizeX * 3);
+
+                Button1.Size = new Size(FirstSizeX, FullSizeY);
+                Button2.Size = new Size(FirstSizeX, FullSizeY);
+                Button3.Size = new Size(FirstSizeX, FullSizeY);
+                ButtonDivision.Size = new Size(SecondSizeX, FullSizeY);
+
+                Button2.Location = new Point(Button1.Size.Width, 0);
+                Button3.Location = new Point(Button1.Size.Width + Button2.Size.Width, 0);
+                ButtonDivision.Location = new Point(Button1.Size.Width + Button2.Size.Width + Button3.Size.Width, 0);
+
+            }
+
+        }
+
+        private void CalculatorPanel3_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorPanel3.Size.Width;
+            int FullSizeY = CalculatorPanel3.Size.Height;
+
+            if (FullSizeX != Button4.Size.Width + Button5.Size.Width + Button6.Size.Width + ButtonMultiplication.Size.Width)
+            {
+                int FirstSizeX, SecondSizeX;
+
+                FirstSizeX = FullSizeX / 4;
+                SecondSizeX = FullSizeX - (FirstSizeX * 3);
+
+                Button4.Size = new Size(FirstSizeX, FullSizeY);
+                Button5.Size = new Size(FirstSizeX, FullSizeY);
+                Button6.Size = new Size(FirstSizeX, FullSizeY);
+                ButtonMultiplication.Size = new Size(SecondSizeX, FullSizeY);
+
+                Button5.Location = new Point(Button4.Size.Width, 0);
+                Button6.Location = new Point(Button4.Size.Width + Button5.Size.Width, 0);
+                ButtonMultiplication.Location = new Point(Button4.Size.Width + Button5.Size.Width + Button6.Size.Width, 0);
+
+            }
+        }
+
+        private void CalculatorPanel4_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorPanel4.Size.Width;
+            int FullSizeY = CalculatorPanel4.Size.Height;
+
+            if (FullSizeX != Button7.Size.Width + Button8.Size.Width + Button9.Size.Width + ButtonSubtraction.Size.Width)
+            {
+                int FirstSizeX, SecondSizeX;
+
+                FirstSizeX = FullSizeX / 4;
+                SecondSizeX = FullSizeX - (FirstSizeX * 3);
+
+                Button7.Size = new Size(FirstSizeX, FullSizeY);
+                Button8.Size = new Size(FirstSizeX, FullSizeY);
+                Button9.Size = new Size(FirstSizeX, FullSizeY);
+                ButtonSubtraction.Size = new Size(SecondSizeX, FullSizeY);
+
+                Button8.Location = new Point(Button7.Size.Width, 0);
+                Button9.Location = new Point(Button7.Size.Width + Button8.Size.Width, 0);
+                ButtonSubtraction.Location = new Point(Button7.Size.Width + Button8.Size.Width + Button9.Size.Width, 0);
+
+            }
+        }
+
+        private void CalculatorPanel5_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorPanel5.Size.Width;
+            int FullSizeY = CalculatorPanel5.Size.Height;
+
+            if (FullSizeX != ButtonDecimal.Size.Width + Button0.Size.Width + ButtonAddition.Size.Width)
+            {
+                int FirstSizeX, SecondSizeX;
+
+                FirstSizeX = FullSizeX / 4;
+                SecondSizeX = FullSizeX - (FirstSizeX * 3);
+
+                ButtonDecimal.Size = new Size(FirstSizeX, FullSizeY);
+                Button0.Size = new Size(FirstSizeX * 2, FullSizeY);
+                ButtonAddition.Size = new Size(SecondSizeX, FullSizeY);
+
+                Button0.Location = new Point(Button7.Size.Width, 0);
+                ButtonAddition.Location = new Point(ButtonDecimal.Size.Width + Button0.Size.Width, 0);
+
+            }
+        }
+
+        private void CalculatorPanel6_SizeChanged(object sender, EventArgs e)
+        {
+            int FullSizeX = CalculatorPanel6.Size.Width;
+            int FullSizeY = CalculatorPanel6.Size.Height;
+
+            if (FullSizeX != ButtonClearMemoryOfCalculator.Size.Width + ButtonEquals.Size.Width)
+            {
+                int FirstSizeX, SecondSizeX;
+
+                FirstSizeX = FullSizeX / 4;
+                SecondSizeX = FullSizeX - FirstSizeX;
+
+                ButtonClearMemoryOfCalculator.Size = new Size(FirstSizeX, FullSizeY);
+                ButtonEquals.Size = new Size(SecondSizeX, FullSizeY);
+
+                ButtonEquals.Location = new Point(ButtonClearMemoryOfCalculator.Size.Width, 0);
+
+            }
+        }
+
+        #endregion
+
+        #endregion
+        #region ControlBoxPanel
 
         #region Drag window
 
@@ -239,7 +411,9 @@ namespace BlokHealth
         }
         #endregion
 
+        // Varibles //
         #region Varibles
+
         // Calcularor&Convert varibles
         string CalculatorA = "", CalculatorB = "", CalculatorEqual = "1";
         char CalculatorTypeOfOperation = ' ';
@@ -288,6 +462,7 @@ namespace BlokHealth
 
         #endregion
 
+        //* Panel left *//
         #region First_panel_(left)
 
         #region InformationAboutApplication
@@ -299,6 +474,8 @@ namespace BlokHealth
         }
 
         #endregion
+
+        #region Notebook
 
         private void NotebookTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -318,6 +495,8 @@ namespace BlokHealth
                 sw.Close();
             }
         }
+
+        #endregion
 
         #region HealthCuriosity
 
@@ -378,6 +557,8 @@ namespace BlokHealth
 
         #endregion
 
+        #region Ćwiczennik
+
         private void ButtonCwiczennik_Click(object sender, EventArgs e)
         {
             ExerciseDictonary exerciseDictonary = new ExerciseDictonary();
@@ -386,18 +567,14 @@ namespace BlokHealth
 
         #endregion
 
+        #endregion
+
+        //* Central Panel *//
         #region Calculator&Converts
 
         #region Calculator
 
-        private void CalculatorTextBox_TextChanged(object sender, EventArgs e)
-        {
-            //if (CalculatorTextBox.Text == "")
-            //{
-            //    CalculatorTextBox.Text += "0";
-            //}
-        }
-
+        // Choose calculator's operation
         private void CalculatorOperation(double liczba)
         {
             if (CalculatorTypeOfOperation == ' ')
@@ -412,6 +589,7 @@ namespace BlokHealth
             }
         }
 
+        // Key operation
         private void CalculatorTextBox_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -559,6 +737,10 @@ namespace BlokHealth
             }
         }
 
+        // Buttons work
+        #region Buttons
+
+        #region Buttons(0-9)
         private void Button1_Click(object sender, EventArgs e)
         {
             CalculatorOperation(1);
@@ -608,6 +790,8 @@ namespace BlokHealth
         {
             CalculatorOperation(0);
         }
+
+        #endregion
 
         private void ButtonDecimal_Click(object sender, EventArgs e)
         {
@@ -710,6 +894,9 @@ namespace BlokHealth
             CalculatorA = CalculatorEqual;
             CalculatorB = "";
         }
+
+        #endregion
+
         #endregion
 
         #region Converts
@@ -1066,17 +1253,17 @@ namespace BlokHealth
             {
                 if (CalculatorTextBox.Text == "Dawid Zawadka")
                 {
-                    LabelConvertEquals.Text = "Pomocnik/60"; 
+                    LabelConvertEquals.Text = "Pomocnik/60";
                     //todo EsterEgg-1
                 }
                 else if (CalculatorTextBox.Text == "Jakub Michalik")
                 {
-                    LabelConvertEquals.Text = "Programista/Projektant"; 
+                    LabelConvertEquals.Text = "Programista/Projektant";
                     //todo EsterEgg-2
                 }
                 else if (CalculatorTextBox.Text == "Igor Baran")
                 {
-                    LabelConvertEquals.Text = "Grafik/Tester"; 
+                    LabelConvertEquals.Text = "Grafik/Tester";
                     //todo EsterEgg-3
                 }
                 else
@@ -1148,6 +1335,7 @@ namespace BlokHealth
 
         #endregion
 
+        //* Food Dictonary *//
         #region ListOfProducts
 
         #region ChoseLabelValues
@@ -1389,11 +1577,25 @@ namespace BlokHealth
 
         #endregion
 
+        #region ProductManagement
+
         private void ButtonOpenAddProductDialog_Click(object sender, EventArgs e)
         {
             CheckProgramDiresArchitecture();
             AddProductForm addProductForm = new AddProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath);
             addProductForm.ShowDialog();
+            Product.Clear();
+            LoadingMyProducts();
+            LoadingProductObjects();
+            ProductAlphabeticSort();
+            SelectActiveProduct();
+        }
+
+        private void ButtonEditProduct_Click(object sender, EventArgs e)
+        {
+            CheckProgramDiresArchitecture();
+            EditProductForm editProductForm = new EditProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath, Product[ProductNumber]);
+            editProductForm.ShowDialog();
             Product.Clear();
             LoadingMyProducts();
             LoadingProductObjects();
@@ -1454,6 +1656,10 @@ namespace BlokHealth
             }
 
         }
+
+        #endregion
+
+        #region Sort and select products
 
         private void ProductAlphabeticSort()
         {
@@ -2430,18 +2636,6 @@ namespace BlokHealth
 
         }
 
-        private void ButtonEditProduct_Click(object sender, EventArgs e)
-        {
-            CheckProgramDiresArchitecture();
-            EditProductForm editProductForm = new EditProductForm(SystemDriveName, MyProductFolderPath, ImagesFolderPath, Product[ProductNumber]);
-            editProductForm.ShowDialog();
-            Product.Clear();
-            LoadingMyProducts();
-            LoadingProductObjects();
-            ProductAlphabeticSort();
-            SelectActiveProduct();
-        }
-
         void SelectActiveProduct()
         {
             // Ustawianie widoczności przycisków / Set buttons visible
@@ -2671,7 +2865,7 @@ namespace BlokHealth
         }
 
         #endregion
+
+        #endregion
     }
 }
-
-//TODO Wprowadź autoskalowanie paneli

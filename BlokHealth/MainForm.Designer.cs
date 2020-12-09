@@ -173,8 +173,9 @@
             // 
             // NotebookTextBox
             // 
-            this.NotebookTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.NotebookTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NotebookTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.NotebookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NotebookTextBox.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,7 +206,8 @@
             // 
             // PanelHealthCuriosity
             // 
-            this.PanelHealthCuriosity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PanelHealthCuriosity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelHealthCuriosity.Controls.Add(this.ButtonNextHealthCuriosity);
             this.PanelHealthCuriosity.Controls.Add(this.LabelHealthCuriosity);
             this.PanelHealthCuriosity.Controls.Add(this.LabelHealthCuriosityTitle);
@@ -216,6 +218,7 @@
             // 
             // ButtonNextHealthCuriosity
             // 
+            this.ButtonNextHealthCuriosity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonNextHealthCuriosity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
             this.ButtonNextHealthCuriosity.FlatAppearance.BorderSize = 0;
             this.ButtonNextHealthCuriosity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -231,6 +234,9 @@
             // 
             // LabelHealthCuriosity
             // 
+            this.LabelHealthCuriosity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelHealthCuriosity.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHealthCuriosity.ForeColor = System.Drawing.Color.SpringGreen;
             this.LabelHealthCuriosity.Location = new System.Drawing.Point(4, 30);
@@ -253,6 +259,7 @@
             // 
             // ButtonInformationAboutApplication
             // 
+            this.ButtonInformationAboutApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonInformationAboutApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(62)))));
             this.ButtonInformationAboutApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(62)))));
             this.ButtonInformationAboutApplication.FlatAppearance.BorderSize = 0;
@@ -269,6 +276,8 @@
             // 
             // PanelLogo
             // 
+            this.PanelLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelLogo.Controls.Add(this.PictureBox);
             this.PanelLogo.Controls.Add(this.LabelLogoTitle);
             this.PanelLogo.Location = new System.Drawing.Point(15, 12);
@@ -288,6 +297,9 @@
             // 
             // LabelLogoTitle
             // 
+            this.LabelLogoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelLogoTitle.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelLogoTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(211)))), ((int)(((byte)(244)))));
             this.LabelLogoTitle.Location = new System.Drawing.Point(92, 1);
@@ -360,6 +372,8 @@
             this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxCloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;
             this.ControlBoxCloseButton.Location = new System.Drawing.Point(1235, 0);
@@ -444,7 +458,7 @@
             // 
             // ButtonEditProduct
             // 
-            this.ButtonEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.ButtonEditProduct.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -461,7 +475,7 @@
             // 
             // ButtonDeleteProduct
             // 
-            this.ButtonDeleteProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonDeleteProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.ButtonDeleteProduct.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -478,8 +492,9 @@
             // 
             // PanelSeparatorLine1
             // 
-            this.PanelSeparatorLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelSeparatorLine1.BackColor = System.Drawing.Color.Gray;
+            this.PanelSeparatorLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelSeparatorLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.PanelSeparatorLine1.Location = new System.Drawing.Point(0, 590);
             this.PanelSeparatorLine1.Name = "PanelSeparatorLine1";
             this.PanelSeparatorLine1.Size = new System.Drawing.Size(421, 1);
@@ -783,7 +798,8 @@
             // 
             // CalculatorMainPanel
             // 
-            this.CalculatorMainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CalculatorMainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel6);
             this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel5);
@@ -793,23 +809,26 @@
             this.CalculatorMainPanel.Controls.Add(this.CalculatorPanel1);
             this.CalculatorMainPanel.Location = new System.Drawing.Point(80, 174);
             this.CalculatorMainPanel.Name = "CalculatorMainPanel";
-            this.CalculatorMainPanel.Size = new System.Drawing.Size(281, 380);
+            this.CalculatorMainPanel.Size = new System.Drawing.Size(281, 381);
             this.CalculatorMainPanel.TabIndex = 29;
+            this.CalculatorMainPanel.SizeChanged += new System.EventHandler(this.CalculatorMainPanel_SizeChanged);
             // 
             // CalculatorPanel6
             // 
+            this.CalculatorPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorPanel6.Controls.Add(this.ButtonEquals);
             this.CalculatorPanel6.Controls.Add(this.ButtonClearMemoryOfCalculator);
-            this.CalculatorPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.CalculatorPanel6.Location = new System.Drawing.Point(0, 314);
             this.CalculatorPanel6.Name = "CalculatorPanel6";
             this.CalculatorPanel6.Size = new System.Drawing.Size(281, 67);
             this.CalculatorPanel6.TabIndex = 23;
+            this.CalculatorPanel6.SizeChanged += new System.EventHandler(this.CalculatorPanel6_SizeChanged);
             // 
             // ButtonEquals
             // 
+            this.ButtonEquals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonEquals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonEquals.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonEquals.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonEquals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(173)))), ((int)(((byte)(133)))));
             this.ButtonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -824,8 +843,9 @@
             // 
             // ButtonClearMemoryOfCalculator
             // 
+            this.ButtonClearMemoryOfCalculator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonClearMemoryOfCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonClearMemoryOfCalculator.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonClearMemoryOfCalculator.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonClearMemoryOfCalculator.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(250)))), ((int)(((byte)(159)))));
             this.ButtonClearMemoryOfCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -841,19 +861,21 @@
             // 
             // CalculatorPanel5
             // 
+            this.CalculatorPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorPanel5.Controls.Add(this.ButtonAddition);
             this.CalculatorPanel5.Controls.Add(this.Button0);
             this.CalculatorPanel5.Controls.Add(this.ButtonDecimal);
-            this.CalculatorPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.CalculatorPanel5.Location = new System.Drawing.Point(0, 247);
             this.CalculatorPanel5.Name = "CalculatorPanel5";
             this.CalculatorPanel5.Size = new System.Drawing.Size(281, 67);
             this.CalculatorPanel5.TabIndex = 22;
+            this.CalculatorPanel5.SizeChanged += new System.EventHandler(this.CalculatorPanel5_SizeChanged);
             // 
             // ButtonAddition
             // 
+            this.ButtonAddition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonAddition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonAddition.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonAddition.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonAddition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
             this.ButtonAddition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -868,8 +890,9 @@
             // 
             // Button0
             // 
+            this.Button0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button0.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -884,8 +907,9 @@
             // 
             // ButtonDecimal
             // 
+            this.ButtonDecimal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonDecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonDecimal.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonDecimal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonDecimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.ButtonDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -900,20 +924,22 @@
             // 
             // CalculatorPanel4
             // 
+            this.CalculatorPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorPanel4.Controls.Add(this.ButtonSubtraction);
             this.CalculatorPanel4.Controls.Add(this.Button9);
             this.CalculatorPanel4.Controls.Add(this.Button8);
             this.CalculatorPanel4.Controls.Add(this.Button7);
-            this.CalculatorPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.CalculatorPanel4.Location = new System.Drawing.Point(0, 180);
             this.CalculatorPanel4.Name = "CalculatorPanel4";
             this.CalculatorPanel4.Size = new System.Drawing.Size(281, 67);
             this.CalculatorPanel4.TabIndex = 22;
+            this.CalculatorPanel4.SizeChanged += new System.EventHandler(this.CalculatorPanel4_SizeChanged);
             // 
             // ButtonSubtraction
             // 
+            this.ButtonSubtraction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonSubtraction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonSubtraction.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonSubtraction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonSubtraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
             this.ButtonSubtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -928,8 +954,9 @@
             // 
             // Button9
             // 
+            this.Button9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button9.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -944,8 +971,9 @@
             // 
             // Button8
             // 
+            this.Button8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button8.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -960,8 +988,9 @@
             // 
             // Button7
             // 
+            this.Button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button7.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -976,20 +1005,22 @@
             // 
             // CalculatorPanel3
             // 
+            this.CalculatorPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorPanel3.Controls.Add(this.ButtonMultiplication);
             this.CalculatorPanel3.Controls.Add(this.Button6);
             this.CalculatorPanel3.Controls.Add(this.Button5);
             this.CalculatorPanel3.Controls.Add(this.Button4);
-            this.CalculatorPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.CalculatorPanel3.Location = new System.Drawing.Point(0, 113);
             this.CalculatorPanel3.Name = "CalculatorPanel3";
             this.CalculatorPanel3.Size = new System.Drawing.Size(281, 67);
             this.CalculatorPanel3.TabIndex = 22;
+            this.CalculatorPanel3.SizeChanged += new System.EventHandler(this.CalculatorPanel3_SizeChanged);
             // 
             // ButtonMultiplication
             // 
+            this.ButtonMultiplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonMultiplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonMultiplication.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonMultiplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonMultiplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
             this.ButtonMultiplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1004,8 +1035,9 @@
             // 
             // Button6
             // 
+            this.Button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button6.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1020,8 +1052,9 @@
             // 
             // Button5
             // 
+            this.Button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button5.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1036,8 +1069,9 @@
             // 
             // Button4
             // 
+            this.Button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button4.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1052,20 +1086,22 @@
             // 
             // CalculatorPanel2
             // 
+            this.CalculatorPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculatorPanel2.Controls.Add(this.ButtonDivision);
             this.CalculatorPanel2.Controls.Add(this.Button3);
             this.CalculatorPanel2.Controls.Add(this.Button2);
             this.CalculatorPanel2.Controls.Add(this.Button1);
-            this.CalculatorPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.CalculatorPanel2.Location = new System.Drawing.Point(0, 46);
             this.CalculatorPanel2.Name = "CalculatorPanel2";
             this.CalculatorPanel2.Size = new System.Drawing.Size(281, 67);
             this.CalculatorPanel2.TabIndex = 21;
+            this.CalculatorPanel2.SizeChanged += new System.EventHandler(this.CalculatorPanel2_SizeChanged);
             // 
             // ButtonDivision
             // 
+            this.ButtonDivision.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ButtonDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ButtonDivision.Dock = System.Windows.Forms.DockStyle.Left;
             this.ButtonDivision.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.ButtonDivision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(143)))), ((int)(((byte)(103)))));
             this.ButtonDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1080,8 +1116,9 @@
             // 
             // Button3
             // 
+            this.Button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button3.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1096,8 +1133,9 @@
             // 
             // Button2
             // 
+            this.Button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button2.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1112,8 +1150,9 @@
             // 
             // Button1
             // 
+            this.Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.Button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(192)))), ((int)(((byte)(100)))));
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1138,6 +1177,7 @@
             // CalculatorTextBox
             // 
             this.CalculatorTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CalculatorTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalculatorTextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorTextBox.Location = new System.Drawing.Point(0, 0);
             this.CalculatorTextBox.MaxLength = 19;
@@ -1146,7 +1186,6 @@
             this.CalculatorTextBox.TabIndex = 14;
             this.CalculatorTextBox.Text = "0";
             this.CalculatorTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.CalculatorTextBox.TextChanged += new System.EventHandler(this.CalculatorTextBox_TextChanged);
             this.CalculatorTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CalculatorTextBox_KeyUp);
             // 
             // PanelConvertEquals
@@ -1271,7 +1310,8 @@
             // 
             // ButtonConvertEqals
             // 
-            this.ButtonConvertEqals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonConvertEqals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonConvertEqals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.ButtonConvertEqals.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(84)))), ((int)(((byte)(92)))));
             this.ButtonConvertEqals.FlatAppearance.BorderSize = 0;
@@ -1310,6 +1350,7 @@
             this.PanelMain.Controls.Add(this.TopPanel);
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMain.Location = new System.Drawing.Point(0, 0);
+            this.PanelMain.MinimumSize = new System.Drawing.Size(1280, 720);
             this.PanelMain.Name = "PanelMain";
             this.PanelMain.Size = new System.Drawing.Size(1280, 720);
             this.PanelMain.TabIndex = 0;
@@ -1331,6 +1372,7 @@
             this.Name = "MainForm";
             this.Text = "BlokHealth";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.PanelLeft.ResumeLayout(false);
             this.PanelLeft.PerformLayout();
             this.PanelHealthCuriosity.ResumeLayout(false);
