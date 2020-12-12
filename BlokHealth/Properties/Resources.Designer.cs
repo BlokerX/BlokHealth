@@ -349,5 +349,15 @@ namespace BlokHealth.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WyciskanieSztangi {
+            get {
+                object obj = ResourceManager.GetObject("WyciskanieSztangi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

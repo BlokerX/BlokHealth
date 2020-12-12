@@ -158,7 +158,7 @@ namespace BlokHealth
         }
         #endregion
 
-        readonly List<Exercise> ExerciseList = new List<Exercise>();
+        List<Exercise> ExerciseList = new List<Exercise>();
         int IndexExerciseList = 0;
 
         void LoadingExercises()
@@ -183,7 +183,7 @@ namespace BlokHealth
             );
 
             ExerciseList.Add(new Exercise(
-                "Przysiad",
+                "Przysiady",
 
                 "Stań ze stopami nieco szerzej od szerokości bioder. " +
                 "Twoje stopy powinny być skierowane lekko na zewnątrz. " +
@@ -219,6 +219,24 @@ namespace BlokHealth
                 BlokHealth.Properties.Resources.MartwyCiąg
             )
             );
+
+            ExerciseList.Add(new Exercise(
+                "Wyciskanie Sztangi",
+
+                "Połóż się na ławce. " +
+                "Stopy ustaw w lekkim rozkroku i mocno zaprzyj o podłoże. " +
+                "Chwyć sztangę nachwytem na taką szerokość, " +
+                "aby w połowie wykonywania ruchu kąt między ramieniem a przedramieniem wynosił 90 stopni." +
+                "Łopatki ściągnięte, barki opuszczone i mocno dociśnięte do ławeczki. " +
+                "Zachowaj naturalne ustawienie kręgosłupa – odcinek lędźwiowy lekko uniesiony, pośladki na ławeczce.",
+
+                "- Mięśnie klatki Piersiowej\n" +
+                "- Triceps",
+
+                BlokHealth.Properties.Resources.WyciskanieSztangi
+            )
+            );
+
         }
 
         private void SelectExercise()

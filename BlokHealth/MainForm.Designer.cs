@@ -116,6 +116,7 @@
             this.ButtonTypeOfConvert = new System.Windows.Forms.Button();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ButtonNotebookFontStyle = new System.Windows.Forms.Button();
             this.PanelLeft.SuspendLayout();
             this.PanelHealthCuriosity.SuspendLayout();
             this.PanelLogo.SuspendLayout();
@@ -145,6 +146,7 @@
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.PanelLeft.Controls.Add(this.ButtonNotebookFontStyle);
             this.PanelLeft.Controls.Add(this.LabelNotesik);
             this.PanelLeft.Controls.Add(this.NotebookTextBox);
             this.PanelLeft.Controls.Add(this.ButtonCwiczennik);
@@ -1360,6 +1362,22 @@
             this.Timer1.Interval = 18000;
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // ButtonNotebookFontStyle
+            // 
+            this.ButtonNotebookFontStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNotebookFontStyle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.ButtonNotebookFontStyle.FlatAppearance.BorderSize = 0;
+            this.ButtonNotebookFontStyle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNotebookFontStyle.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNotebookFontStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ButtonNotebookFontStyle.Location = new System.Drawing.Point(371, 74);
+            this.ButtonNotebookFontStyle.Name = "ButtonNotebookFontStyle";
+            this.ButtonNotebookFontStyle.Size = new System.Drawing.Size(30, 27);
+            this.ButtonNotebookFontStyle.TabIndex = 11;
+            this.ButtonNotebookFontStyle.Text = "A";
+            this.ButtonNotebookFontStyle.UseVisualStyleBackColor = true;
+            this.ButtonNotebookFontStyle.Click += new System.EventHandler(this.ButtonNotebookFontStyle_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1497,5 +1515,6 @@
         private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Panel CalculatorPanel1;
         private System.Windows.Forms.TextBox CalculatorTextBox;
+        private System.Windows.Forms.Button ButtonNotebookFontStyle;
     }
 }

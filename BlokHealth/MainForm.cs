@@ -42,6 +42,8 @@ namespace BlokHealth
             Timer1.Start();
 
             //Notebook
+            SetNotebookFontStyle();
+            //-----------------------------------//
             string aSomeText;
             if (!File.Exists(NotebookFilePath))
             {
@@ -72,6 +74,7 @@ namespace BlokHealth
                 sr.Close();
                 NotebookTextBox.Text = aSomeText;
             }
+            //-----------------------------------//
 
             #endregion
             ControlBox_Loading();
@@ -97,6 +100,11 @@ namespace BlokHealth
             if (!Directory.Exists(ImagesFolderPath))
             {
                 Directory.CreateDirectory(ImagesFolderPath);
+            }
+            
+            if (!Directory.Exists(SettingsFolderPath))
+            {
+                Directory.CreateDirectory(SettingsFolderPath);
             }
         }
 
@@ -433,6 +441,8 @@ namespace BlokHealth
         string NotebookFileFolderPath;
         string NotebookFilePath;
         string ImagesFolderPath;
+        string SettingsFolderPath;
+        string NotebookFontSettingsFilePath;
 
         // Image varibles
         Bitmap ExampleImgBitmap;
@@ -458,6 +468,9 @@ namespace BlokHealth
             NotebookFileFolderPath = $@"{ProgramMainFolderPath}\Notatki";
             NotebookFilePath = $@"{NotebookFileFolderPath}\NotatkaBlokHealth.txt";
             ImagesFolderPath = $@"{ProgramMainFolderPath}\Images";
+            SettingsFolderPath = $@"{ProgramMainFolderPath}\Settings";
+            NotebookFontSettingsFilePath = $@"{SettingsFolderPath}\NotebookFontSettings.txt";
+            
         }
 
         #endregion
@@ -493,6 +506,74 @@ namespace BlokHealth
                 sw.WriteLine(NotebookTextBox.Text);
 
                 sw.Close();
+            }
+        }
+
+        private void ButtonNotebookFontStyle_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog()
+            {
+                Font = NotebookTextBox.Font,
+                ShowColor = true,
+                Color = NotebookTextBox.ForeColor,
+                ShowEffects = true
+            }; 
+            fontDialog.ShowDialog();
+
+            // Ustawianie formatu czcionki / Set font styles
+            NotebookTextBox.Font = fontDialog.Font;
+            NotebookTextBox.ForeColor = fontDialog.Color;
+
+            #region ZapisUstawień
+            if (!File.Exists(NotebookFontSettingsFilePath))
+            {
+                StreamWriter sw = File.CreateText(NotebookFontSettingsFilePath);
+                var fCvt = new FontConverter();
+                var CCvt = new ColorConverter();
+
+                sw.WriteLine(fCvt.ConvertToString(NotebookTextBox.Font));
+                sw.WriteLine(CCvt.ConvertToString(NotebookTextBox.ForeColor));
+
+                sw.Close();
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(NotebookFontSettingsFilePath, false);
+                var fCvt = new FontConverter();
+                var CCvt = new ColorConverter();
+
+                sw.WriteLine(fCvt.ConvertToString(NotebookTextBox.Font));
+                sw.WriteLine(CCvt.ConvertToString(NotebookTextBox.ForeColor));
+
+                sw.Close();
+            }
+            #endregion
+
+        }
+
+        private void SetNotebookFontStyle()
+        {
+            if (!File.Exists(NotebookFontSettingsFilePath))
+            {
+                StreamWriter sw = File.CreateText(NotebookFontSettingsFilePath);
+                File.SetAttributes(NotebookFilePath, FileAttributes.Normal);
+                sw.Close();
+            }
+            else
+            {
+                string font, color;
+
+                StreamReader sr = File.OpenText(NotebookFontSettingsFilePath);
+                font = sr.ReadLine();
+                color = sr.ReadLine();
+                sr.Close();
+
+                // Ustawianie formatu czcionki / Set font styles
+                var fCvt = new FontConverter();
+                var cCvt = new ColorConverter();
+
+                NotebookTextBox.Font = fCvt.ConvertFromString(font) as Font;
+                NotebookTextBox.ForeColor = (Color)cCvt.ConvertFromString(color);
             }
         }
 
