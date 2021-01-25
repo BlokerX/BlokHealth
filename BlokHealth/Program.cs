@@ -17,7 +17,7 @@ namespace BlokHealth
             #region ShowIntroForm
             IntroForm introForm = new IntroForm();
             introForm.Show();
-            for (int i = 0; i < 250; i++)
+            for (int i = 0; i < 200; i++)
             {
                 Thread.Sleep(5);
                 Application.DoEvents();
@@ -28,3 +28,5 @@ namespace BlokHealth
         }
     }
 }
+// (PL): Najlepiej to odpalać na ekranie 16:9
+// (ENG): It's best to launch this app on a 16:9 screen

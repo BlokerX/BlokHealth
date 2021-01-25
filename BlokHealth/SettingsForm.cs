@@ -5,15 +5,19 @@ using System.Windows.Forms;
 
 namespace BlokHealth
 {
-    public partial class InformationAboutApplication : Form
+    public partial class SettingsForm : Form
     {
-        public InformationAboutApplication()
+        public SettingsForm()
         {
             InitializeComponent();
             UpdateTheme();
         }
 
-        #region ControlBoxPanel
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            ControlBox_Loading();
+            this.MotywComboBox.SelectedIndex = (int)AppTheme.ChoseTheme;
+        }
 
         #region ProtectForMaximalizeForm
         protected override CreateParams CreateParams
@@ -26,7 +30,10 @@ namespace BlokHealth
                 return cp;
             }
         }
+
         #endregion
+
+        #region ControlBoxPanel
 
         #region Drag window
 
@@ -39,7 +46,7 @@ namespace BlokHealth
 
         #endregion
 
-        private bool CloseBox = false;
+        private readonly bool CloseBox = true;
 
         private void ControlBox_MouseMove_Drag(MouseEventArgs e)
         {
@@ -47,36 +54,6 @@ namespace BlokHealth
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-        private void ControlBoxCloseButton_Click(object sender, EventArgs e)
-        {
-            // Jeśli zamykasz tylko okno:
-            this.Close();
-        }
-
-        private void ControlBoxMinimizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState != FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
-            else if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void ControlBoxMaximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState != FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
             }
         }
 
@@ -132,7 +109,7 @@ namespace BlokHealth
             ControlBox_MouseMove_Drag(e);
         }
 
-        private void ControlBoxTextPanel_MouseMove(object sender, MouseEventArgs e)
+        private void PanelControlBox_MouseMove(object sender, MouseEventArgs e)
         {
             ControlBox_MouseMove_Drag(e);
         }
@@ -142,29 +119,64 @@ namespace BlokHealth
             ControlBox_MouseMove_Drag(e);
         }
 
-        #endregion
-
-        private void InformationAboutApplication_Load(object sender, EventArgs e)
+        private void ControlBoxTextPanel_MouseMove(object sender, MouseEventArgs e)
         {
-            ControlBox_Loading();
-            LabelProductName.Text = "Produkt: " + ProductName;
-            LabelVersion.Text = "Wersja: " + ProductVersion;
-            LabelAutors.Text = CompanyName;
+            ControlBox_MouseMove_Drag(e);
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void ControlBoxCloseButton_Click(object sender, EventArgs e)
+        {
+            // Jeśli zamykasz tylko okno:
+            this.Close();
+
+            // Jeśli zamykasz całą aplikację:
+            //Application.Exit();
+        }
+
+        private void ControlBoxMinimizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ControlBoxMaximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        #endregion
+
+        private void ButtonZastosuj_Click(object sender, EventArgs e)
+        {
+            AppTheme.ChoseTheme = (AppTheme.ExampleTheme)MotywComboBox.SelectedIndex;
+            this.Close();
+        }
+
+        private void ButtonAnuluj_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
         //* Themes *//
         #region Themes
 
         private void UpdateTheme()
         {
             AppTheme DownloadedTheme = AppTheme.DownloadTheme();
-            #region Update InformationAboutApplicationTheme
+            #region UpdateMainFormTheme
 
             this.ControlBoxPanel.BackColor = DownloadedTheme.ControlBox;
             this.ControlBoxTextLabel.ForeColor = DownloadedTheme.ControlBoxAppNameColor;
@@ -175,15 +187,15 @@ namespace BlokHealth
             this.ControlBoxMinimizeButton.BackgroundImage = DownloadedTheme.MinimalizeImg;
             this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
 
-            this.PanelMain.BackColor = DownloadedTheme.PanelMainInformationAboutApplication;
-
-            this.LabelLogoTitle.ForeColor = DownloadedTheme.ProductNameForeColor;
-            this.LabelVersion.ForeColor = DownloadedTheme.LabelWersjaForeColor;
-            this.LabelProductName.ForeColor = DownloadedTheme.LabelProduktForeColor;
-            this.LabelCreators.ForeColor = DownloadedTheme.LabelTworcyForeColor;
-            this.LabelAutors.ForeColor = DownloadedTheme.LabelAutorzyForeColor;
-            this.CloseButton.BackColor = DownloadedTheme.ButtonCloseInformationAboutApplicationBackgroundColor;
-            this.CloseButton.ForeColor = DownloadedTheme.ButtonCloseInformationAboutApplicationForeColor;
+            this.CentralPanel.BackColor = DownloadedTheme.CentralPanelSettingsFormBackgroundColor;
+            this.LabelUstawienia.ForeColor = DownloadedTheme.LabelUstawieniaSettingsFormForeColor;
+            this.LabelMotyw.ForeColor = DownloadedTheme.LabelMotywSettingsFormForeColor;
+            this.MotywComboBox.BackColor = DownloadedTheme.MotywComboBoxSettingsFormBackgroundColor;
+            this.MotywComboBox.ForeColor = DownloadedTheme.MotywComboBoxSettingsFormForeColor;
+            this.ButtonAnuluj.BackColor = DownloadedTheme.ButtonAnulujSettingsFormBackgroundColor;
+            this.ButtonAnuluj.ForeColor = DownloadedTheme.ButtonAnulujSettingsFormForeColor;
+            this.ButtonZastosuj.BackColor = DownloadedTheme.ButtonZastosujSettingsFormBackgroundColor;
+            this.ButtonZastosuj.ForeColor = DownloadedTheme.ButtonZastosujSettingsFormForeColor;
 
             #endregion
         }

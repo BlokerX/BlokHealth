@@ -83,9 +83,59 @@ namespace BlokHealth.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BialaLeftArrow {
+            get {
+                object obj = ResourceManager.GetObject("BialaLeftArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BialaRightArrow {
+            get {
+                object obj = ResourceManager.GetObject("BialaRightArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap białe_wingrona {
             get {
                 object obj = ResourceManager.GetObject("białe_wingrona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BialyKrzyzyk {
+            get {
+                object obj = ResourceManager.GetObject("BialyKrzyzyk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BialyMaksymalize {
+            get {
+                object obj = ResourceManager.GetObject("BialyMaksymalize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BialyMinimalize {
+            get {
+                object obj = ResourceManager.GetObject("BialyMinimalize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +193,16 @@ namespace BlokHealth.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IntroImageBassicVersion {
+            get {
+                object obj = ResourceManager.GetObject("IntroImageBassicVersion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jabłka {
             get {
                 object obj = ResourceManager.GetObject("jabłka", resourceCulture);
@@ -176,6 +236,26 @@ namespace BlokHealth.Properties {
         internal static System.Drawing.Bitmap krówka_cukierki {
             get {
                 object obj = ResourceManager.GetObject("krówka_cukierki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap krzyzykDark {
+            get {
+                object obj = ResourceManager.GetObject("krzyzykDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap left_arrow_dark {
+            get {
+                object obj = ResourceManager.GetObject("left_arrow_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +313,16 @@ namespace BlokHealth.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap okienkoDark {
+            get {
+                object obj = ResourceManager.GetObject("okienkoDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap orzeszki_nerkowca {
             get {
                 object obj = ResourceManager.GetObject("orzeszki_nerkowca", resourceCulture);
@@ -263,6 +353,16 @@ namespace BlokHealth.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap podkreslnikDark {
+            get {
+                object obj = ResourceManager.GetObject("podkreslnikDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pomidor {
             get {
                 object obj = ResourceManager.GetObject("pomidor", resourceCulture);
@@ -286,6 +386,16 @@ namespace BlokHealth.Properties {
         internal static System.Drawing.Bitmap Przysiady {
             get {
                 object obj = ResourceManager.GetObject("Przysiady", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow_dark {
+            get {
+                object obj = ResourceManager.GetObject("right_arrow_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +466,46 @@ namespace BlokHealth.Properties {
         internal static System.Drawing.Bitmap WyciskanieSztangi {
             get {
                 object obj = ResourceManager.GetObject("WyciskanieSztangi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zembatkaDark {
+            get {
+                object obj = ResourceManager.GetObject("zembatkaDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZembatkaDarkMini {
+            get {
+                object obj = ResourceManager.GetObject("ZembatkaDarkMini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zembatkaLight {
+            get {
+                object obj = ResourceManager.GetObject("zembatkaLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zembatkaLightMini {
+            get {
+                object obj = ResourceManager.GetObject("zembatkaLightMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

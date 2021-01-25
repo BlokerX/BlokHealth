@@ -729,6 +729,7 @@ namespace BlokHealth
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddProductForm";
+            this.ShowIcon = false;
             this.Text = "Dodaj Produkt";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ExampleImagePictureBox)).EndInit();

@@ -124,6 +124,21 @@
   <data name="barszcz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barszcz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BialaLeftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\128x128_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BialaRightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\128x128_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BialyKrzyzyk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\krzyzyk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BialyMaksymalize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\okienko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BialyMinimalize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\podkreslnik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="białe_wingrona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\białe wingrona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +157,9 @@
   <data name="gruszki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gruszki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IntroImageBassicVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IntroImageBassicVersion-Big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jabłka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jablka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +169,14 @@
   <data name="kajzerki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kajzerki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="krzyzykDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\krzyzykDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="krówka_cukierki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\krówka cukierki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left_arrow_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left_arrow_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maliny" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maliny.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +193,9 @@
   <data name="ogorek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ogorek.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="okienkoDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\okienkoDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="orzeszki_nerkowca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orzeszki nerkowca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,6 +205,9 @@
   <data name="pizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pizza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="podkreslnikDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\podkreslnikDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pomidor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pomidor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +216,9 @@
   </data>
   <data name="Przysiady" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Przysiady.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right_arrow_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right_arrow_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rodzynki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rodzynki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,6 +237,18 @@
   </data>
   <data name="WyciskanieSztangi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WyciskanieSztangi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zembatkaDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zembatkaDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZembatkaDarkMini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ZembatkaDarkMini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zembatkaLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zembatkaLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zembatkaLightMini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zembatkaLightMini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="śliwki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\śliwki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

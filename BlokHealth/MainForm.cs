@@ -15,6 +15,7 @@ namespace BlokHealth
         public MainForm()
         {
             InitializeComponent();
+            UpdateTheme();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace BlokHealth
             {
                 Directory.CreateDirectory(ImagesFolderPath);
             }
-            
+
             if (!Directory.Exists(SettingsFolderPath))
             {
                 Directory.CreateDirectory(SettingsFolderPath);
@@ -137,6 +138,8 @@ namespace BlokHealth
             PanelFill.Size = new Size(FullSizeX + 17 * UniwersalSize, FullSizeY);
             PanelLeft.Size = new Size(UniwersalSize, FullSizeX);
             PanelRight.Size = new Size(UniwersalSize, FullSizeX);
+            ComboBoxTypeOfValueAfterConvert.Refresh();
+            ComboBoxTypeOfValueBeforeConvert.Refresh();
         }
 
         #region CalculatorSize
@@ -307,7 +310,7 @@ namespace BlokHealth
 
         #endregion
 
-        private bool CloseBox = true;
+        private readonly bool CloseBox = true;
 
         private void ControlBox_MouseMove_Drag(MouseEventArgs e)
         {
@@ -434,6 +437,10 @@ namespace BlokHealth
         readonly List<string> HealthCuriosity = new List<string>();
         int IndeksOfHealthCuriosty;
 
+        // Convert type button
+        Color BackgroundColorEnergiaButton;
+        Color BackgroundColorMasaButton;
+
         // Paths
         string SystemDriveName = "-";
         string ProgramMainFolderPath;
@@ -446,7 +453,7 @@ namespace BlokHealth
 
         // Image varibles
         Bitmap ExampleImgBitmap;
-        MemoryStream msForExampleImg = new MemoryStream();
+        readonly MemoryStream msForExampleImg = new MemoryStream();
 
         void VariblesDefaultConstructor()
         {
@@ -470,7 +477,7 @@ namespace BlokHealth
             ImagesFolderPath = $@"{ProgramMainFolderPath}\Images";
             SettingsFolderPath = $@"{ProgramMainFolderPath}\Settings";
             NotebookFontSettingsFilePath = $@"{SettingsFolderPath}\NotebookFontSettings.txt";
-            
+
         }
 
         #endregion
@@ -484,6 +491,17 @@ namespace BlokHealth
         {
             InformationAboutApplication informationAboutApplication = new InformationAboutApplication();
             informationAboutApplication.Show();
+        }
+
+        #endregion
+
+        #region Settings
+
+        private void ButtonOpenSettingsForm_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+            UpdateTheme();
         }
 
         #endregion
@@ -517,7 +535,7 @@ namespace BlokHealth
                 ShowColor = true,
                 Color = NotebookTextBox.ForeColor,
                 ShowEffects = true
-            }; 
+            };
             fontDialog.ShowDialog();
 
             // Ustawianie formatu czcionki / Set font styles
@@ -644,6 +662,8 @@ namespace BlokHealth
         {
             ExerciseDictonary exerciseDictonary = new ExerciseDictonary();
             exerciseDictonary.Show();
+
+            //TODO Application.Run(new ExerciseDictonary());
         }
 
         #endregion
@@ -1358,7 +1378,7 @@ namespace BlokHealth
             if (ButtonTypeOfConvert.Text == "Energia")
             {
 
-                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+                ButtonTypeOfConvert.BackColor = BackgroundColorMasaButton;
                 ButtonTypeOfConvert.Text = "Masa";
 
                 ComboBoxTypeOfValueBeforeConvert.Items.Clear();
@@ -1388,7 +1408,7 @@ namespace BlokHealth
             }
             else if (ButtonTypeOfConvert.Text == "Masa")
             {
-                ButtonTypeOfConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(90)))), ((int)(((byte)(74)))));
+                ButtonTypeOfConvert.BackColor = BackgroundColorEnergiaButton;
                 ButtonTypeOfConvert.Text = "Energia";
 
                 ComboBoxTypeOfValueBeforeConvert.Items.Clear();
@@ -2946,6 +2966,169 @@ namespace BlokHealth
         }
 
         #endregion
+
+        #endregion
+
+        //* Themes *//
+        #region Themes
+
+        private void UpdateTheme()
+        {
+            AppTheme DownloadedTheme = AppTheme.DownloadTheme();
+            #region UpdateMainFormTheme
+
+            this.ControlBoxPanel.BackColor = DownloadedTheme.ControlBox;
+            this.ControlBoxTextLabel.ForeColor = DownloadedTheme.ControlBoxAppNameColor;
+            this.ControlBoxCloseButton.BackgroundImage = DownloadedTheme.CloseImg;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMaximizeButton.BackgroundImage = DownloadedTheme.MaximalizeImg;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMinimizeButton.BackgroundImage = DownloadedTheme.MinimalizeImg;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+
+            // Główne:
+            this.PanelLeft.BackColor = DownloadedTheme.LeftPanel;
+            this.PanelFill.BackColor = DownloadedTheme.CentralPanel;
+            this.PanelRight.BackColor = DownloadedTheme.RightPanel;
+
+            // LeftPanel:
+            this.ButtonOpenSettingsForm.BackgroundImage = DownloadedTheme.ButtonOpenSettingsFormBackgroundImage;
+            this.ButtonOpenSettingsForm.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;
+            this.LabelLogoTitle.ForeColor = DownloadedTheme.ProductNameForeColor;
+            this.ButtonInformationAboutApplication.BackColor = DownloadedTheme.InfoButtonBackgroundColor;
+            this.ButtonInformationAboutApplication.ForeColor = DownloadedTheme.InfoButtonForeColor;
+            this.ButtonInformationAboutApplication.FlatAppearance.BorderColor = DownloadedTheme.InfoButtonBackgroundColor;
+            this.LabelNotesik.ForeColor = DownloadedTheme.NotebookHeaderForeColor;
+            this.ButtonNotebookFontStyle.ForeColor = DownloadedTheme.FontStyleButtonForeColor;
+            this.ButtonNotebookFontStyle.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;
+            this.NotebookTextBox.BackColor = DownloadedTheme.NotebookBackgroundColor;
+            this.LabelHealthCuriosityTitle.ForeColor = DownloadedTheme.CiekawostkaHeaderForeColor;
+            this.ButtonNextHealthCuriosity.ForeColor = DownloadedTheme.ButtonNextCiekawostkaForeColor;
+            this.ButtonNextHealthCuriosity.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;
+            this.LabelHealthCuriosity.ForeColor = DownloadedTheme.LabelCiekawostkiForeColor;
+            this.ButtonCwiczennik.BackColor = DownloadedTheme.CwiczennikBackgroundColor;
+            this.ButtonCwiczennik.ForeColor = DownloadedTheme.CwiczennikForeColor;
+            this.ButtonCwiczennik.FlatAppearance.BorderColor = DownloadedTheme.CwiczennikBackgroundColor;
+
+            // CentralPanel
+            this.BackgroundColorEnergiaButton = DownloadedTheme.ButtonButtonTypeOfConvertEnergiaBackgroundColor;
+            this.BackgroundColorMasaButton = DownloadedTheme.ButtonButtonTypeOfConvertMasaBackgroundColor;
+            if (ButtonTypeOfConvert.Text == "Energia")
+            { this.ButtonTypeOfConvert.BackColor = DownloadedTheme.ButtonButtonTypeOfConvertEnergiaBackgroundColor; }
+            else if (ButtonTypeOfConvert.Text == "Masa")
+            { this.ButtonTypeOfConvert.BackColor = DownloadedTheme.ButtonButtonTypeOfConvertMasaBackgroundColor; }
+            this.ButtonTypeOfConvert.ForeColor = DownloadedTheme.ButtonButtonTypeOfConvertForeColor;
+            this.LabelKonwertujZ.ForeColor = DownloadedTheme.LabelsKonwertujZ_lub_NaForeColor;
+            this.LabelKonwertujNa.ForeColor = DownloadedTheme.LabelsKonwertujZ_lub_NaForeColor;
+            this.ComboBoxTypeOfValueAfterConvert.BackColor = DownloadedTheme.ConvertComboBoxBackgroundColor;
+            this.ComboBoxTypeOfValueBeforeConvert.BackColor = DownloadedTheme.ConvertComboBoxBackgroundColor;
+            this.ComboBoxTypeOfValueAfterConvert.ForeColor = DownloadedTheme.ConvertComboBoxForeColor;
+            this.ComboBoxTypeOfValueBeforeConvert.ForeColor = DownloadedTheme.ConvertComboBoxForeColor;
+            this.CalculatorTextBox.BackColor = DownloadedTheme.CalculatorTextBoxBackgroundColor;
+            this.CalculatorTextBox.ForeColor = DownloadedTheme.CalculatorTextBoxForeColor;
+
+            this.Button1.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button1.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button1.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button2.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button2.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button2.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button3.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button3.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button3.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button4.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button4.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button4.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button5.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button5.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button5.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button6.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button6.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button6.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button7.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button7.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button7.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button8.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button8.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button8.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button9.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button9.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button9.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.Button0.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.Button0.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.Button0.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonDecimal.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonDecimal.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonDecimal.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonAddition.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonAddition.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonAddition.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonSubtraction.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonSubtraction.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonSubtraction.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonMultiplication.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonMultiplication.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonMultiplication.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonDivision.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonDivision.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonDivision.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonEquals.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonEquals.ForeColor = DownloadedTheme.ButtonsOfCalculatorForeColor;
+            this.ButtonEquals.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+            this.ButtonClearMemoryOfCalculator.BackColor = DownloadedTheme.ButtonsOfCalculatorBackgroundColor;
+            this.ButtonClearMemoryOfCalculator.FlatAppearance.BorderColor = DownloadedTheme.CentralPanel;
+
+
+            this.ButtonConvertEqals.BackColor = DownloadedTheme.KonwertujWynikButtonBackgroundColor;
+            this.ButtonConvertEqals.ForeColor = DownloadedTheme.KonwertujWynikButtonForeColor;
+            this.ButtonConvertEqals.FlatAppearance.BorderColor = DownloadedTheme.KonwertujWynikButtonBackgroundColor;
+            this.LabelWynik.ForeColor = DownloadedTheme.LabelWynikForeColor;
+            this.LabelConvertEquals.ForeColor = DownloadedTheme.LabelWynikForeColor;
+
+            // RightPanel
+            this.LabelDescriptionOfProduct.ForeColor = DownloadedTheme.LabelDescribeOfProductForeColorMainForm;
+            this.LabelWartosciOdzywcze.ForeColor = DownloadedTheme.LabelWartOdzywczeForeColorMainForm;
+
+            this.LabelWartoscEnergetyczna.ForeColor = DownloadedTheme.LabelWartEnergetyczneForeColorMainForm;
+            this.LabelValueWartoscEnergetyczna.ForeColor = DownloadedTheme.LabelWartEnergetyczneForeColorMainForm;
+
+            this.LabelBialko.ForeColor = DownloadedTheme.LabelBialkoForeColorMainForm;
+            this.LabelValueBialko.ForeColor = DownloadedTheme.LabelBialkoForeColorMainForm;
+
+            this.LabelTluszcz.ForeColor = DownloadedTheme.LabelTluszczForeColorMainForm;
+            this.LabelValueTluszcz.ForeColor = DownloadedTheme.LabelTluszczForeColorMainForm;
+
+            this.LabelWeglowodany.ForeColor = DownloadedTheme.LabelWeglowodanyForeColorMainForm;
+            this.LabelValueWeglowodany.ForeColor = DownloadedTheme.LabelWeglowodanyForeColorMainForm;
+
+            this.LabelBlonnik.ForeColor = DownloadedTheme.LabelBlonnikForeColorMainForm;
+            this.LabelValueBlonnik.ForeColor = DownloadedTheme.LabelBlonnikForeColorMainForm;
+
+            this.LabelWitaminy.ForeColor = DownloadedTheme.LabelWitaminyForeColorMainForm;
+            this.LabelMineraly.ForeColor = DownloadedTheme.LabelMineralyForeColorMainForm;
+
+            this.LabelValueWitaminy.ForeColor = DownloadedTheme.LabelPodWitaminyIPodMineralyMainForm;
+            this.LabelValueMineraly.ForeColor = DownloadedTheme.LabelPodWitaminyIPodMineralyMainForm;
+
+            this.ButtonEditProduct.FlatAppearance.BorderColor = DownloadedTheme.EditAndDeleteProductBorderColor;
+            this.ButtonEditProduct.ForeColor = DownloadedTheme.EditAndDeleteProductForeColor;
+
+            this.ButtonDeleteProduct.FlatAppearance.BorderColor = DownloadedTheme.EditAndDeleteProductBorderColor;
+            this.ButtonDeleteProduct.ForeColor = DownloadedTheme.EditAndDeleteProductForeColor;
+
+            this.ButtonOpenAddProductDialog.ForeColor = DownloadedTheme.AddProductForeColor;
+
+            this.PanelSeparatorLine1.BackColor = DownloadedTheme.PanelLineBackgroundColor;
+
+            this.FoodTitleLabel.ForeColor = DownloadedTheme.FoodTitleForeColor;
+
+            this.GoBackButton.BackgroundImage = DownloadedTheme.ArrowLeftImg;
+            this.GoBackButton.FlatAppearance.BorderColor = DownloadedTheme.RightPanel;
+            this.GoNextButton.BackgroundImage = DownloadedTheme.ArrowRightImg;
+            this.GoNextButton.FlatAppearance.BorderColor = DownloadedTheme.RightPanel;
+
+            #endregion
+        }
 
         #endregion
     }

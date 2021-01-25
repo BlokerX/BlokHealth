@@ -11,6 +11,7 @@ namespace BlokHealth
         public ExerciseDictonary()
         {
             InitializeComponent();
+            UpdateTheme();
         }
 
         private void ExerciseDictonary_Load(object sender, EventArgs e)
@@ -158,6 +159,8 @@ namespace BlokHealth
         }
         #endregion
 
+        #region ExerciseList
+
         List<Exercise> ExerciseList = new List<Exercise>();
         int IndexExerciseList = 0;
 
@@ -176,7 +179,7 @@ namespace BlokHealth
                 "Najlepiej, jeśli klatka piersiowa znajdzie się tuż nad ziemią.",
 
                 "- Klatka piersiowa\n" +
-                "- Bicepsy",
+                "- Tricepsy",
 
                 BlokHealth.Properties.Resources.Pompki
             )
@@ -273,5 +276,45 @@ namespace BlokHealth
             SelectExercise();
         }
 
+        #endregion
+
+        //* Themes *//
+        #region Themes
+
+        private void UpdateTheme()
+        {
+            AppTheme DownloadedTheme = AppTheme.DownloadTheme();
+            #region Update InformationAboutApplicationTheme
+
+            this.ControlBoxPanel.BackColor = DownloadedTheme.ControlBox;
+            this.ControlBoxTextLabel.ForeColor = DownloadedTheme.ControlBoxAppNameColor;
+            this.ControlBoxCloseButton.BackgroundImage = DownloadedTheme.CloseImg;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMaximizeButton.BackgroundImage = DownloadedTheme.MaximalizeImg;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMinimizeButton.BackgroundImage = DownloadedTheme.MinimalizeImg;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+
+            this.CentralPanel.BackColor = DownloadedTheme.ExerciseDictonaryMainPanelColor;
+
+            this.LabelCwiczennik.ForeColor = DownloadedTheme.LabelHeaderForeColor;
+
+            this.LabelOpisWykonaniaCwiczenia.ForeColor = DownloadedTheme.LabelSecondHeadersForeColor;
+            this.LabelAktywnePartieMiesni.ForeColor = DownloadedTheme.LabelSecondHeadersForeColor;
+
+            this.LabelOpisWykonaniaCwiczeniaValue.ForeColor = DownloadedTheme.TextExerciseDictonaryForeColor;
+            this.LabelAktywnePartieMiesniValue.ForeColor = DownloadedTheme.TextExerciseDictonaryForeColor;
+
+            this.LabelTitle.ForeColor = DownloadedTheme.TitleForeColor;
+
+            this.GoBackButton.BackgroundImage = DownloadedTheme.ArrowLeftImg;
+            this.GoNextButton.BackgroundImage = DownloadedTheme.ArrowRightImg;
+
+            #endregion
+        }
+
+        #endregion
+
     }
 }
+//TODO Ćwiczennik:Zrobić wyświetlanie tej części aplikacji jako oddzielną procesowo aplikację

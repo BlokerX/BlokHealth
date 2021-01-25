@@ -17,6 +17,7 @@ namespace BlokHealth
         public AddProductForm(string systemDriveName, string FolderOfProducts, string FolderOfImages)
         {
             InitializeComponent();
+            UpdateTheme();
             MyProductFolderPath = FolderOfProducts;
             ImagesFolderPath = FolderOfImages;
             SystemDriveName = systemDriveName;
@@ -318,6 +319,106 @@ namespace BlokHealth
                 LabelInfoPodajInnaNazwe.Visible = true;
             }
         }
+
+        //* Themes *//
+        #region Themes
+
+        private void UpdateTheme()
+        {
+            AppTheme DownloadedTheme = AppTheme.DownloadTheme();
+            #region Update InformationAboutApplicationTheme
+
+            this.ControlBoxPanel.BackColor = DownloadedTheme.ControlBox;
+            this.ControlBoxTextLabel.ForeColor = DownloadedTheme.ControlBoxAppNameColor;
+            this.ControlBoxCloseButton.BackgroundImage = DownloadedTheme.CloseImg;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMaximizeButton.BackgroundImage = DownloadedTheme.MaximalizeImg;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+            this.ControlBoxMinimizeButton.BackgroundImage = DownloadedTheme.MinimalizeImg;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = DownloadedTheme.ControlBox;
+
+            this.CentralPanel.BackColor = DownloadedTheme.CentralPanelAddAndEditProductFormsBackgroundColor;
+
+            this.LabelNazwaProduktu.ForeColor = DownloadedTheme.LabelNazwaProduktuForeColorAddAndEditProductForms;
+            this.LabelWartoscEnergetyczna.ForeColor = DownloadedTheme.LabelWartoscEnergetycznaColorAddAndEditProductForms;
+            this.LabelBialko.ForeColor = DownloadedTheme.LabelBialkoForeColorAddAndEditProductForms;
+            this.LabelTluszcz.ForeColor = DownloadedTheme.LabelTluszczForeColorAddAndEditProductForms;
+            this.LabelWeglowodany.ForeColor = DownloadedTheme.LabelWeglowodanyForeColorAddAndEditProductForms;
+            this.LabelBlonnik.ForeColor = DownloadedTheme.LabelBlonnikForeColorAddAndEditProductForms;
+            this.LabelWitaminy.ForeColor = DownloadedTheme.LabelWitaminyForeColorAddAndEditProductForms;
+            this.LabelMineraly.ForeColor = DownloadedTheme.LabelMineralyForeColorAddAndEditProductForms;
+            this.LabelOpisProduktu.ForeColor = DownloadedTheme.LabelOpisProduktuForeColorAddAndEditProductForms;
+
+            this.ProductNameTextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.ProductNameTextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.EnergyValueVaribleComboBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.EnergyValueVaribleComboBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.ProteinVaribleComboBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.ProteinVaribleComboBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.FatVaribleComboBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.FatVaribleComboBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.CarbonohydratesVaribleComboBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.CarbonohydratesVaribleComboBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.FiberVaribleComboBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.FiberVaribleComboBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.Vitamin1TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin1TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin2TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin2TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin3TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin3TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin4TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin4TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin5TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin5TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin6TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin6TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin7TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin7TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Vitamin8TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Vitamin8TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.Mineral1TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral1TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral2TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral2TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral3TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral3TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral4TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral4TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral5TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral5TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral6TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral6TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.Mineral7TextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+            this.Mineral7TextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+
+            this.DescribeTextBox.ForeColor = DownloadedTheme.TextBoxAndComboBoxForeColorAddAndEditProductForms;
+            this.DescribeTextBox.BackColor = DownloadedTheme.TextBoxAndComboBoxBackgroundColorAddAndEditProductForms;
+
+            this.LabelInfoPodajNazwe.ForeColor = DownloadedTheme.WarningsColor;
+            this.LabelInfoPodajInnaNazwe.ForeColor = DownloadedTheme.WarningsColor;
+
+            this.LabelInfo1.ForeColor = DownloadedTheme.Podpowiedz_ZalecanaNazwa_ForeColor;
+            this.LabelInfo3.ForeColor = DownloadedTheme.Podpowiedz_ZapisUlamkow_ForeColor;
+            this.LabelInfo2.ForeColor = DownloadedTheme.LabelWartoscWGramachForeColor;
+
+            this.ButtonWybierzObrazek.BackColor = DownloadedTheme.ButtonWybierzObrazekBackgroundColor;
+            this.ButtonWybierzObrazek.ForeColor = DownloadedTheme.ButtonWybierzObrazekForeColor;
+            this.ButtonWybierzObrazek.FlatAppearance.BorderColor = DownloadedTheme.ButtonsWybierzObrazekAndResetBorderColor;
+            this.ButtonAddProduct.BackColor = DownloadedTheme.ButtonZapiszDodajProduktBackgroundColor;
+            this.ButtonAddProduct.ForeColor = DownloadedTheme.ButtonZapiszDodajProduktForeColor;
+
+            #endregion
+        }
+
+        #endregion
 
     }
 }

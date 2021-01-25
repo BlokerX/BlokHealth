@@ -88,6 +88,7 @@
     <Compile Include="AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppTheme.cs" />
     <Compile Include="EditProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +123,12 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +152,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,7 +175,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="128x128.ico" />
+    <None Include="Resources\right_arrow_dark.png" />
+    <None Include="Resources\left_arrow_dark.png" />
+    <None Include="Resources\zembatkaLightMini.png" />
+    <None Include="Resources\zembatkaLight.png" />
+    <None Include="Resources\ZembatkaDarkMini.png" />
+    <None Include="Resources\zembatkaDark.png" />
+    <None Include="Resources\podkreslnikDark.png" />
+    <None Include="Resources\podkreslnik.png" />
+    <None Include="Resources\okienkoDark.png" />
+    <None Include="Resources\okienko.png" />
+    <None Include="Resources\krzyzykDark.png" />
+    <None Include="Resources\krzyzyk.png" />
+    <None Include="Resources\IntroImageBassicVersion-Big.png" />
+    <None Include="Resources\128x128_1.png" />
+    <None Include="Resources\128x128_2.png" />
     <Content Include="Resources\64x64.ico" />
+    <None Include="Resources\okno.png" />
+    <None Include="Resources\mini.png" />
+    <None Include="Resources\krzyzyc.png" />
+    <None Include="Resources\podkreslnik.jpg" />
+    <None Include="Resources\okienko.jpg" />
+    <None Include="Resources\krzyzyk.jpg" />
     <None Include="Resources\WyciskanieSztangi.jpg" />
     <None Include="Resources\Przysiady.png" />
     <None Include="Resources\Pompki.png" />
