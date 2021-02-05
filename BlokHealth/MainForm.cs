@@ -15,6 +15,13 @@ namespace BlokHealth
         public MainForm()
         {
             InitializeComponent();
+
+            // Procedura Bezpieczeństwa and set varibles
+            VariblesDefaultConstructor();
+            CheckProgramDiresArchitecture();
+
+            //Themes
+            AppTheme.ChoseTheme = (AppTheme.ExampleTheme)DownloadThemeSettingsOfFile();
             UpdateTheme();
         }
 
@@ -25,10 +32,6 @@ namespace BlokHealth
             // Select Convert Values
             ComboBoxTypeOfValueAfterConvert.SelectedIndex = 1;
             ComboBoxTypeOfValueBeforeConvert.SelectedIndex = 0;
-
-            // Procedura Bezpieczeństwa and set varibles
-            VariblesDefaultConstructor();
-            CheckProgramDiresArchitecture();
 
             // Prepare Products
             LoadingMyProducts();
@@ -44,6 +47,7 @@ namespace BlokHealth
 
             //Notebook
             SetNotebookFontStyle();
+            SetNotebookBackgroundColor();
             //-----------------------------------//
             string aSomeText;
             if (!File.Exists(NotebookFilePath))
@@ -450,6 +454,8 @@ namespace BlokHealth
         string ImagesFolderPath;
         string SettingsFolderPath;
         string NotebookFontSettingsFilePath;
+        string NotebookBackgroundColorFilePath;
+        string SelectedThemeSettingsFilePath;
 
         // Image varibles
         Bitmap ExampleImgBitmap;
@@ -477,7 +483,8 @@ namespace BlokHealth
             ImagesFolderPath = $@"{ProgramMainFolderPath}\Images";
             SettingsFolderPath = $@"{ProgramMainFolderPath}\Settings";
             NotebookFontSettingsFilePath = $@"{SettingsFolderPath}\NotebookFontSettings.txt";
-
+            NotebookBackgroundColorFilePath = $@"{SettingsFolderPath}\NotebookBackgroundColorSettings.txt";
+            SelectedThemeSettingsFilePath = $@"{SettingsFolderPath}\SelectedThemeSettings.txt";
         }
 
         #endregion
@@ -499,9 +506,21 @@ namespace BlokHealth
 
         private void ButtonOpenSettingsForm_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsForm = new SettingsForm();
+            SettingsForm settingsForm = new SettingsForm(SelectedThemeSettingsFilePath);
             settingsForm.ShowDialog();
             UpdateTheme();
+        }
+
+        private int DownloadThemeSettingsOfFile()
+        {
+            if (File.Exists(SelectedThemeSettingsFilePath))
+            {
+                StreamReader sr = File.OpenText(SelectedThemeSettingsFilePath);
+                int x = int.Parse(sr.ReadLine());
+                sr.Close();
+                return x;
+            }
+            return 0;
         }
 
         #endregion
@@ -592,6 +611,61 @@ namespace BlokHealth
 
                 NotebookTextBox.Font = fCvt.ConvertFromString(font) as Font;
                 NotebookTextBox.ForeColor = (Color)cCvt.ConvertFromString(color);
+            }
+        }
+
+        private void ButtonNotebookBackgroundColorChange_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog()
+            {
+                Color = NotebookTextBox.BackColor,
+                FullOpen = false
+            };
+            colorDialog.ShowDialog();
+
+            NotebookTextBox.BackColor = colorDialog.Color;
+
+            #region ZapisUstawień
+            if (!File.Exists(NotebookBackgroundColorFilePath))
+            {
+                StreamWriter sw = File.CreateText(NotebookBackgroundColorFilePath);
+                var CCvt = new ColorConverter();
+
+                sw.WriteLine(CCvt.ConvertToString(NotebookTextBox.BackColor));
+
+                sw.Close();
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(NotebookBackgroundColorFilePath, false);
+                var CCvt = new ColorConverter();
+
+                sw.WriteLine(CCvt.ConvertToString(NotebookTextBox.BackColor));
+
+                sw.Close();
+            }
+            #endregion
+        }
+
+        private void SetNotebookBackgroundColor()
+        {
+            if (!File.Exists(NotebookBackgroundColorFilePath))
+            {
+                StreamWriter sw = File.CreateText(NotebookBackgroundColorFilePath);
+                sw.Close();
+            }
+            else
+            {
+                string color;
+
+                StreamReader sr = File.OpenText(NotebookBackgroundColorFilePath);
+                color = sr.ReadLine();
+                sr.Close();
+
+                // Ustawianie koloru / Set color
+                var cCvt = new ColorConverter();
+                try{ NotebookTextBox.BackColor = (Color)cCvt.ConvertFromString(color); }
+                catch { }
             }
         }
 
@@ -3001,7 +3075,10 @@ namespace BlokHealth
             this.LabelNotesik.ForeColor = DownloadedTheme.NotebookHeaderForeColor;
             this.ButtonNotebookFontStyle.ForeColor = DownloadedTheme.FontStyleButtonForeColor;
             this.ButtonNotebookFontStyle.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;
+            this.ButtonNotebookBackgroundColorChange.ForeColor = DownloadedTheme.FontStyleButtonForeColor;
+            this.ButtonNotebookBackgroundColorChange.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;
             this.NotebookTextBox.BackColor = DownloadedTheme.NotebookBackgroundColor;
+            this.SetNotebookBackgroundColor();
             this.LabelHealthCuriosityTitle.ForeColor = DownloadedTheme.CiekawostkaHeaderForeColor;
             this.ButtonNextHealthCuriosity.ForeColor = DownloadedTheme.ButtonNextCiekawostkaForeColor;
             this.ButtonNextHealthCuriosity.FlatAppearance.BorderColor = DownloadedTheme.LeftPanel;

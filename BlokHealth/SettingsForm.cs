@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -7,10 +8,29 @@ namespace BlokHealth
 {
     public partial class SettingsForm : Form
     {
-        public SettingsForm()
+        public SettingsForm(string selectedThemeSettingsFilePath)
         {
             InitializeComponent();
+            SelectedThemeSettingsFilePath = selectedThemeSettingsFilePath;
             UpdateTheme();
+        }
+
+        private string SelectedThemeSettingsFilePath;
+
+        private void SetThemeSettingsOfFile()
+        {
+            if (!File.Exists(SelectedThemeSettingsFilePath))
+            {
+                StreamWriter sw = File.CreateText(SelectedThemeSettingsFilePath);
+                sw.WriteLine((int)AppTheme.ChoseTheme);
+                sw.Close();
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(SelectedThemeSettingsFilePath, false);
+                sw.WriteLine((int)AppTheme.ChoseTheme);
+                sw.Close();
+            }
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -162,6 +182,7 @@ namespace BlokHealth
         private void ButtonZastosuj_Click(object sender, EventArgs e)
         {
             AppTheme.ChoseTheme = (AppTheme.ExampleTheme)MotywComboBox.SelectedIndex;
+            SetThemeSettingsOfFile();
             this.Close();
         }
 

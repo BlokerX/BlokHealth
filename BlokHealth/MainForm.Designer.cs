@@ -41,12 +41,18 @@
             this.LabelHealthCuriosityTitle = new System.Windows.Forms.Label();
             this.ButtonInformationAboutApplication = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.ButtonOpenSettingsForm = new System.Windows.Forms.Button();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
             this.LabelLogoTitle = new System.Windows.Forms.Label();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.ControlBoxPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxMinimizeButton = new System.Windows.Forms.Button();
+            this.ControlBoxMaximizeButton = new System.Windows.Forms.Button();
+            this.ControlBoxCloseButton = new System.Windows.Forms.Button();
             this.ControlBoxTextPanel = new System.Windows.Forms.Panel();
             this.ControlBoxTextLabel = new System.Windows.Forms.Label();
             this.ControlBoxIconPanel = new System.Windows.Forms.Panel();
+            this.ControlBoxIcon = new System.Windows.Forms.PictureBox();
             this.PanelRight = new System.Windows.Forms.Panel();
             this.ButtonEditProduct = new System.Windows.Forms.Button();
             this.ButtonDeleteProduct = new System.Windows.Forms.Button();
@@ -67,9 +73,12 @@
             this.LabelTluszcz = new System.Windows.Forms.Label();
             this.LabelBialko = new System.Windows.Forms.Label();
             this.LabelWartoscEnergetyczna = new System.Windows.Forms.Label();
+            this.PictureBoxImageOfProduct = new System.Windows.Forms.PictureBox();
             this.LabelDescriptionOfProduct = new System.Windows.Forms.Label();
             this.ControlPanel_to_Left = new System.Windows.Forms.Panel();
             this.FoodTitleLabel = new System.Windows.Forms.Label();
+            this.GoNextButton = new System.Windows.Forms.Button();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.PanelFill = new System.Windows.Forms.Panel();
             this.CalculatorMainPanel = new System.Windows.Forms.Panel();
             this.CalculatorPanel6 = new System.Windows.Forms.Panel();
@@ -109,23 +118,18 @@
             this.ButtonTypeOfConvert = new System.Windows.Forms.Button();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.PictureBoxImageOfProduct = new System.Windows.Forms.PictureBox();
-            this.GoNextButton = new System.Windows.Forms.Button();
-            this.GoBackButton = new System.Windows.Forms.Button();
-            this.ButtonOpenSettingsForm = new System.Windows.Forms.Button();
-            this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.ControlBoxMinimizeButton = new System.Windows.Forms.Button();
-            this.ControlBoxMaximizeButton = new System.Windows.Forms.Button();
-            this.ControlBoxCloseButton = new System.Windows.Forms.Button();
-            this.ControlBoxIcon = new System.Windows.Forms.PictureBox();
+            this.ButtonNotebookBackgroundColorChange = new System.Windows.Forms.Button();
             this.PanelLeft.SuspendLayout();
             this.PanelHealthCuriosity.SuspendLayout();
             this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.TopPanel.SuspendLayout();
             this.ControlBoxPanel.SuspendLayout();
             this.ControlBoxTextPanel.SuspendLayout();
             this.ControlBoxIconPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).BeginInit();
             this.PanelRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).BeginInit();
             this.ControlPanel_to_Left.SuspendLayout();
             this.PanelFill.SuspendLayout();
             this.CalculatorMainPanel.SuspendLayout();
@@ -139,14 +143,12 @@
             this.PanelConvertSettings.SuspendLayout();
             this.PanelConvertSettingsEnergy.SuspendLayout();
             this.PanelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.PanelLeft.Controls.Add(this.ButtonNotebookBackgroundColorChange);
             this.PanelLeft.Controls.Add(this.ButtonNotebookFontStyle);
             this.PanelLeft.Controls.Add(this.LabelNotesik);
             this.PanelLeft.Controls.Add(this.NotebookTextBox);
@@ -305,6 +307,33 @@
             this.PanelLogo.Size = new System.Drawing.Size(327, 56);
             this.PanelLogo.TabIndex = 2;
             // 
+            // ButtonOpenSettingsForm
+            // 
+            this.ButtonOpenSettingsForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonOpenSettingsForm.BackgroundImage = global::BlokHealth.Properties.Resources.zembatkaLightMini;
+            this.ButtonOpenSettingsForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ButtonOpenSettingsForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.ButtonOpenSettingsForm.FlatAppearance.BorderSize = 0;
+            this.ButtonOpenSettingsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonOpenSettingsForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOpenSettingsForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ButtonOpenSettingsForm.Location = new System.Drawing.Point(297, 0);
+            this.ButtonOpenSettingsForm.Name = "ButtonOpenSettingsForm";
+            this.ButtonOpenSettingsForm.Size = new System.Drawing.Size(30, 30);
+            this.ButtonOpenSettingsForm.TabIndex = 12;
+            this.ButtonOpenSettingsForm.UseVisualStyleBackColor = true;
+            this.ButtonOpenSettingsForm.Click += new System.EventHandler(this.ButtonOpenSettingsForm_Click);
+            // 
+            // PictureBox
+            // 
+            this.PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox.Image")));
+            this.PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox.Name = "PictureBox";
+            this.PictureBox.Size = new System.Drawing.Size(55, 55);
+            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox.TabIndex = 0;
+            this.PictureBox.TabStop = false;
+            // 
             // LabelLogoTitle
             // 
             this.LabelLogoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -343,6 +372,56 @@
             this.ControlBoxPanel.TabIndex = 1;
             this.ControlBoxPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxPanel_MouseMove);
             // 
+            // ControlBoxMinimizeButton
+            // 
+            this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
+            this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxMinimizeButton.Location = new System.Drawing.Point(1145, 0);
+            this.ControlBoxMinimizeButton.Name = "ControlBoxMinimizeButton";
+            this.ControlBoxMinimizeButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxMinimizeButton.TabIndex = 3;
+            this.ControlBoxMinimizeButton.UseVisualStyleBackColor = true;
+            this.ControlBoxMinimizeButton.Click += new System.EventHandler(this.ControlBoxMinimizeButton_Click);
+            // 
+            // ControlBoxMaximizeButton
+            // 
+            this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
+            this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxMaximizeButton.Location = new System.Drawing.Point(1190, 0);
+            this.ControlBoxMaximizeButton.Name = "ControlBoxMaximizeButton";
+            this.ControlBoxMaximizeButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxMaximizeButton.TabIndex = 2;
+            this.ControlBoxMaximizeButton.UseVisualStyleBackColor = true;
+            this.ControlBoxMaximizeButton.Click += new System.EventHandler(this.ControlBoxMaximizeButton_Click);
+            // 
+            // ControlBoxCloseButton
+            // 
+            this.ControlBoxCloseButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialyKrzyzyk;
+            this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
+            this.ControlBoxCloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ControlBoxCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ControlBoxCloseButton.Location = new System.Drawing.Point(1235, 0);
+            this.ControlBoxCloseButton.Name = "ControlBoxCloseButton";
+            this.ControlBoxCloseButton.Size = new System.Drawing.Size(45, 30);
+            this.ControlBoxCloseButton.TabIndex = 1;
+            this.ControlBoxCloseButton.UseVisualStyleBackColor = true;
+            this.ControlBoxCloseButton.Click += new System.EventHandler(this.ControlBoxCloseButton_Click);
+            // 
             // ControlBoxTextPanel
             // 
             this.ControlBoxTextPanel.AutoSize = true;
@@ -350,7 +429,7 @@
             this.ControlBoxTextPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ControlBoxTextPanel.Location = new System.Drawing.Point(27, 0);
             this.ControlBoxTextPanel.Name = "ControlBoxTextPanel";
-            this.ControlBoxTextPanel.Size = new System.Drawing.Size(63, 30);
+            this.ControlBoxTextPanel.Size = new System.Drawing.Size(4, 30);
             this.ControlBoxTextPanel.TabIndex = 5;
             this.ControlBoxTextPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxTextPanel_MouseMove);
             // 
@@ -361,7 +440,7 @@
             this.ControlBoxTextLabel.Location = new System.Drawing.Point(1, 9);
             this.ControlBoxTextLabel.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.ControlBoxTextLabel.Name = "ControlBoxTextLabel";
-            this.ControlBoxTextLabel.Size = new System.Drawing.Size(59, 13);
+            this.ControlBoxTextLabel.Size = new System.Drawing.Size(0, 13);
             this.ControlBoxTextLabel.TabIndex = 3;
             this.ControlBoxTextLabel.Text = this.Text;
             this.ControlBoxTextLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlBoxTextLabel_MouseMove);
@@ -374,6 +453,16 @@
             this.ControlBoxIconPanel.Name = "ControlBoxIconPanel";
             this.ControlBoxIconPanel.Size = new System.Drawing.Size(27, 30);
             this.ControlBoxIconPanel.TabIndex = 4;
+            // 
+            // ControlBoxIcon
+            // 
+            this.ControlBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("ControlBoxIcon.Image")));
+            this.ControlBoxIcon.Location = new System.Drawing.Point(7, 6);
+            this.ControlBoxIcon.Name = "ControlBoxIcon";
+            this.ControlBoxIcon.Size = new System.Drawing.Size(18, 18);
+            this.ControlBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ControlBoxIcon.TabIndex = 2;
+            this.ControlBoxIcon.TabStop = false;
             // 
             // PanelRight
             // 
@@ -648,6 +737,16 @@
             this.LabelWartoscEnergetyczna.TabIndex = 4;
             this.LabelWartoscEnergetyczna.Text = "Wartość energetyczna:";
             // 
+            // PictureBoxImageOfProduct
+            // 
+            this.PictureBoxImageOfProduct.Image = global::BlokHealth.Properties.Resources.brak_zdjęcia;
+            this.PictureBoxImageOfProduct.Location = new System.Drawing.Point(18, 12);
+            this.PictureBoxImageOfProduct.Name = "PictureBoxImageOfProduct";
+            this.PictureBoxImageOfProduct.Size = new System.Drawing.Size(185, 140);
+            this.PictureBoxImageOfProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxImageOfProduct.TabIndex = 3;
+            this.PictureBoxImageOfProduct.TabStop = false;
+            // 
             // LabelDescriptionOfProduct
             // 
             this.LabelDescriptionOfProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -684,6 +783,40 @@
             this.FoodTitleLabel.TabIndex = 2;
             this.FoodTitleLabel.Text = "-";
             this.FoodTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GoNextButton
+            // 
+            this.GoNextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.GoNextButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialaRightArrow;
+            this.GoNextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.GoNextButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.GoNextButton.FlatAppearance.BorderSize = 0;
+            this.GoNextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoNextButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoNextButton.Location = new System.Drawing.Point(335, 18);
+            this.GoNextButton.Name = "GoNextButton";
+            this.GoNextButton.Size = new System.Drawing.Size(60, 60);
+            this.GoNextButton.TabIndex = 1;
+            this.GoNextButton.UseVisualStyleBackColor = false;
+            this.GoNextButton.Click += new System.EventHandler(this.GoNextButton_Click);
+            this.GoNextButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
+            // 
+            // GoBackButton
+            // 
+            this.GoBackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.GoBackButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialaLeftArrow;
+            this.GoBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.GoBackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.GoBackButton.FlatAppearance.BorderSize = 0;
+            this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackButton.Location = new System.Drawing.Point(23, 18);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(60, 60);
+            this.GoBackButton.TabIndex = 0;
+            this.GoBackButton.UseVisualStyleBackColor = false;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            this.GoBackButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
             // 
             // PanelFill
             // 
@@ -1264,136 +1397,21 @@
             this.Timer1.Interval = 18000;
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // PictureBoxImageOfProduct
+            // ButtonNotebookBackgroundColorChange
             // 
-            this.PictureBoxImageOfProduct.Image = global::BlokHealth.Properties.Resources.brak_zdjęcia;
-            this.PictureBoxImageOfProduct.Location = new System.Drawing.Point(18, 12);
-            this.PictureBoxImageOfProduct.Name = "PictureBoxImageOfProduct";
-            this.PictureBoxImageOfProduct.Size = new System.Drawing.Size(185, 140);
-            this.PictureBoxImageOfProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxImageOfProduct.TabIndex = 3;
-            this.PictureBoxImageOfProduct.TabStop = false;
-            // 
-            // GoNextButton
-            // 
-            this.GoNextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.GoNextButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialaRightArrow;
-            this.GoNextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.GoNextButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.GoNextButton.FlatAppearance.BorderSize = 0;
-            this.GoNextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoNextButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoNextButton.Location = new System.Drawing.Point(335, 18);
-            this.GoNextButton.Name = "GoNextButton";
-            this.GoNextButton.Size = new System.Drawing.Size(60, 60);
-            this.GoNextButton.TabIndex = 1;
-            this.GoNextButton.UseVisualStyleBackColor = false;
-            this.GoNextButton.Click += new System.EventHandler(this.GoNextButton_Click);
-            this.GoNextButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
-            // 
-            // GoBackButton
-            // 
-            this.GoBackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.GoBackButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialaLeftArrow;
-            this.GoBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.GoBackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.GoBackButton.FlatAppearance.BorderSize = 0;
-            this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoBackButton.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoBackButton.Location = new System.Drawing.Point(23, 18);
-            this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(60, 60);
-            this.GoBackButton.TabIndex = 0;
-            this.GoBackButton.UseVisualStyleBackColor = false;
-            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
-            this.GoBackButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GoNextButton_PreviewKeyDown);
-            // 
-            // ButtonOpenSettingsForm
-            // 
-            this.ButtonOpenSettingsForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenSettingsForm.BackgroundImage = global::BlokHealth.Properties.Resources.zembatkaLightMini;
-            this.ButtonOpenSettingsForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ButtonOpenSettingsForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.ButtonOpenSettingsForm.FlatAppearance.BorderSize = 0;
-            this.ButtonOpenSettingsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonOpenSettingsForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOpenSettingsForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ButtonOpenSettingsForm.Location = new System.Drawing.Point(297, 0);
-            this.ButtonOpenSettingsForm.Name = "ButtonOpenSettingsForm";
-            this.ButtonOpenSettingsForm.Size = new System.Drawing.Size(30, 30);
-            this.ButtonOpenSettingsForm.TabIndex = 12;
-            this.ButtonOpenSettingsForm.UseVisualStyleBackColor = true;
-            this.ButtonOpenSettingsForm.Click += new System.EventHandler(this.ButtonOpenSettingsForm_Click);
-            // 
-            // PictureBox
-            // 
-            this.PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox.Image")));
-            this.PictureBox.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(55, 55);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox.TabIndex = 0;
-            this.PictureBox.TabStop = false;
-            // 
-            // ControlBoxMinimizeButton
-            // 
-            this.ControlBoxMinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMinimizeButton.BackgroundImage")));
-            this.ControlBoxMinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ControlBoxMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ControlBoxMinimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ControlBoxMinimizeButton.FlatAppearance.BorderSize = 0;
-            this.ControlBoxMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ControlBoxMinimizeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.ControlBoxMinimizeButton.Location = new System.Drawing.Point(1145, 0);
-            this.ControlBoxMinimizeButton.Name = "ControlBoxMinimizeButton";
-            this.ControlBoxMinimizeButton.Size = new System.Drawing.Size(45, 30);
-            this.ControlBoxMinimizeButton.TabIndex = 3;
-            this.ControlBoxMinimizeButton.UseVisualStyleBackColor = true;
-            this.ControlBoxMinimizeButton.Click += new System.EventHandler(this.ControlBoxMinimizeButton_Click);
-            // 
-            // ControlBoxMaximizeButton
-            // 
-            this.ControlBoxMaximizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ControlBoxMaximizeButton.BackgroundImage")));
-            this.ControlBoxMaximizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ControlBoxMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ControlBoxMaximizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ControlBoxMaximizeButton.FlatAppearance.BorderSize = 0;
-            this.ControlBoxMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ControlBoxMaximizeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.ControlBoxMaximizeButton.Location = new System.Drawing.Point(1190, 0);
-            this.ControlBoxMaximizeButton.Name = "ControlBoxMaximizeButton";
-            this.ControlBoxMaximizeButton.Size = new System.Drawing.Size(45, 30);
-            this.ControlBoxMaximizeButton.TabIndex = 2;
-            this.ControlBoxMaximizeButton.UseVisualStyleBackColor = true;
-            this.ControlBoxMaximizeButton.Click += new System.EventHandler(this.ControlBoxMaximizeButton_Click);
-            // 
-            // ControlBoxCloseButton
-            // 
-            this.ControlBoxCloseButton.BackgroundImage = global::BlokHealth.Properties.Resources.BialyKrzyzyk;
-            this.ControlBoxCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ControlBoxCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ControlBoxCloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ControlBoxCloseButton.FlatAppearance.BorderSize = 0;
-            this.ControlBoxCloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ControlBoxCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.ControlBoxCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ControlBoxCloseButton.ForeColor = System.Drawing.Color.Transparent;
-            this.ControlBoxCloseButton.Location = new System.Drawing.Point(1235, 0);
-            this.ControlBoxCloseButton.Name = "ControlBoxCloseButton";
-            this.ControlBoxCloseButton.Size = new System.Drawing.Size(45, 30);
-            this.ControlBoxCloseButton.TabIndex = 1;
-            this.ControlBoxCloseButton.UseVisualStyleBackColor = true;
-            this.ControlBoxCloseButton.Click += new System.EventHandler(this.ControlBoxCloseButton_Click);
-            // 
-            // ControlBoxIcon
-            // 
-            this.ControlBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("ControlBoxIcon.Image")));
-            this.ControlBoxIcon.Location = new System.Drawing.Point(7, 6);
-            this.ControlBoxIcon.Name = "ControlBoxIcon";
-            this.ControlBoxIcon.Size = new System.Drawing.Size(18, 18);
-            this.ControlBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ControlBoxIcon.TabIndex = 2;
-            this.ControlBoxIcon.TabStop = false;
+            this.ButtonNotebookBackgroundColorChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNotebookBackgroundColorChange.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.ButtonNotebookBackgroundColorChange.FlatAppearance.BorderSize = 0;
+            this.ButtonNotebookBackgroundColorChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonNotebookBackgroundColorChange.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonNotebookBackgroundColorChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ButtonNotebookBackgroundColorChange.Location = new System.Drawing.Point(335, 74);
+            this.ButtonNotebookBackgroundColorChange.Name = "ButtonNotebookBackgroundColorChange";
+            this.ButtonNotebookBackgroundColorChange.Size = new System.Drawing.Size(30, 27);
+            this.ButtonNotebookBackgroundColorChange.TabIndex = 12;
+            this.ButtonNotebookBackgroundColorChange.Text = "T";
+            this.ButtonNotebookBackgroundColorChange.UseVisualStyleBackColor = true;
+            this.ButtonNotebookBackgroundColorChange.Click += new System.EventHandler(this.ButtonNotebookBackgroundColorChange_Click);
             // 
             // MainForm
             // 
@@ -1413,14 +1431,17 @@
             this.PanelHealthCuriosity.ResumeLayout(false);
             this.PanelHealthCuriosity.PerformLayout();
             this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.TopPanel.ResumeLayout(false);
             this.ControlBoxPanel.ResumeLayout(false);
             this.ControlBoxPanel.PerformLayout();
             this.ControlBoxTextPanel.ResumeLayout(false);
             this.ControlBoxTextPanel.PerformLayout();
             this.ControlBoxIconPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).EndInit();
             this.PanelRight.ResumeLayout(false);
             this.PanelRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).EndInit();
             this.ControlPanel_to_Left.ResumeLayout(false);
             this.PanelFill.ResumeLayout(false);
             this.CalculatorMainPanel.ResumeLayout(false);
@@ -1437,9 +1458,6 @@
             this.PanelConvertSettings.PerformLayout();
             this.PanelConvertSettingsEnergy.ResumeLayout(false);
             this.PanelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxImageOfProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ControlBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -1534,5 +1552,6 @@
         private System.Windows.Forms.TextBox CalculatorTextBox;
         private System.Windows.Forms.Button ButtonNotebookFontStyle;
         private System.Windows.Forms.Button ButtonOpenSettingsForm;
+        private System.Windows.Forms.Button ButtonNotebookBackgroundColorChange;
     }
 }
